@@ -194,7 +194,7 @@ export default function Hoy() {
             <span className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-azul-suave text-azul"><Icono nombre="edit_note" className="text-[26px]" /></span>
             <span className="min-w-0 flex-1">
               <span className="block font-extrabold">Escribir una nota</span>
-              <span className="block text-[14px] text-gris">¿Qué pensamiento ronda tu mente hoy?</span>
+              <span className="block text-[14px] text-gris">Escríbela o grábala con tu voz; tu acompañante te responde.</span>
             </span>
             <Icono nombre="arrow_forward" className="text-gris" />
           </Link>

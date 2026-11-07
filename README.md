@@ -13,7 +13,7 @@ datos de ejemplo en memoria y se reinicia al recargar; no hay servidor ni se env
 |---------------|---------------------------------|----------|
 | `/hoy`        | `src/pages/Hoy.jsx`             | Ánimo del día y semana, acceso a la IA, "Tú y tu terapeuta" (responder), psicólogos para ti y últimas páginas |
 | `/psicologos` | `src/pages/PsicologosPage.jsx`  | Matchmaking: aviso de cambios, situación actual, mini mapa de México, recomendaciones con "¿Por qué?" y "ver otra opción", otras ayudas |
-| `/escribir`   | `src/pages/Escribir.jsx`        | Chispa del día, página con etiquetas y privacidad (Solo yo / Mi terapeuta), lista con filtros |
+| `/escribir`   | `src/pages/Escribir.jsx`        | Notas escritas o **de voz** (grabación con el micrófono y transcripción en vivo cuando el navegador lo permite). Un **acompañante de IA** con 4 personalidades (Escucha, Compañía, Orden, Calma) responde cada nota con texto y la lee en voz alta; si detecta riesgo, ofrece ayuda humana. Etiquetas, privacidad y lista con filtros (incluye "De voz") |
 | `/ajustes`    | `src/pages/Ajustes.jsx`         | Perfil, contacto de confianza, privacidad, escritura, avisos, tamaño de letra, datos |
 
 ### Acceso
@@ -42,6 +42,7 @@ src/
   estado.jsx          estado compartido en memoria (páginas, mensajes, ánimo, letra)
   index.css           estilos base y componentes de Tailwind
   data/ejemplo.js     datos de ejemplo (psicólogos, notas, mensajes…)
+  data/acompanante.js personalidades, respuestas de la IA y voz (síntesis del navegador)
   data/mapa.js        contorno de México (Natural Earth, dominio público)
   components/         Layout (navegación y crisis), Psicologos (mapa y tarjeta), ui (piezas pequeñas)
   pages/              una pantalla por archivo
