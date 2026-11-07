@@ -6,9 +6,9 @@ en la app es la terapeuta, y solo ve lo que el usuario decide compartir.
 
 | Archivo        | Pantalla                                                     |
 |----------------|--------------------------------------------------------------|
-| `index.html`   | Diario (pliego izquierdo) y registro de ánimo privado (derecho) |
+| `index.html`   | El libro: página izquierda **Mi diario** (ánimo, escribir, últimas páginas) y derecha **Terapia** (chat confidencial, lo compartido, líneas de crisis). En móvil se pasa de página con las cintas superiores; `#terapia` abre la derecha |
 | `pensar.html`  | Escribir páginas; cada una es "Solo yo" o "Mi terapeuta"     |
-| `chats.html`   | Terapia: canal confidencial con la terapeuta + líneas de crisis |
+| `chats.html`   | Redirección a `index.html#terapia` (enlaces antiguos) |
 | `ajustes.html` | Escritura, privacidad y confidencialidad, avisos, papel, datos |
 | `img/`         | Foto de perfil                                               |
 

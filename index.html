@@ -6,222 +6,175 @@
       min-height: max(884px, 100dvh);
     }
   </style>
-  <script>try{var _a=JSON.parse(localStorage.getItem("dt-ajustes")||"{}");document.documentElement.style.zoom={chica:"0.92",grande:"1.12"}[_a.letra]||"";}catch(e){}</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(44,40,37,0.04)]"><div class="h-16 px-margin-mobile flex items-center justify-between"><div class="flex items-center gap-space-sm min-w-0"><span aria-label="Diario &amp; Tinta" role="img" class="h-9 w-9 flex-shrink-0 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-sm"><span class="material-symbols-outlined text-[20px]">ink_pen</span></span><div class="flex flex-col min-w-0"><span class="font-headline-sm text-headline-sm text-primary tracking-tight truncate leading-tight">Mi Diario</span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider truncate">Diario personal</span></div></div><div class="flex items-center gap-space-sm flex-shrink-0"><span class="hidden xs:inline-block font-label-md text-label-md text-tertiary px-space-xs py-0.5 rounded-lg bg-tertiary-fixed/30">Hoy</span><a class="min-w-[44px] min-h-[44px] flex items-center justify-center p-1 rounded-full transition-transform active:scale-95" data-path="ajustes" href="ajustes.html"><img alt="Profile" class="w-8 h-8 rounded-full object-cover shadow-[0_1px_4px_rgba(44,40,37,0.12)]" src="img/foto-02.jpg"/></a></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-24 bg-surface"><div class="flex flex-col w-full px-margin-mobile pb-space-lg gap-space-lg">
-<!-- Selector de Pliegos / Vista Cuaderno (Toggle de Páginas en Móvil) -->
-<div class="relative w-full flex items-center justify-between p-1 bg-surface-container rounded-xl shadow-sm">
-<button class="flex-1 flex items-center justify-center gap-space-xs py-2 px-space-sm rounded-lg bg-surface-container-lowest text-primary shadow-[0_2px_8px_rgba(44,40,37,0.06)] transition-all duration-300" id="tab-left" onclick="switchSpread('left')">
-<span class="material-symbols-outlined text-[18px]">auto_stories</span>
-<span class="font-label-md text-label-md">Pliego Izq. (Diario)</span>
-</button>
-<button class="flex-1 flex items-center justify-center gap-space-xs py-2 px-space-sm rounded-lg text-on-surface-variant hover:text-on-surface transition-all duration-300" id="tab-right" onclick="switchSpread('right')">
-<span class="material-symbols-outlined text-[18px]">self_improvement</span>
-<span class="font-label-md text-label-md">Pliego Der. (Ánimo)</span>
-</button>
-</div>
-<!-- Contenedor del Libro Abierto (Simulación Encuadernación) -->
-<div class="relative w-full rounded-xl bg-surface-container-low shadow-[0_8px_24px_rgba(44,40,37,0.07)] p-space-sm overflow-hidden">
-<!-- Costura Central / Encuadernación Artesanal Visual -->
-<div class="absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-4 z-20 pointer-events-none hidden md:flex flex-col justify-between items-center py-4 opacity-40">
-<div class="w-0.5 h-full bg-outline-variant"></div>
-<div class="absolute inset-y-0 flex flex-col justify-around">
-<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
-<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
-<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
-<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
-<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
-</div>
-</div>
-<!-- PÁGINA IZQUIERDA: Mi Diario & Hábitos -->
-<section class="flex flex-col gap-space-md w-full bg-surface-container-lowest rounded-lg p-space-md shadow-sm relative overflow-hidden" id="page-left">
-<!-- Washi tape decorativo superior -->
-<div class="absolute -top-2 left-8 w-20 h-5 bg-secondary-container/40 -rotate-2 rounded-sm backdrop-blur-[1px] shadow-sm pointer-events-none"></div>
-<!-- Encabezado de la página: Fecha y Cita -->
-<div class="flex flex-col pt-1">
-<div class="flex items-center justify-between">
-<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">Anotación del día</span>
-<span class="material-symbols-outlined text-secondary text-[20px]">cruelty_free</span>
-</div>
-<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mt-1">Hoy, 24 de Octubre</h1>
-<div class="relative mt-2 p-space-sm bg-surface-container/60 rounded-lg">
-<p class="font-display-lg-mobile text-body-md italic text-on-surface-variant leading-relaxed">
-            "Escribir no es más que una conversación silenciosa con el alma que despierta en cada página."
-          </p>
-<span class="block text-right font-label-sm text-label-sm text-primary mt-1">— Notas del Tintero</span>
-</div>
-</div>
-<!-- Racha de Días (Sello de Tinta Artesanal) -->
-<div class="relative bg-surface-container-low rounded-xl p-space-md shadow-sm overflow-hidden">
-<div class="flex items-center justify-between gap-space-sm">
-<div class="flex items-center gap-space-sm">
-<div class="w-10 h-10 rounded-full bg-secondary-fixed flex items-center justify-center shadow-inner">
-<span aria-label="Fuego" class="text-[20px]" role="img">🔥</span>
-</div>
-<div class="flex flex-col">
-<span class="font-headline-sm text-headline-sm text-on-surface">14 días seguidos</span>
-<span class="font-body-sm text-body-sm text-on-surface-variant">Racha de tinta y memoria</span>
-</div>
-</div>
-<!-- Sello de cera / insignia -->
-<div class="w-9 h-9 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-label-sm text-label-sm shadow-md rotate-6">
-            100%
-          </div>
-</div>
-<!-- Mini Calendario Semanal con Sellos -->
-<div class="grid grid-cols-7 gap-1 mt-space-sm pt-space-xs text-center">
-<div class="flex flex-col items-center gap-1">
-<span class="font-label-sm text-label-sm text-on-surface-variant">L</span>
-<span class="w-7 h-7 rounded-full bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center font-label-sm text-label-sm shadow-sm">✓</span>
-</div>
-<div class="flex flex-col items-center gap-1">
-<span class="font-label-sm text-label-sm text-on-surface-variant">M</span>
-<span class="w-7 h-7 rounded-full bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center font-label-sm text-label-sm shadow-sm">✓</span>
-</div>
-<div class="flex flex-col items-center gap-1">
-<span class="font-label-sm text-label-sm text-on-surface-variant">X</span>
-<span class="w-7 h-7 rounded-full bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center font-label-sm text-label-sm shadow-sm">✓</span>
-</div>
-<div class="flex flex-col items-center gap-1">
-<span class="font-label-sm text-label-sm text-on-surface-variant">J</span>
-<span class="w-7 h-7 rounded-full bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center font-label-sm text-label-sm shadow-sm">✓</span>
-</div>
-<div class="flex flex-col items-center gap-1">
-<span class="font-label-sm text-label-sm text-on-surface-variant">V</span>
-<span class="w-7 h-7 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-label-sm text-label-sm shadow-md animate-pulse">●</span>
-</div>
-<div class="flex flex-col items-center gap-1">
-<span class="font-label-sm text-label-sm text-on-surface-variant">S</span>
-<span class="w-7 h-7 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center font-label-sm text-label-sm">26</span>
-</div>
-<div class="flex flex-col items-center gap-1">
-<span class="font-label-sm text-label-sm text-on-surface-variant">D</span>
-<span class="w-7 h-7 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center font-label-sm text-label-sm">27</span>
-</div>
-</div>
-</div>
-<!-- Sección 'Escribe tus pensamientos' -->
-<div class="relative bg-surface-container rounded-xl p-space-md shadow-sm">
-<!-- Cinta decorativa washi esquina -->
-<div class="absolute -top-2 right-4 w-12 h-4 bg-tertiary-fixed/60 rotate-6 rounded-sm pointer-events-none"></div>
-<div class="flex flex-col gap-1">
-<div class="flex items-center gap-1 text-primary">
-<span class="material-symbols-outlined text-[20px]">edit_note</span>
-<span class="font-label-md text-label-md uppercase tracking-wider">Lienzo en Blanco</span>
-</div>
-<p class="font-headline-sm text-headline-sm text-on-surface">¿Qué pensamiento ronda tu mente hoy?</p>
-<p class="font-body-sm text-body-sm text-on-surface-variant">Captura una emoción, una idea fugaz o una charla que no quieres olvidar.</p>
-</div>
-<div class="mt-space-md flex flex-col gap-space-sm">
-<div class="p-space-sm bg-surface-container-lowest rounded-lg shadow-inner">
-<p class="font-body-md text-body-md text-on-surface-variant italic">"Caminando bajo los fresnos del parque, el olor a café recién molido..."</p>
-</div>
-<button onclick="location.href='pensar.html'" class="w-full py-3 px-space-md bg-primary hover:bg-on-primary-fixed-variant text-on-primary rounded-lg font-label-lg text-label-lg flex items-center justify-center gap-2 shadow-md transition-all active:scale-[0.98]">
-<span class="material-symbols-outlined text-[20px]">ink_pen</span>
-<span>Escribir nueva nota +</span>
-</button>
-</div>
-</div>
-<!-- Accesos Directos a Funciones Esenciales -->
-<div class="flex flex-col gap-space-xs mt-space-xs">
-<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider px-1">Cajón de Herramientas</span>
-<div class="grid grid-cols-2 gap-space-xs">
-<!-- Tarjeta 1: Mi terapeuta -->
-<div onclick="location.href='chats.html'" class="p-space-sm bg-surface-container-low hover:bg-surface-container rounded-lg flex items-center gap-space-sm cursor-pointer transition-colors shadow-sm">
-<div class="w-8 h-8 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed">
-<span class="material-symbols-outlined text-[18px]">psychology</span>
-</div>
-<div class="flex flex-col min-w-0">
-<span class="font-label-md text-label-md text-on-surface truncate">Mi terapeuta</span>
-<span class="font-label-sm text-label-sm text-on-surface-variant truncate">1 mensaje nuevo</span>
-</div>
-</div>
-<!-- Tarjeta 2: Borradores guardados -->
-<div onclick="location.href='pensar.html'" class="p-space-sm bg-surface-container-low hover:bg-surface-container rounded-lg flex items-center gap-space-sm cursor-pointer transition-colors shadow-sm">
-<div class="w-8 h-8 rounded-full bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed">
-<span class="material-symbols-outlined text-[18px]">attach_file</span>
-</div>
-<div class="flex flex-col min-w-0">
-<span class="font-label-md text-label-md text-on-surface truncate">Borradores</span>
-<span class="font-label-sm text-label-sm text-on-surface-variant truncate">2 páginas sueltas</span>
-</div>
-</div>
-<!-- Tarjeta 3: Recuerdos del año pasado -->
-<div class="p-space-sm bg-surface-container-low hover:bg-surface-container rounded-lg flex items-center gap-space-sm cursor-pointer transition-colors shadow-sm">
-<div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed">
-<span class="material-symbols-outlined text-[18px]">hourglass_top</span>
-</div>
-<div class="flex flex-col min-w-0">
-<span class="font-label-md text-label-md text-on-surface truncate">Hace 1 año</span>
-<span class="font-label-sm text-label-sm text-on-surface-variant truncate">Encuentro de café</span>
-</div>
-</div>
-<!-- Tarjeta 4: Configuración -->
-<div onclick="location.href='ajustes.html'" class="p-space-sm bg-surface-container-low hover:bg-surface-container rounded-lg flex items-center gap-space-sm cursor-pointer transition-colors shadow-sm">
-<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant">
-<span class="material-symbols-outlined text-[18px]">settings</span>
-</div>
-<div class="flex flex-col min-w-0">
-<span class="font-label-md text-label-md text-on-surface truncate">Ajustes</span>
-<span class="font-label-sm text-label-sm text-on-surface-variant truncate">Papel y estilo</span>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- PÁGINA DERECHA: Bienestar privado -->
-<section class="hidden md:flex flex-col gap-space-md w-full bg-surface-container-lowest rounded-lg p-space-md shadow-sm relative overflow-hidden mt-space-md md:mt-0" id="page-right">
-<div class="absolute -top-2 right-8 w-20 h-5 bg-tertiary-fixed/60 rotate-2 rounded-sm pointer-events-none"></div>
-<div class="flex flex-col pt-1">
-  <span class="font-label-sm text-label-sm text-tertiary uppercase tracking-widest flex items-center gap-1"><span class="material-symbols-outlined text-[15px]">lock</span> Bienestar · solo para ti</span>
-  <h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mt-1">¿Cómo te sientes hoy?</h2>
-  <p class="font-body-sm text-body-sm text-on-surface-variant">No hay respuestas correctas. Elige el sello que más se parezca a tu día.</p>
+  <script>try{var _a=JSON.parse(localStorage.getItem("dt-ajustes")||"{}");document.documentElement.style.zoom={chica:"0.92",grande:"1.12"}[_a.letra]||"";}catch(e){}</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased flex flex-col min-h-screen">
+<style>
+  .hoja { box-shadow: 0 1px 0 rgba(44,40,37,.04), 0 6px 16px rgba(44,40,37,.06); }
+  .burbuja-yo { border-bottom-right-radius: 4px; }
+  .burbuja-ella { border-bottom-left-radius: 4px; }
+  @media (min-width: 768px) {
+    #page-left { border-top-right-radius: 4px; border-bottom-right-radius: 4px; }
+    #page-right { border-top-left-radius: 4px; border-bottom-left-radius: 4px; }
+  }
+</style>
+<header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(44,40,37,0.04)]"><div class="h-16 px-margin-mobile flex items-center justify-between max-w-[1200px] mx-auto"><div class="flex items-center gap-space-sm min-w-0"><span aria-label="Diario &amp; Tinta" role="img" class="h-9 w-9 flex-shrink-0 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-sm"><span class="material-symbols-outlined text-[20px]">ink_pen</span></span><div class="flex flex-col min-w-0"><span class="font-headline-sm text-headline-sm text-primary tracking-tight truncate leading-tight">Mi Diario</span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider truncate flex items-center gap-1"><span class="material-symbols-outlined text-[13px]">lock</span> Privado y confidencial</span></div></div><a class="min-w-[44px] min-h-[44px] flex items-center justify-center p-1 rounded-full transition-transform active:scale-95" href="ajustes.html" aria-label="Ajustes"><img alt="" class="w-8 h-8 rounded-full object-cover shadow-[0_1px_4px_rgba(44,40,37,0.12)]" src="img/foto-02.jpg"/></a></div></header>
+
+<main class="flex-1 flex flex-col relative w-full pt-16 pb-space-lg bg-surface">
+<div class="flex flex-col w-full max-w-[1200px] mx-auto px-margin-mobile md:px-margin pt-space-md gap-space-md">
+
+<!-- Cintas del libro (solo móvil): elegir página -->
+<div class="md:hidden sticky top-[4.25rem] z-40 w-full flex items-center p-1 bg-surface-container rounded-xl shadow-sm" role="tablist" aria-label="Páginas del libro">
+  <button id="tab-left" role="tab" class="flex-1 flex items-center justify-center gap-space-xs py-2 px-space-sm rounded-lg transition-all duration-300" onclick="abrirPagina('diario')">
+    <span class="material-symbols-outlined text-[18px]">auto_stories</span><span class="font-label-md text-label-md">Mi diario</span>
+  </button>
+  <button id="tab-right" role="tab" class="flex-1 flex items-center justify-center gap-space-xs py-2 px-space-sm rounded-lg transition-all duration-300" onclick="abrirPagina('terapia')">
+    <span class="material-symbols-outlined text-[18px]">psychology</span><span class="font-label-md text-label-md">Terapia</span>
+    <span id="tab-aviso" class="hidden w-2 h-2 rounded-full bg-primary" aria-label="Mensaje nuevo"></span>
+  </button>
 </div>
 
-<!-- Sellos de ánimo -->
-<div id="animos" class="grid grid-cols-5 gap-1.5" role="radiogroup" aria-label="Estado de ánimo de hoy"></div>
-<label class="flex flex-col gap-1">
-  <span class="font-label-md text-label-md text-on-surface-variant">¿Quieres anotar algo más? (opcional)</span>
-  <textarea id="animo-nota" rows="2" maxlength="280" placeholder="Dormí poco, pero la caminata me ayudó…" class="w-full rounded-lg border-0 bg-surface-container px-3 py-2 font-body-sm text-body-sm text-on-surface resize-none focus:ring-2 focus:ring-primary placeholder:text-outline"></textarea>
-</label>
-<div class="flex items-center justify-between gap-space-sm">
-  <label class="flex items-center gap-2 font-label-md text-label-md text-on-surface-variant cursor-pointer">
-    <input id="animo-compartir" type="checkbox" class="rounded border-outline-variant text-primary focus:ring-primary"/>
-    Compartir con mi terapeuta
-  </label>
-  <button id="animo-guardar" class="py-2 px-4 rounded-lg bg-primary text-on-primary font-label-md text-label-md shadow-sm hover:bg-on-primary-fixed-variant active:scale-95 transition-all">Guardar</button>
-</div>
-<p id="animo-estado" class="font-label-sm text-label-sm text-tertiary -mt-2 min-h-[1rem]" aria-live="polite"></p>
-
-<!-- Semana emocional -->
-<div class="bg-surface-container-low rounded-xl p-space-md shadow-sm">
-  <div class="flex items-center justify-between mb-space-sm">
-    <span class="font-label-lg text-label-lg text-on-surface">Tu semana</span>
-    <span class="font-label-sm text-label-sm text-on-surface-variant">Últimos 7 días</span>
-  </div>
-  <div id="semana" class="grid grid-cols-7 gap-1 text-center"></div>
-</div>
-
-<!-- Próxima sesión -->
-<div class="bg-surface-container rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm">
-  <div class="flex items-center gap-space-sm">
-    <div class="w-11 h-11 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center font-headline-sm text-headline-sm shadow-sm" aria-hidden="true">ER</div>
-    <div class="min-w-0">
-      <span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Próxima sesión</span>
-      <p class="font-label-lg text-label-lg text-on-surface">Jueves 13 de nov · 17:00</p>
-      <p class="font-body-sm text-body-sm text-on-surface-variant">Psic. Elena Ruiz · Videollamada</p>
+<!-- Libro abierto -->
+<div class="relative w-full rounded-xl bg-surface-container-low shadow-[0_8px_24px_rgba(44,40,37,0.07)] p-space-sm md:p-space-md">
+  <!-- Costura central -->
+  <div class="absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-4 z-20 pointer-events-none hidden md:flex justify-center py-4 opacity-40" aria-hidden="true">
+    <div class="w-0.5 h-full bg-outline-variant"></div>
+    <div class="absolute inset-y-6 flex flex-col justify-around">
+      <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
     </div>
   </div>
-  <a href="chats.html" class="py-2.5 px-space-sm bg-secondary-fixed text-on-secondary-fixed rounded-lg font-label-md text-label-md flex items-center justify-center gap-1.5 shadow-sm hover:bg-secondary-fixed-dim transition-all">
-    <span class="material-symbols-outlined text-[18px]">psychology</span> Escribir a mi terapeuta
-  </a>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-space-sm md:gap-space-lg items-start">
+
+  <!-- ===================== PÁGINA IZQUIERDA: MI DIARIO ===================== -->
+  <section id="page-left" class="flex flex-col gap-space-md w-full bg-surface-container-lowest rounded-lg p-space-md hoja relative" aria-labelledby="t-diario">
+    <div class="absolute -top-2 left-8 w-20 h-5 bg-secondary-container/40 -rotate-2 rounded-sm shadow-sm pointer-events-none"></div>
+    <div class="flex flex-col pt-1">
+      <span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">Mi diario · solo para ti</span>
+      <h1 id="t-diario" class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mt-1">Hoy</h1>
+      <p class="font-body-sm text-body-sm italic text-on-surface-variant">Escribir es una conversación silenciosa contigo.</p>
+    </div>
+
+    <!-- Ánimo de hoy -->
+    <div class="flex flex-col gap-space-sm">
+      <p class="font-headline-sm text-headline-sm text-on-surface">¿Cómo te sientes hoy?</p>
+      <div id="animos" class="grid grid-cols-5 gap-1.5" role="radiogroup" aria-label="Estado de ánimo de hoy"></div>
+      <label class="flex flex-col gap-1">
+        <span class="sr-only">Nota sobre tu ánimo (opcional)</span>
+        <textarea id="animo-nota" rows="2" maxlength="280" placeholder="¿Quieres anotar algo más? (opcional)" class="w-full rounded-lg border-0 bg-surface-container px-3 py-2 font-body-sm text-body-sm text-on-surface resize-none focus:ring-2 focus:ring-primary placeholder:text-outline"></textarea>
+      </label>
+      <div class="flex items-center justify-between gap-space-sm">
+        <label class="flex items-center gap-2 font-label-md text-label-md text-on-surface-variant cursor-pointer">
+          <input id="animo-compartir" type="checkbox" class="rounded border-outline-variant text-primary focus:ring-primary"/>
+          Compartir con mi terapeuta
+        </label>
+        <button id="animo-guardar" class="py-2 px-4 rounded-lg bg-primary text-on-primary font-label-md text-label-md shadow-sm hover:bg-on-primary-fixed-variant active:scale-95 transition-all">Guardar</button>
+      </div>
+      <p id="animo-estado" class="font-label-sm text-label-sm text-tertiary min-h-[1rem]" aria-live="polite"></p>
+      <div class="bg-surface-container-low rounded-xl p-space-sm">
+        <div class="flex items-center justify-between mb-1.5 px-1">
+          <span class="font-label-md text-label-md text-on-surface">Tu semana</span>
+          <span class="font-label-sm text-label-sm text-on-surface-variant">Últimos 7 días</span>
+        </div>
+        <div id="semana" class="grid grid-cols-7 gap-1 text-center"></div>
+      </div>
+    </div>
+
+    <!-- Escribir -->
+    <div class="relative bg-surface-container rounded-xl p-space-md">
+      <div class="absolute -top-2 right-4 w-12 h-4 bg-tertiary-fixed/60 rotate-6 rounded-sm pointer-events-none"></div>
+      <div class="flex items-center gap-1 text-primary">
+        <span class="material-symbols-outlined text-[20px]">edit_note</span>
+        <span class="font-label-md text-label-md uppercase tracking-wider">Lienzo en blanco</span>
+      </div>
+      <p class="font-headline-sm text-headline-sm text-on-surface mt-1">¿Qué pensamiento ronda tu mente hoy?</p>
+      <a href="pensar.html" class="mt-space-sm w-full py-3 px-space-md bg-primary hover:bg-on-primary-fixed-variant text-on-primary rounded-lg font-label-lg text-label-lg flex items-center justify-center gap-2 shadow-md transition-all active:scale-[0.98]">
+        <span class="material-symbols-outlined text-[20px]">ink_pen</span> Escribir una página
+      </a>
+    </div>
+
+    <!-- Páginas recientes -->
+    <div class="flex flex-col gap-space-xs">
+      <div class="flex items-center justify-between px-1">
+        <span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Tus últimas páginas</span>
+        <a href="pensar.html" class="font-label-md text-label-md text-primary hover:underline">Ver todas</a>
+      </div>
+      <ul id="recientes" class="flex flex-col gap-space-xs"></ul>
+    </div>
+  </section>
+
+  <!-- ===================== PÁGINA DERECHA: TERAPIA ===================== -->
+  <section id="page-right" class="hidden md:flex flex-col gap-space-md w-full bg-surface-container-lowest rounded-lg p-space-md hoja relative" aria-labelledby="t-terapia">
+    <div class="absolute -top-2 right-8 w-20 h-5 bg-tertiary-fixed/60 rotate-2 rounded-sm pointer-events-none"></div>
+    <div class="flex flex-col pt-1">
+      <span class="font-label-sm text-label-sm text-tertiary uppercase tracking-widest flex items-center gap-1"><span class="material-symbols-outlined text-[15px]">lock</span> Espacio confidencial</span>
+      <h2 id="t-terapia" class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mt-1">Tú y tu terapeuta</h2>
+    </div>
+
+    <!-- Terapeuta + próxima sesión -->
+    <div class="flex items-center gap-space-sm p-space-sm rounded-xl bg-surface-container-low">
+      <div class="w-11 h-11 flex-shrink-0 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center font-headline-sm text-headline-sm shadow-sm" aria-hidden="true">ER</div>
+      <div class="min-w-0 flex-1">
+        <p class="font-label-lg text-label-lg text-on-surface">Psic. Elena Ruiz</p>
+        <p class="font-body-sm text-body-sm text-on-surface-variant truncate">Responde lun–vie, 9:00–19:00</p>
+      </div>
+      <div class="text-right flex-shrink-0">
+        <p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Próxima sesión</p>
+        <p class="font-label-md text-label-md text-primary">Jue 13 nov · 17:00</p>
+      </div>
+    </div>
+
+    <!-- Conversación -->
+    <div class="flex flex-col rounded-xl border border-outline-variant/60 overflow-hidden">
+      <div class="px-space-sm py-1.5 border-b border-dashed border-outline-variant flex items-center justify-between">
+        <span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[15px] text-tertiary">encrypted</span> Solo tú y ella pueden leer esto</span>
+        <span id="t-total" class="font-label-sm text-label-sm text-outline"></span>
+      </div>
+      <ol id="hilo" class="flex flex-col gap-space-sm p-space-sm h-[22rem] overflow-y-auto" aria-live="polite" aria-label="Mensajes"></ol>
+      <form id="t-form" class="border-t border-outline-variant/60 p-space-sm flex items-end gap-2 bg-surface-container-low/60" autocomplete="off">
+        <label for="t-texto" class="sr-only">Escribe un mensaje</label>
+        <textarea id="t-texto" rows="1" maxlength="1000" placeholder="Escribe a tu terapeuta…" class="flex-1 rounded-xl border-0 bg-surface-container-lowest px-3 py-2.5 font-body-md text-body-md text-on-surface resize-none focus:ring-2 focus:ring-primary placeholder:text-outline max-h-40"></textarea>
+        <button id="t-enviar" type="submit" class="h-11 w-11 flex-shrink-0 rounded-full bg-primary text-on-primary shadow-md flex items-center justify-center hover:bg-on-primary-fixed-variant active:scale-95 transition-all disabled:opacity-40" aria-label="Enviar mensaje">
+          <span class="material-symbols-outlined text-[20px]">send</span>
+        </button>
+      </form>
+    </div>
+
+    <!-- Compartido -->
+    <div class="flex flex-col gap-1">
+      <span class="font-label-md text-label-md text-on-surface flex items-center gap-1.5"><span class="material-symbols-outlined text-[18px] text-secondary">folder_shared</span> Lo que le has compartido</span>
+      <ul id="compartidas" class="flex flex-wrap gap-1.5 mt-1"></ul>
+      <p id="compartidas-vacio" class="hidden font-body-sm text-body-sm italic text-outline">Aún no compartes nada. Marca "Mi terapeuta" al guardar una página.</p>
+    </div>
+
+    <!-- Crisis -->
+    <div class="rounded-xl p-space-sm bg-error-container/50 border border-error/20">
+      <p class="font-label-md text-label-md text-on-error-container flex items-center gap-1.5"><span class="material-symbols-outlined text-[18px]">emergency</span> Este chat no es para emergencias</p>
+      <p class="font-body-sm text-body-sm text-on-error-container mt-1">Si estás en crisis o en peligro, llama a la <a href="tel:8009112000" class="font-semibold underline">Línea de la Vida 800 911 2000</a> o al <a href="tel:911" class="font-semibold underline">911</a>.</p>
+    </div>
+  </section>
+
+  </div>
 </div>
 
-<p class="flex items-start gap-1.5 font-body-sm text-body-sm text-on-surface-variant">
-  <span class="material-symbols-outlined text-[16px] text-tertiary mt-0.5">verified_user</span>
-  Tus registros se guardan solo en este dispositivo. Tu terapeuta únicamente ve lo que tú decides compartir.
-</p>
-</section>
+<div class="flex items-center justify-center gap-space-sm py-2 opacity-70">
+  <div class="w-12 h-px bg-outline-variant"></div>
+  <span class="font-display-lg-mobile text-body-sm italic text-outline">Diario &amp; Tinta • Confidencial entre tú y tu terapeuta</span>
+  <div class="w-12 h-px bg-outline-variant"></div>
+</div>
+</div>
+
 <script>
 (() => {
+  const get = (k, d) => { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch { return d; } };
+  const set = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} };
+  const $ = s => document.querySelector(s);
+  const dia = 864e5;
+  const fecha = d => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+  const hoy = fecha(new Date());
+  const ajustes = get('dt-ajustes', {});
+
+  // ---------- Página izquierda: diario ----------
+  $('#t-diario').textContent = 'Hoy, ' + new Date().toLocaleDateString('es-MX', { weekday: 'long', day: 'numeric', month: 'long' });
+
   const ANIMOS = [
     { id: 'calma',     emoji: '🌿', txt: 'Calma',     color: 'bg-tertiary-fixed' },
     { id: 'alegria',   emoji: '☀️', txt: 'Alegría',   color: 'bg-secondary-fixed' },
@@ -229,14 +182,8 @@
     { id: 'tristeza',  emoji: '🌧️', txt: 'Tristeza',  color: 'bg-primary-fixed' },
     { id: 'ansiedad',  emoji: '🌀', txt: 'Ansiedad',  color: 'bg-error-container' },
   ];
-  const get = (k, d) => { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch { return d; } };
-  const set = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} };
-  const fecha = d => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
-  const hoy = fecha(new Date());
-  const ajustes = get('dt-ajustes', {});
   let registros = get('dt-animo', {});
   let elegido = registros[hoy]?.animo || null;
-  const $ = s => document.querySelector(s);
   $('#animo-nota').value = registros[hoy]?.nota || '';
   $('#animo-compartir').checked = registros[hoy] ? !!registros[hoy].compartido : !!ajustes.compartirDefault;
 
@@ -258,7 +205,7 @@
     const dias = ['D', 'L', 'M', 'X', 'J', 'V', 'S'];
     for (let i = 6; i >= 0; i--) {
       const d = new Date(); d.setDate(d.getDate() - i);
-      const k = fecha(d), r = registros[k], a = r && ANIMOS.find(x => x.id === r.animo);
+      const r = registros[fecha(d)], a = r && ANIMOS.find(x => x.id === r.animo);
       const cel = document.createElement('div');
       cel.className = 'flex flex-col items-center gap-1';
       cel.innerHTML = `<span class="font-label-sm text-label-sm text-on-surface-variant">${dias[d.getDay()]}</span>
@@ -269,42 +216,115 @@
   $('#animo-guardar').onclick = () => {
     if (!elegido) { $('#animo-estado').textContent = 'Elige primero un sello de ánimo.'; return; }
     registros[hoy] = { animo: elegido, nota: $('#animo-nota').value.trim(), compartido: $('#animo-compartir').checked };
-    set('dt-animo', registros); pintarSemana();
+    set('dt-animo', registros); pintarSemana(); pintarCompartidas();
     $('#animo-estado').textContent = registros[hoy].compartido ? 'Guardado y visible para tu terapeuta ✓' : 'Guardado solo para ti ✓';
   };
-  pintarAnimos(); pintarSemana();
+
+  // Mismas páginas de ejemplo que Pensar, por si aún no has escrito nada
+  const SEMILLA_PAGINAS = [
+    { titulo: 'Lluvia en Coyoacán', texto: 'La tarde se detuvo cuando empezó a llover…', priv: 'terapeuta', fecha: Date.now() - dia },
+    { titulo: 'El tren de las 6', texto: 'Hoy pensé que llego tarde a mis propias ideas, pero llego…', priv: 'privado', fecha: Date.now() - dia * 3 },
+    { titulo: 'Cuaderno de amate', texto: 'Vi cómo se golpea la corteza del amate hasta volverla papel…', priv: 'terapeuta', fecha: Date.now() - dia * 6 },
+  ];
+  const paginas = () => get('dt-paginas', null) || SEMILLA_PAGINAS;
+  const compartida = p => p.priv === 'terapeuta';
+
+  function pintarRecientes() {
+    const ul = $('#recientes'); ul.innerHTML = '';
+    const lista = [...paginas()].sort((a, b) => b.fecha - a.fecha).slice(0, 3);
+    if (!lista.length) { ul.innerHTML = '<li class="font-body-sm text-body-sm italic text-outline px-1">Tu primera página te espera.</li>'; return; }
+    lista.forEach(p => {
+      const li = document.createElement('li');
+      li.innerHTML = `<a href="pensar.html" class="flex items-start gap-space-sm p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors">
+          <span class="material-symbols-outlined text-[18px] mt-0.5 ${compartida(p) ? 'text-tertiary' : 'text-outline'}"></span>
+          <span class="min-w-0 flex-1"><span class="block font-label-lg text-label-lg text-on-surface truncate"></span><span class="block font-body-sm text-body-sm text-on-surface-variant truncate"></span></span>
+          <span class="font-label-sm text-label-sm text-outline flex-shrink-0"></span></a>`;
+      const [ico, txt, f] = li.querySelectorAll('a > span');
+      ico.textContent = compartida(p) ? 'psychology' : 'lock';
+      ico.title = compartida(p) ? 'Compartida con tu terapeuta' : 'Solo para ti';
+      txt.firstChild.textContent = p.titulo || 'Sin título';
+      txt.lastChild.textContent = p.texto || '';
+      f.textContent = new Date(p.fecha).toLocaleDateString('es-MX', { day: 'numeric', month: 'short' });
+      ul.appendChild(li);
+    });
+  }
+
+  // ---------- Página derecha: terapia ----------
+  const SEMILLA = [
+    { de: 'ella', texto: 'Hola, te escribo para recordarte que puedes usar este espacio entre sesiones. Respondo en horario laboral; no es un canal de emergencias.', t: Date.now() - dia * 6 },
+    { de: 'yo',   texto: 'Gracias. Esta semana probé escribir antes de dormir, como acordamos. Me ayudó a ordenar lo del trabajo.', t: Date.now() - dia * 4 },
+    { de: 'ella', texto: 'Qué bueno que lo intentaste. Si quieres, comparte una de esas páginas y la revisamos el jueves.', t: Date.now() - dia * 4 + 36e5 * 3 },
+  ];
+  let hilo = get('dt-terapia', SEMILLA);
+  const hora = ts => {
+    const d = new Date(ts), dias = Math.floor((Date.now() - ts) / dia);
+    const h = d.toLocaleTimeString('es-MX', { hour: '2-digit', minute: '2-digit' });
+    return dias === 0 ? `Hoy, ${h}` : dias === 1 ? `Ayer, ${h}` : `${d.toLocaleDateString('es-MX', { day: 'numeric', month: 'short' })}, ${h}`;
+  };
+  function pintarHilo() {
+    const ol = $('#hilo'); ol.innerHTML = '';
+    hilo.forEach(m => {
+      const yo = m.de === 'yo';
+      const li = document.createElement('li');
+      li.className = `flex flex-col max-w-[85%] ${yo ? 'self-end items-end' : 'self-start items-start'}`;
+      li.innerHTML = `<div class="px-3.5 py-2.5 rounded-2xl font-body-md text-body-md whitespace-pre-line ${yo ? 'burbuja-yo bg-primary text-on-primary' : 'burbuja-ella bg-surface-container text-on-surface'}"></div>
+        <span class="font-label-sm text-label-sm text-outline mt-1 px-1"></span>`;
+      li.firstElementChild.textContent = m.texto;
+      li.lastElementChild.textContent = (yo ? 'Tú · ' : 'Elena · ') + hora(m.t);
+      ol.appendChild(li);
+    });
+    $('#t-total').textContent = `${hilo.length} mensajes`;
+    ol.scrollTop = ol.scrollHeight;
+    // Aviso en la cinta móvil si el último mensaje es de la terapeuta
+    $('#tab-aviso').classList.toggle('hidden', hilo.at(-1)?.de !== 'ella');
+  }
+  function pintarCompartidas() {
+    const ul = $('#compartidas'); ul.innerHTML = '';
+    const chip = (icono, texto) => {
+      const li = document.createElement('li');
+      li.className = 'inline-flex items-center gap-1 max-w-full px-2 py-1 rounded-full bg-surface-container font-label-md text-label-md text-on-surface';
+      li.innerHTML = `<span class="material-symbols-outlined text-[15px] text-secondary">${icono}</span><span class="truncate"></span>`;
+      li.lastChild.textContent = texto; ul.appendChild(li);
+    };
+    paginas().filter(compartida).forEach(p => chip('description', p.titulo || 'Sin título'));
+    const n = Object.values(get('dt-animo', {})).filter(r => r.compartido).length;
+    if (n) chip('self_improvement', `${n} registro${n > 1 ? 's' : ''} de ánimo`);
+    $('#compartidas-vacio').classList.toggle('hidden', ul.children.length > 0);
+  }
+  const texto = $('#t-texto');
+  const ajustar = () => { texto.style.height = 'auto'; texto.style.height = Math.min(texto.scrollHeight, 160) + 'px'; $('#t-enviar').disabled = !texto.value.trim(); };
+  texto.addEventListener('input', ajustar);
+  texto.addEventListener('keydown', e => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); $('#t-form').requestSubmit(); } });
+  $('#t-form').onsubmit = e => {
+    e.preventDefault();
+    const v = texto.value.trim(); if (!v) return;
+    hilo.push({ de: 'yo', texto: v, t: Date.now() }); set('dt-terapia', hilo);
+    texto.value = ''; ajustar(); pintarHilo();
+  };
+
+  // ---------- Pasar de página (móvil) ----------
+  const ON = 'bg-surface-container-lowest text-primary shadow-[0_2px_8px_rgba(44,40,37,0.06)]';
+  const OFF = 'text-on-surface-variant hover:text-on-surface';
+  window.abrirPagina = (pag, desdeHash) => {
+    const der = pag === 'terapia';
+    $('#page-left').classList.toggle('hidden', der);
+    $('#page-right').classList.toggle('hidden', !der);
+    $('#page-right').classList.toggle('flex', der);
+    [[$('#tab-left'), !der], [$('#tab-right'), der]].forEach(([b, on]) => {
+      b.classList.remove(...(on ? OFF : ON).split(' ')); b.classList.add(...(on ? ON : OFF).split(' '));
+      b.setAttribute('aria-selected', on);
+    });
+    if (!desdeHash) history.replaceState(null, '', der ? '#terapia' : '#diario');
+    // Al mostrar la página medimos de nuevo: oculta, la caja y el hilo no tienen tamaño
+    if (der) requestAnimationFrame(() => { ajustar(); const ol = $('#hilo'); ol.scrollTop = ol.scrollHeight; });
+  };
+  // Las fuentes web cambian la altura de los mensajes al cargar
+  addEventListener('load', () => { ajustar(); const ol = $('#hilo'); ol.scrollTop = ol.scrollHeight; });
+
+  pintarAnimos(); pintarSemana(); pintarRecientes(); pintarHilo(); pintarCompartidas(); ajustar();
+  abrirPagina(location.hash === '#terapia' ? 'terapia' : 'diario', true);
+  addEventListener('hashchange', () => abrirPagina(location.hash === '#terapia' ? 'terapia' : 'diario', true));
 })();
 </script>
-
-</div>
-<!-- Sello de Tinta Final de Página / Cierre Poético -->
-<div class="flex items-center justify-center gap-space-sm py-2 opacity-70">
-<div class="w-12 h-px bg-outline-variant"></div>
-<span class="font-display-lg-mobile text-body-sm italic text-outline">Páginas de Otoño • Edición Hecha a Mano</span>
-<div class="w-12 h-px bg-outline-variant"></div>
-</div>
-</div>
-<script>
-  function switchSpread(page) {
-    const leftPage = document.getElementById('page-left');
-    const rightPage = document.getElementById('page-right');
-    const tabLeft = document.getElementById('tab-left');
-    const tabRight = document.getElementById('tab-right');
-
-    if (page === 'left') {
-      leftPage.classList.remove('hidden');
-      rightPage.classList.add('hidden');
-      rightPage.classList.remove('flex');
-      
-      tabLeft.className = "flex-1 flex items-center justify-center gap-space-xs py-2 px-space-sm rounded-lg bg-surface-container-lowest text-primary shadow-[0_2px_8px_rgba(44,40,37,0.06)] transition-all duration-300";
-      tabRight.className = "flex-1 flex items-center justify-center gap-space-xs py-2 px-space-sm rounded-lg text-on-surface-variant hover:text-on-surface transition-all duration-300";
-    } else {
-      leftPage.classList.add('hidden');
-      rightPage.classList.remove('hidden');
-      rightPage.classList.add('flex');
-
-      tabRight.className = "flex-1 flex items-center justify-center gap-space-xs py-2 px-space-sm rounded-lg bg-surface-container-lowest text-primary shadow-[0_2px_8px_rgba(44,40,37,0.06)] transition-all duration-300";
-      tabLeft.className = "flex-1 flex items-center justify-center gap-space-xs py-2 px-space-sm rounded-lg text-on-surface-variant hover:text-on-surface transition-all duration-300";
-    }
-  }
-</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(44,40,37,0.05)]" data-active-classes="text-primary font-label-md"><div class="flex justify-around items-center h-16 px-space-xs"><a aria-current="page" class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] px-space-xs transition-colors text-primary font-label-md" data-path="diario-&amp;-mapa" href="index.html"><span class="material-symbols-outlined text-[22px]">menu_book</span><span class="font-label-sm text-label-sm mt-0.5 leading-none">Diario</span></a><a class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] px-space-xs text-on-surface-variant hover:text-on-surface transition-colors" data-path="pensamientos" href="pensar.html"><span class="material-symbols-outlined text-[22px]">edit_note</span><span class="font-label-sm text-label-sm mt-0.5 leading-none">Pensar</span></a><a class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] px-space-xs text-on-surface-variant hover:text-on-surface transition-colors" data-path="chats" href="chats.html"><span class="material-symbols-outlined text-[22px]">psychology</span><span class="font-label-sm text-label-sm mt-0.5 leading-none">Terapia</span></a><a class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] px-space-xs text-on-surface-variant hover:text-on-surface transition-colors" data-path="ajustes" href="ajustes.html"><span class="material-symbols-outlined text-[22px]">settings</span><span class="font-label-sm text-label-sm mt-0.5 leading-none">Ajustes</span></a></div></nav></body></html>
+</main>
+</body></html>
