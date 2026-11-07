@@ -81,8 +81,8 @@ export default function Escribir() {
         <section className="lg:col-span-5 flex flex-col gap-3" aria-labelledby="t-paginas">
           <div className="flex items-end justify-between gap-2">
             <div>
-              <h2 id="t-paginas" className="text-lg font-extrabold">Tus páginas</h2>
-              <p className="text-[13px] text-gris">{paginas.length} páginas · {compartidas} compartidas con tu terapeuta</p>
+              <h2 id="t-paginas" className="text-lg font-extrabold">Tus notas</h2>
+              <p className="text-[13px] text-gris">{paginas.length} {paginas.length === 1 ? "nota" : "notas"} · {compartidas} compartidas con tu terapeuta</p>
             </div>
           </div>
           <Segmentado etiqueta="Filtrar páginas" valor={filtro} onCambio={setFiltro} opciones={FILTROS} />
