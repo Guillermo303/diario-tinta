@@ -115,7 +115,7 @@ function Recientes() {
   return (
     <section className="flex flex-col gap-2" aria-labelledby="t-recientes">
       <div className="flex items-center justify-between px-1">
-        <h2 id="t-recientes" className="etiqueta">Tus últimas páginas</h2>
+        <h2 id="t-recientes" className="etiqueta">Tus últimas notas</h2>
         <Link to="/escribir" className="text-[13px] font-bold text-primario hover:underline">Ver todas</Link>
       </div>
       <ul className="flex flex-col gap-2">
@@ -201,7 +201,7 @@ export default function Hoy() {
           <Link to="/escribir" className="tarjeta flex items-center gap-4 p-5 hover:border-primario/30">
             <span className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-azul-suave text-azul"><Icono nombre="edit_note" className="text-[26px]" /></span>
             <span className="min-w-0 flex-1">
-              <span className="block font-extrabold">Escribir una página</span>
+              <span className="block font-extrabold">Escribir una nota</span>
               <span className="block text-[14px] text-gris">¿Qué pensamiento ronda tu mente hoy?</span>
             </span>
             <Icono nombre="arrow_forward" className="text-gris" />

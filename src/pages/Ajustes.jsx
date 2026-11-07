@@ -38,7 +38,7 @@ export default function Ajustes() {
               </div>
             </div>
             <div className="grid grid-cols-3 gap-2 text-center">
-              {[['14', 'días de racha'], ['3', 'páginas'], ['8', 'sesiones']].map(([n, t]) => (
+              {[['14', 'días de racha'], ['3', 'notas'], ['8', 'sesiones']].map(([n, t]) => (
                 <div key={t} className="rounded-xl bg-suave py-2.5"><p className="text-xl font-extrabold">{n}</p><p className="text-[11px] font-semibold text-gris">{t}</p></div>
               ))}
             </div>
@@ -69,7 +69,7 @@ export default function Ajustes() {
             <div className="py-3">
               <p className="rounded-xl bg-primario-suave/60 p-3 text-[14px]">Esta app no tiene perfiles públicos, amigos ni mensajes con otras personas. Solo tu terapeuta ve lo que tú decides compartir.</p>
             </div>
-            <Interruptor id="a-compartir" activo={a.compartirDefault} onCambio={cambiar('compartirDefault')} etiqueta="Compartir con mi terapeuta por defecto" detalle="Si está apagado, cada página nueva empieza como “Solo yo”." />
+            <Interruptor id="a-compartir" activo={a.compartirDefault} onCambio={cambiar('compartirDefault')} etiqueta="Compartir con mi terapeuta por defecto" detalle="Si está apagado, cada nota nueva empieza como “Solo yo”." />
             <Interruptor id="a-ia" activo={a.iaDiario} onCambio={cambiar('iaDiario')} etiqueta="Permitir que la IA lea mi diario" detalle="Sirve para detectar señales y mejorar tus recomendaciones. Puedes apagarlo cuando quieras." />
             <Interruptor id="a-pin" activo={a.pin} onCambio={cambiar('pin')} etiqueta="Pedir PIN al abrir" detalle="Protege tu diario si alguien más usa este dispositivo." />
             <Interruptor id="a-notif" activo={a.ocultarNotif} onCambio={cambiar('ocultarNotif')} etiqueta="Ocultar contenido en las notificaciones" detalle="Los avisos dirán “Tienes un mensaje” sin mostrar el texto." />

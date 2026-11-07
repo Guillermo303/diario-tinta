@@ -24,7 +24,7 @@ export default function Escribir() {
     if (!texto.trim()) return aviso('Escribe algo antes de guardar');
     agregarPagina({ id: crypto.randomUUID(), titulo: titulo.trim() || 'Sin título', texto: texto.trim(), etiquetas, priv, fecha: new Date() });
     setTitulo(''); setTexto(''); setEtiquetas([]);
-    aviso(priv === 'terapeuta' ? 'Página guardada y visible para tu terapeuta' : 'Página guardada solo para ti');
+    aviso(priv === 'terapeuta' ? 'Nota guardada y visible para tu terapeuta' : 'Nota guardada solo para ti');
   };
 
   return (
@@ -49,8 +49,8 @@ export default function Escribir() {
 
           <div className="tarjeta flex flex-col gap-3 p-5">
             <label htmlFor="titulo" className="sr-only">Título</label>
-            <input id="titulo" value={titulo} onChange={e => setTitulo(e.target.value)} placeholder="Título de tu página…" className="w-full border-0 bg-transparent p-0 text-xl font-extrabold placeholder:text-tenue focus:outline-none focus:ring-0" />
-            <label htmlFor="texto" className="sr-only">Tu página</label>
+            <input id="titulo" value={titulo} onChange={e => setTitulo(e.target.value)} placeholder="Título de tu nota…" className="w-full border-0 bg-transparent p-0 text-xl font-extrabold placeholder:text-tenue focus:outline-none focus:ring-0" />
+            <label htmlFor="texto" className="sr-only">Tu nota</label>
             <textarea id="texto" rows="9" value={texto} onChange={e => setTexto(e.target.value)} placeholder="Escribe sin filtro. Nadie más lo verá si no quieres."
               className="w-full resize-none border-0 bg-transparent p-0 text-[16px] leading-7 placeholder:text-tenue focus:outline-none focus:ring-0" />
             <div className="flex items-center justify-between border-t border-linea pt-3 text-[13px] text-gris">
@@ -74,7 +74,7 @@ export default function Escribir() {
               <span className="etiqueta">¿Quién puede verla?</span>
               <Segmentado etiqueta="Privacidad" valor={priv} onCambio={setPriv} opciones={[{ valor: 'privado', txt: '🔒 Solo yo' }, { valor: 'terapeuta', txt: '🩺 Mi terapeuta' }]} />
             </div>
-            <button type="submit" className="boton-primario !px-6 !py-3"><Icono nombre="check" className="text-[20px]" /> Guardar página</button>
+            <button type="submit" className="boton-primario !px-6 !py-3"><Icono nombre="check" className="text-[20px]" /> Guardar nota</button>
           </div>
         </form>
 
@@ -85,7 +85,7 @@ export default function Escribir() {
               <p className="text-[13px] text-gris">{paginas.length} {paginas.length === 1 ? "nota" : "notas"} · {compartidas} compartidas con tu terapeuta</p>
             </div>
           </div>
-          <Segmentado etiqueta="Filtrar páginas" valor={filtro} onCambio={setFiltro} opciones={FILTROS} />
+          <Segmentado etiqueta="Filtrar notas" valor={filtro} onCambio={setFiltro} opciones={FILTROS} />
           <ul className="flex flex-col gap-2.5">
             {visibles.map(p => (
               <li key={p.id} className="aparece tarjeta flex flex-col gap-1.5 p-4">
@@ -102,7 +102,7 @@ export default function Escribir() {
                 </div>
               </li>
             ))}
-            {!visibles.length && <li className="text-[14px] italic text-tenue">No hay páginas con este filtro.</li>}
+            {!visibles.length && <li className="text-[14px] italic text-tenue">No hay notas con este filtro.</li>}
           </ul>
         </section>
       </div>

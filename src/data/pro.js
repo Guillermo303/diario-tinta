@@ -12,12 +12,12 @@ export const SOLICITUDES = [
   {
     id: 's1', nombre: 'Ana Lucía', iniciales: 'AL', color: 'bg-azul', compat: 96, edad: 29,
     pide: 'Llamada de orientación de 15 min', cuando: 'Mañana, 18:00', temas: ['Sueño', 'Estrés laboral', 'Ansiedad nocturna'],
-    nota: 'La app te recomendó porque mencionó el sueño 5 veces esta semana. Compartió 2 páginas y su semana de ánimo.',
+    nota: 'La app te recomendó porque mencionó el sueño 5 veces esta semana. Compartió 2 notas y su semana de ánimo.',
   },
   {
     id: 's2', nombre: 'Jorge P.', iniciales: 'JP', color: 'bg-ambar', compat: 89, edad: 41,
     pide: 'Primera sesión completa', cuando: 'Jue 13 nov, 19:00', temas: ['Duelo', 'Cansancio'],
-    nota: 'Prefiere presencial. No ha compartido páginas todavía.',
+    nota: 'Prefiere presencial. No ha compartido notas todavía.',
   },
 ];
 
@@ -30,7 +30,7 @@ export const PACIENTES = [
   {
     id: 'p1', nombre: 'Valeria R.', iniciales: 'VR', color: 'bg-lila', desde: 'Paciente desde agosto', proxima: 'Hoy, 20:00 · Videollamada',
     animo: ['tristeza', 'tristeza', 'cansancio', 'tristeza', 'ansiedad', 'tristeza', 'tristeza'],
-    compartido: ['Semana de ánimo', 'Página: "No le encuentro sentido"', 'Resumen de su charla con la IA'],
+    compartido: ['Semana de ánimo', 'Nota: "No le encuentro sentido"', 'Resumen de su charla con la IA'],
     resumen: 'Habla de aislamiento y cansancio. En su charla de anoche dijo que "no tiene caso seguir así". La IA le mostró las líneas de crisis y le ofreció hablar contigo.',
     mensajes: [
       { de: 'ella', texto: 'Hola Laura, anoche fue muy difícil. No sé si pueda esperar a la sesión.', fecha: horas(1) },
@@ -49,7 +49,7 @@ export const PACIENTES = [
   {
     id: 'p3', nombre: 'Sofía T.', iniciales: 'ST', color: 'bg-azul', desde: 'Paciente desde octubre', proxima: 'Mié 12 nov, 18:00 · En línea',
     animo: ['ansiedad', 'calma', 'calma', 'alegria', 'calma', 'alegria', 'calma'],
-    compartido: ['Semana de ánimo', 'Página: "Primera noche que duermo bien"'],
+    compartido: ['Semana de ánimo', 'Nota: "Primera noche que duermo bien"'],
     resumen: 'Mejora sostenida esta semana. Practica la respiración con la IA en modo Calma antes de dormir.',
     mensajes: [
       { de: 'ella', texto: 'Por fin dormí 7 horas. Gracias por el ejercicio.', fecha: haceDias(1) },

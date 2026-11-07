@@ -33,7 +33,7 @@ export const TERAPEUTA = {
 export const MENSAJES_TERAPEUTA = [
   { de: 'ella', texto: 'Hola, recuerda que puedes usar este espacio entre sesiones. Respondo en horario laboral; no es un canal de emergencias.', fecha: haceDias(6) },
   { de: 'yo', texto: 'Gracias. Esta semana probé escribir antes de dormir, como acordamos. Me ayudó a ordenar lo del trabajo.', fecha: haceDias(4) },
-  { de: 'ella', texto: 'Qué bueno que lo intentaste. Si quieres, comparte una de esas páginas y la revisamos el jueves.', fecha: haceDias(4), nuevo: true },
+  { de: 'ella', texto: 'Qué bueno que lo intentaste. Si quieres, comparte una de esas notas y la revisamos el jueves.', fecha: haceDias(4), nuevo: true },
 ];
 
 export const PAGINAS = [
@@ -69,7 +69,7 @@ export const PSICOLOGOS = [
   {
     id: 'av', iniciales: 'AV', nombre: 'Psic. Andrés Villarreal', ciudad: 'gomez', lugar: 'Gómez Palacio, Dgo.', distancia: 'a 9 km', modo: 'Presencial',
     compat: 91, precio: 500, libre: 'Lun 10 nov, 17:00', color: 'bg-azul',
-    ayuda: 'Se especializa en estrés y agotamiento laboral, el tema que más aparece en tus páginas. Te ayuda a poner límites.',
+    ayuda: 'Se especializa en estrés y agotamiento laboral, el tema que más aparece en tus notas. Te ayuda a poner límites.',
     enfoques: ['Estrés laboral', 'Ansiedad', 'Aceptación y compromiso'],
     razones: ['El trabajo sigue siendo tu tema principal.', 'Calificaste con 5/5 tu llamada con él.', 'Bajó al lugar 2 porque esta semana pesó más el sueño.'],
   },
