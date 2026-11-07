@@ -101,6 +101,7 @@ export default function Ajustes() {
             <div className="flex flex-wrap gap-2 py-3">
               <button type="button" onClick={() => aviso('Exportar mis datos (ejemplo)')} className="boton-borde"><Icono nombre="download" className="text-[18px]" /> Exportar mis datos</button>
               <button type="button" onClick={() => aviso('Borrar todo (ejemplo): en la app real pediría confirmación')} className="boton border border-alerta/30 text-alerta hover:bg-alerta-suave"><Icono nombre="delete" className="text-[18px]" /> Borrar todo</button>
+              <Link to="/entrar" className="boton-borde"><Icono nombre="logout" className="text-[18px]" /> Cerrar sesión</Link>
             </div>
           </Seccion>
         </div>

@@ -12,6 +12,7 @@ import Escribir from './pages/Escribir';
 import Ajustes from './pages/Ajustes';
 import Pacientes from './pages/pro/Pacientes';
 import Encargado from './pages/pro/Encargado';
+import Acceso from './pages/Acceso';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -30,6 +31,8 @@ createRoot(document.getElementById('root')).render(
               <Route index element={<Pacientes />} />
               <Route path="encargado" element={<Encargado />} />
             </Route>
+            <Route path="entrar" element={<Acceso modo="entrar" />} />
+            <Route path="registro" element={<Acceso modo="registro" />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </ProveedorAvisos>

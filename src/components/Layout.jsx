@@ -111,6 +111,7 @@ export default function Layout({ pro = false }) {
                 <span className="min-w-0 flex-1"><span className="block truncate text-sm font-bold">{PSICOLOGA.nombre}</span><span className="block text-[12px] text-gris">★ {PSICOLOGA.calificacion} · {PSICOLOGA.ciudad}</span></span>
               </div>
               <NavLink to="/" className="boton-borde w-full"><Icono nombre="swap_horiz" className="text-[18px]" /> Vista de usuaria</NavLink>
+              <NavLink to="/entrar?rol=psicologo" className="text-center text-[12px] font-semibold text-gris hover:text-primario">Cerrar sesión</NavLink>
             </>
           ) : (
             <>
@@ -123,7 +124,11 @@ export default function Layout({ pro = false }) {
                 <Icono nombre="settings" className="text-gris" />
               </NavLink>
               <BotonAyuda />
-              <NavLink to="/pro" className="text-center text-[12px] font-semibold text-gris hover:text-primario">¿Eres psicólogo? Abrir panel</NavLink>
+              <div className="flex justify-center gap-3 text-[12px] font-semibold text-gris">
+                <NavLink to="/pro" className="hover:text-primario">¿Eres psicólogo?</NavLink>
+                <span aria-hidden="true">·</span>
+                <NavLink to="/entrar" className="hover:text-primario">Cerrar sesión</NavLink>
+              </div>
             </>
           )}
         </div>

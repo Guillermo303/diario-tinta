@@ -17,6 +17,13 @@ datos de ejemplo en memoria y se reinicia al recargar; no hay servidor ni se env
 | `/escribir`   | `src/pages/Escribir.jsx`        | Chispa del día, página con etiquetas y privacidad (Solo yo / Mi terapeuta), lista con filtros |
 | `/ajustes`    | `src/pages/Ajustes.jsx`         | Perfil, contacto de confianza, privacidad, escritura, avisos, tamaño de letra, datos |
 
+### Acceso
+
+| Ruta        | Archivo                | Qué hace |
+|-------------|------------------------|----------|
+| `/entrar`   | `src/pages/Acceso.jsx` | Inicio de sesión; se elige "Busco apoyo" o "Soy psicólogo" y lleva a `/` o a `/pro` |
+| `/registro` | `src/pages/Acceso.jsx` | Registro con correo, nombre, teléfono y contraseña; la persona usuaria acepta el aviso de privacidad y el uso de datos de salud; el psicólogo agrega cédula, años de experiencia, ciudad, especialidades, experiencia y CV (PDF/Word). `?rol=psicologo` abre directo esa opción |
+
 ### Panel de psicólogos
 
 | Ruta             | Archivo                        | Qué hace |
