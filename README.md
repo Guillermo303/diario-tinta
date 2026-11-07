@@ -11,7 +11,7 @@ datos de ejemplo en memoria y se reinicia al recargar; no hay servidor ni se env
 
 | Ruta          | Archivo                         | Qué hace |
 |---------------|---------------------------------|----------|
-| `/`           | `src/pages/Hoy.jsx`             | Ánimo del día y semana, acceso a la IA, "Tú y tu terapeuta" (responder), psicólogos para ti y últimas páginas |
+| `/hoy`        | `src/pages/Hoy.jsx`             | Ánimo del día y semana, acceso a la IA, "Tú y tu terapeuta" (responder), psicólogos para ti y últimas páginas |
 | `/psicologos` | `src/pages/PsicologosPage.jsx`  | Matchmaking: aviso de cambios, situación actual, mini mapa de México, recomendaciones con "¿Por qué?" y "ver otra opción", otras ayudas |
 | `/hablar`     | `src/pages/Hablar.jsx`          | Desahogo con IA y 4 personalidades (Escucha, Compañía, Orden, Calma); temas detectados editables; si detecta riesgo, ofrece ayuda humana |
 | `/escribir`   | `src/pages/Escribir.jsx`        | Chispa del día, página con etiquetas y privacidad (Solo yo / Mi terapeuta), lista con filtros |
@@ -21,7 +21,7 @@ datos de ejemplo en memoria y se reinicia al recargar; no hay servidor ni se env
 
 | Ruta        | Archivo                | Qué hace |
 |-------------|------------------------|----------|
-| `/entrar`   | `src/pages/Acceso.jsx` | Inicio de sesión; se elige "Busco apoyo" o "Soy psicólogo" y lleva a `/` o a `/pro` |
+| `/entrar`   | `src/pages/Acceso.jsx` | Pantalla de inicio (`/` abre aquí). Inicio de sesión; se elige "Busco apoyo" o "Soy psicólogo" y lleva a `/hoy` o a `/pro` |
 | `/registro` | `src/pages/Acceso.jsx` | Registro con correo, nombre, teléfono y contraseña; la persona usuaria acepta el aviso de privacidad y el uso de datos de salud; el psicólogo agrega cédula, años de experiencia, ciudad, especialidades, experiencia y CV (PDF/Word). `?rol=psicologo` abre directo esa opción |
 
 ### Panel de psicólogos

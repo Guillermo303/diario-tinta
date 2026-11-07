@@ -60,8 +60,8 @@ export default function Acceso({ modo }) {
     const e = validar(); setErrores(e);
     if (Object.keys(e).length) { document.getElementById(Object.keys(e)[0])?.focus(); return; }
     if (registro && pro) { aviso('Solicitud enviada: tu encargado revisará tus datos'); navegar('/pro/encargado'); }
-    else if (registro) { aviso(`¡Bienvenida, ${d.nombre.trim().split(' ')[0]}! Empieza tu mes gratis`); navegar('/'); }
-    else { aviso('Sesión iniciada (ejemplo)'); navegar(pro ? '/pro' : '/'); }
+    else if (registro) { aviso(`¡Bienvenida, ${d.nombre.trim().split(' ')[0]}! Empieza tu mes gratis`); navegar('/hoy'); }
+    else { aviso('Sesión iniciada (ejemplo)'); navegar(pro ? '/pro' : '/hoy'); }
   };
 
   const err = k => errores[k] ? { 'aria-invalid': true, 'aria-describedby': `${k}-error` } : {};

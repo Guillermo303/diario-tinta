@@ -20,8 +20,9 @@ createRoot(document.getElementById('root')).render(
       <ProveedorApp>
         <ProveedorAvisos>
           <Routes>
+            <Route index element={<Navigate to="/entrar" replace />} />
             <Route element={<Layout />}>
-              <Route index element={<Hoy />} />
+              <Route path="hoy" element={<Hoy />} />
               <Route path="psicologos" element={<PsicologosPage />} />
               <Route path="hablar" element={<Hablar />} />
               <Route path="escribir" element={<Escribir />} />
@@ -33,7 +34,7 @@ createRoot(document.getElementById('root')).render(
             </Route>
             <Route path="entrar" element={<Acceso modo="entrar" />} />
             <Route path="registro" element={<Acceso modo="registro" />} />
-            <Route path="*" element={<Navigate to="/" replace />} />
+            <Route path="*" element={<Navigate to="/entrar" replace />} />
           </Routes>
         </ProveedorAvisos>
       </ProveedorApp>

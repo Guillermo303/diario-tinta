@@ -7,7 +7,7 @@ import { PSICOLOGA } from '../data/pro';
 import { useAviso } from './ui';
 
 const NAV_USUARIA = [
-  { a: '/', txt: 'Hoy', icono: 'today' },
+  { a: '/hoy', txt: 'Hoy', icono: 'today' },
   { a: '/psicologos', txt: 'Psicólogos', icono: 'person_search' },
   { a: '/hablar', txt: 'Hablar', icono: 'forum' },
   { a: '/escribir', txt: 'Escribir', icono: 'edit_note' },
@@ -110,7 +110,7 @@ export default function Layout({ pro = false }) {
                 <span className="flex h-10 w-10 items-center justify-center rounded-full bg-primario text-sm font-bold text-white">{PSICOLOGA.iniciales}</span>
                 <span className="min-w-0 flex-1"><span className="block truncate text-sm font-bold">{PSICOLOGA.nombre}</span><span className="block text-[12px] text-gris">★ {PSICOLOGA.calificacion} · {PSICOLOGA.ciudad}</span></span>
               </div>
-              <NavLink to="/" className="boton-borde w-full"><Icono nombre="swap_horiz" className="text-[18px]" /> Vista de usuaria</NavLink>
+              <NavLink to="/hoy" className="boton-borde w-full"><Icono nombre="swap_horiz" className="text-[18px]" /> Vista de usuaria</NavLink>
               <NavLink to="/entrar?rol=psicologo" className="text-center text-[12px] font-semibold text-gris hover:text-primario">Cerrar sesión</NavLink>
             </>
           ) : (
@@ -139,7 +139,7 @@ export default function Layout({ pro = false }) {
         <header className="md:hidden sticky top-0 z-40 flex items-center justify-between gap-3 border-b border-linea bg-fondo/90 px-4 py-3 backdrop-blur">
           <Marca pro={pro} />
           {pro ? (
-            <NavLink to="/" className="boton-borde !px-3 !py-1.5 text-[13px]"><Icono nombre="swap_horiz" className="text-[18px]" /> Usuaria</NavLink>
+            <NavLink to="/hoy" className="boton-borde !px-3 !py-1.5 text-[13px]"><Icono nombre="swap_horiz" className="text-[18px]" /> Usuaria</NavLink>
           ) : (
             <div className="flex items-center gap-2">
               <BotonAyuda compacto />
