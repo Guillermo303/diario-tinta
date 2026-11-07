@@ -10,6 +10,8 @@ import PsicologosPage from './pages/PsicologosPage';
 import Hablar from './pages/Hablar';
 import Escribir from './pages/Escribir';
 import Ajustes from './pages/Ajustes';
+import Pacientes from './pages/pro/Pacientes';
+import Encargado from './pages/pro/Encargado';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -23,8 +25,12 @@ createRoot(document.getElementById('root')).render(
               <Route path="hablar" element={<Hablar />} />
               <Route path="escribir" element={<Escribir />} />
               <Route path="ajustes" element={<Ajustes />} />
-              <Route path="*" element={<Navigate to="/" replace />} />
             </Route>
+            <Route path="pro" element={<Layout pro />}>
+              <Route index element={<Pacientes />} />
+              <Route path="encargado" element={<Encargado />} />
+            </Route>
+            <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </ProveedorAvisos>
       </ProveedorApp>

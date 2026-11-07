@@ -3,21 +3,26 @@ import { NavLink, Outlet, useLocation } from 'react-router-dom';
 import { Icono } from './ui';
 import { useApp } from '../estado';
 import { CONTACTO_CONFIANZA, LINEAS_CRISIS, USUARIA } from '../data/ejemplo';
+import { PSICOLOGA } from '../data/pro';
 import { useAviso } from './ui';
 
-const NAV = [
+const NAV_USUARIA = [
   { a: '/', txt: 'Hoy', icono: 'today' },
   { a: '/psicologos', txt: 'Psicólogos', icono: 'person_search' },
   { a: '/hablar', txt: 'Hablar', icono: 'forum' },
   { a: '/escribir', txt: 'Escribir', icono: 'edit_note' },
 ];
+const NAV_PRO = [
+  { a: '/pro', txt: 'Pacientes', icono: 'groups' },
+  { a: '/pro/encargado', txt: 'Encargado', icono: 'support_agent' },
+];
 
-const Marca = () => (
+const Marca = ({ pro }) => (
   <span className="flex items-center gap-2.5">
     <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-primario text-white"><Icono nombre="spa" className="text-[20px]" /></span>
     <span className="flex flex-col leading-tight">
       <span className="text-[15px] font-extrabold">Diario &amp; Tinta</span>
-      <span className="flex items-center gap-1 whitespace-nowrap text-[11px] font-semibold text-gris"><Icono nombre="lock" className="text-[12px]" /> Privado y confidencial</span>
+      <span className="flex items-center gap-1 whitespace-nowrap text-[11px] font-semibold text-gris">{pro ? <><Icono nombre="medical_services" className="text-[12px]" /> Panel de psicólogos</> : <><Icono nombre="lock" className="text-[12px]" /> Privado y confidencial</>}</span>
     </span>
   </span>
 );
@@ -78,7 +83,8 @@ function HojaCrisis() {
   );
 }
 
-export default function Layout() {
+export default function Layout({ pro = false }) {
+  const NAV = pro ? NAV_PRO : NAV_USUARIA;
   const { pathname } = useLocation();
   const { letra } = useApp();
   useEffect(() => { window.scrollTo(0, 0); }, [pathname]);
@@ -88,7 +94,7 @@ export default function Layout() {
     <div className="min-h-screen md:flex">
       {/* Lateral (escritorio) */}
       <aside className="hidden md:flex md:w-64 lg:w-72 flex-shrink-0 flex-col gap-8 border-r border-linea bg-superficie px-5 py-6 sticky top-0 h-screen">
-        <Marca />
+        <Marca pro={pro} />
         <nav aria-label="Principal" className="flex flex-col gap-1">
           {NAV.map(n => (
             <NavLink key={n.a} to={n.a} end
@@ -98,26 +104,43 @@ export default function Layout() {
           ))}
         </nav>
         <div className="mt-auto flex flex-col gap-3">
-          <NavLink to="/ajustes" className={({ isActive }) => `flex items-center gap-3 rounded-xl p-2 transition ${isActive ? 'bg-primario-suave' : 'hover:bg-suave'}`}>
-            <img src={USUARIA.foto} alt="" className="h-10 w-10 rounded-full object-cover" />
-            <span className="min-w-0 flex-1">
-              <span className="block truncate text-sm font-bold">{USUARIA.nombre}</span>
-              <span className="block text-[12px] text-gris">Ajustes y privacidad</span>
-            </span>
-            <Icono nombre="settings" className="text-gris" />
-          </NavLink>
-          <BotonAyuda />
+          {pro ? (
+            <>
+              <div className="flex items-center gap-3 rounded-xl p-2">
+                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-primario text-sm font-bold text-white">{PSICOLOGA.iniciales}</span>
+                <span className="min-w-0 flex-1"><span className="block truncate text-sm font-bold">{PSICOLOGA.nombre}</span><span className="block text-[12px] text-gris">★ {PSICOLOGA.calificacion} · {PSICOLOGA.ciudad}</span></span>
+              </div>
+              <NavLink to="/" className="boton-borde w-full"><Icono nombre="swap_horiz" className="text-[18px]" /> Vista de usuaria</NavLink>
+            </>
+          ) : (
+            <>
+              <NavLink to="/ajustes" className={({ isActive }) => `flex items-center gap-3 rounded-xl p-2 transition ${isActive ? 'bg-primario-suave' : 'hover:bg-suave'}`}>
+                <img src={USUARIA.foto} alt="" className="h-10 w-10 rounded-full object-cover" />
+                <span className="min-w-0 flex-1">
+                  <span className="block truncate text-sm font-bold">{USUARIA.nombre}</span>
+                  <span className="block text-[12px] text-gris">Ajustes y privacidad</span>
+                </span>
+                <Icono nombre="settings" className="text-gris" />
+              </NavLink>
+              <BotonAyuda />
+              <NavLink to="/pro" className="text-center text-[12px] font-semibold text-gris hover:text-primario">¿Eres psicólogo? Abrir panel</NavLink>
+            </>
+          )}
         </div>
       </aside>
 
       <div className="flex-1 min-w-0">
         {/* Barra superior (móvil) */}
         <header className="md:hidden sticky top-0 z-40 flex items-center justify-between gap-3 border-b border-linea bg-fondo/90 px-4 py-3 backdrop-blur">
-          <Marca />
-          <div className="flex items-center gap-2">
-            <BotonAyuda compacto />
-            <NavLink to="/ajustes" aria-label="Ajustes"><img src={USUARIA.foto} alt="" className="h-9 w-9 rounded-full object-cover" /></NavLink>
-          </div>
+          <Marca pro={pro} />
+          {pro ? (
+            <NavLink to="/" className="boton-borde !px-3 !py-1.5 text-[13px]"><Icono nombre="swap_horiz" className="text-[18px]" /> Usuaria</NavLink>
+          ) : (
+            <div className="flex items-center gap-2">
+              <BotonAyuda compacto />
+              <NavLink to="/ajustes" aria-label="Ajustes"><img src={USUARIA.foto} alt="" className="h-9 w-9 rounded-full object-cover" /></NavLink>
+            </div>
+          )}
         </header>
 
         <main className="mx-auto w-full max-w-[1120px] px-4 md:px-8 pt-5 md:pt-10 pb-28 md:pb-12">
@@ -127,7 +150,7 @@ export default function Layout() {
 
       {/* Navegación inferior (móvil) */}
       <nav aria-label="Principal" className="md:hidden fixed inset-x-0 bottom-0 z-40 border-t border-linea bg-superficie/95 backdrop-blur" style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}>
-        <div className="grid grid-cols-4">
+        <div className={`grid ${pro ? 'grid-cols-2' : 'grid-cols-4'}`}>
           {NAV.map(n => (
             <NavLink key={n.a} to={n.a} end className={({ isActive }) => `flex flex-col items-center gap-0.5 py-2.5 text-[11px] font-bold ${isActive ? 'text-primario' : 'text-tenue'}`}>
               {({ isActive }) => <>

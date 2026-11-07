@@ -17,6 +17,15 @@ datos de ejemplo en memoria y se reinicia al recargar; no hay servidor ni se env
 | `/escribir`   | `src/pages/Escribir.jsx`        | Chispa del día, página con etiquetas y privacidad (Solo yo / Mi terapeuta), lista con filtros |
 | `/ajustes`    | `src/pages/Ajustes.jsx`         | Perfil, contacto de confianza, privacidad, escritura, avisos, tamaño de letra, datos |
 
+### Panel de psicólogos
+
+| Ruta             | Archivo                        | Qué hace |
+|------------------|--------------------------------|----------|
+| `/pro`           | `src/pages/pro/Pacientes.jsx`  | Alertas priorizadas por la IA, solicitudes nuevas del matchmaking (aceptar o proponer horario), lista de pacientes y chat con cada uno, lo que compartió y resumen de la IA |
+| `/pro/encargado` | `src/pages/pro/Encargado.jsx`  | Chat con su encargado de la red y pestañas de Contratación (alta y condiciones), Pagos (estado de cuenta y depósitos) y Ofertas de trabajo |
+
+Se entra desde "¿Eres psicólogo? Abrir panel" (menú lateral o Ajustes). Datos en `src/data/pro.js`.
+
 Siempre visible: botón **Ayuda ahora** con Línea de la Vida (800 911 2000), 911 y aviso al contacto de confianza.
 
 ## Estructura

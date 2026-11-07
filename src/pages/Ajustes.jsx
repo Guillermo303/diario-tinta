@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Encabezado, Icono, Interruptor, Segmentado, useAviso } from '../components/ui';
 import { useApp } from '../estado';
 import { CONTACTO_CONFIANZA, USUARIA } from '../data/ejemplo';
@@ -56,6 +57,11 @@ export default function Ajustes() {
             <p className="text-[13px] text-gris">Solo recibe un aviso si pulsas “Ayuda ahora” y eliges avisarle, o en una urgencia que aceptaste al registrarte.</p>
             <button type="button" onClick={() => aviso('Cambiar contacto (ejemplo)')} className="boton-borde self-start">Cambiar contacto</button>
           </section>
+          <Link to="/pro" className="tarjeta flex items-center gap-3 p-5 hover:border-primario/30">
+            <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-azul-suave text-azul"><Icono nombre="medical_services" /></span>
+            <span className="min-w-0 flex-1"><span className="block font-bold">¿Eres psicólogo?</span><span className="block text-[13px] text-gris">Abre el panel para atender pacientes y hablar con tu encargado.</span></span>
+            <Icono nombre="arrow_forward" className="text-gris" />
+          </Link>
         </aside>
 
         <div className="lg:col-span-8 flex flex-col gap-4">
