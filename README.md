@@ -7,6 +7,7 @@ en la app es la terapeuta, y solo ve lo que el usuario decide compartir.
 | Archivo        | Pantalla                                                     |
 |----------------|--------------------------------------------------------------|
 | `index.html`   | El libro: página izquierda **Mi diario** (ánimo, escribir, resumen de "Tú y tu terapeuta", últimas páginas) y derecha **Psicólogos para ti** (recomendaciones compatibles, mini mapa de México y en qué ayuda cada uno). En móvil se pasa de página con las cintas; `#psicologos` abre la derecha |
+| `hablar.html`  | Desahogo con IA: 4 personalidades (Escucha, Compañía, Orden, Calma), charla de ejemplo y temas detectados que alimentan las recomendaciones de psicólogos |
 | `pensar.html`  | Escribir páginas; cada una es "Solo yo" o "Mi terapeuta"     |
 | `chats.html`   | Redirección a `index.html` (enlaces antiguos) |
 | `ajustes.html` | Escritura, privacidad y confidencialidad, avisos, papel, datos |
