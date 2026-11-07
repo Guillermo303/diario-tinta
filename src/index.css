@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { -webkit-text-size-adjust: 100%; }
+  body { @apply bg-fondo text-tinta font-sans antialiased; font-size: 15px; line-height: 1.55; }
+  h1, h2, h3 { text-wrap: balance; letter-spacing: -0.01em; }
+  :focus-visible { outline: 2px solid theme('colors.primario.DEFAULT'); outline-offset: 2px; border-radius: 6px; }
+  button, a, label { -webkit-tap-highlight-color: transparent; }
+}
+
+@layer components {
+  .tarjeta { @apply bg-superficie rounded-2xl shadow-tarjeta border border-linea/60; }
+  .etiqueta { @apply text-[11px] font-bold uppercase tracking-[0.08em] text-gris; }
+  .boton { @apply inline-flex items-center justify-center gap-1.5 rounded-full px-4 py-2 text-sm font-semibold transition active:scale-[.98] disabled:opacity-40 disabled:active:scale-100; }
+  .boton-primario { @apply boton bg-primario text-white hover:bg-primario-oscuro; }
+  .boton-suave { @apply boton bg-primario-suave text-primario-oscuro hover:bg-[#cfe7e3]; }
+  .boton-borde { @apply boton border border-linea bg-superficie text-tinta hover:bg-suave; }
+  .campo { @apply w-full rounded-xl border border-linea bg-superficie px-3.5 py-2.5 text-[15px] text-tinta placeholder:text-tenue focus:border-primario focus:outline-none focus:ring-2 focus:ring-primario/20; }
+  .icono { font-family: 'Material Symbols Rounded'; font-weight: 400; font-style: normal; line-height: 1; letter-spacing: normal; text-transform: none; display: inline-block; white-space: nowrap; direction: ltr; -webkit-font-smoothing: antialiased; font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+  .icono-lleno { font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+}
+
+.respira { animation: respira 14s ease-in-out infinite; }
+@keyframes respira { 0%, 100% { transform: scale(.7); } 28%, 57% { transform: scale(1); } }
+.aparece { animation: aparece .25s ease-out; }
+@keyframes aparece { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .respira, .aparece { animation: none; } }

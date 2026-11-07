@@ -1,37 +1,53 @@
-# Diario & Tinta — prototipo web
+# Diario & Tinta — prototipo en React
 
-Diario personal **privado** para personas en terapia psicológica. No es una red social:
-no hay perfiles públicos, amigos, mapas de otros usuarios ni mensajes entre usuarios. La única otra persona
-en la app es la terapeuta, y solo ve lo que el usuario decide compartir.
+Diario personal **privado** para personas con posible depresión o deterioro de su salud mental.
+No es una red social: la app es un **puente** entre la persona y la ayuda que necesita (IA para
+desahogarse, psicólogos cercanos, contacto de confianza y líneas de crisis).
 
-| Archivo        | Pantalla                                                     |
-|----------------|--------------------------------------------------------------|
-| `index.html`   | El libro: página izquierda **Mi diario** (ánimo, escribir, resumen de "Tú y tu terapeuta", últimas páginas) y derecha **Psicólogos para ti** (recomendaciones compatibles, mini mapa de México y en qué ayuda cada uno). En móvil se pasa de página con las cintas; `#psicologos` abre la derecha |
-| `hablar.html`  | Desahogo con IA: 4 personalidades (Escucha, Compañía, Orden, Calma), charla de ejemplo y temas detectados que alimentan las recomendaciones de psicólogos |
-| `pensar.html`  | Escribir páginas; cada una es "Solo yo" o "Mi terapeuta"     |
-| `chats.html`   | Redirección a `index.html` (enlaces antiguos) |
-| `ajustes.html` | Escritura, privacidad y confidencialidad, avisos, papel, datos |
-| `img/`         | Foto de perfil                                               |
+Hecho con **React 18 + Vite + Tailwind CSS + React Router**. Es un prototipo navegable: todo usa
+datos de ejemplo en memoria y se reinicia al recargar; no hay servidor ni se envía nada.
+
+## Pantallas
+
+| Ruta          | Archivo                         | Qué hace |
+|---------------|---------------------------------|----------|
+| `/`           | `src/pages/Hoy.jsx`             | Ánimo del día y semana, acceso a la IA, "Tú y tu terapeuta" (responder), psicólogos para ti y últimas páginas |
+| `/psicologos` | `src/pages/PsicologosPage.jsx`  | Matchmaking: aviso de cambios, situación actual, mini mapa de México, recomendaciones con "¿Por qué?" y "ver otra opción", otras ayudas |
+| `/hablar`     | `src/pages/Hablar.jsx`          | Desahogo con IA y 4 personalidades (Escucha, Compañía, Orden, Calma); temas detectados editables; si detecta riesgo, ofrece ayuda humana |
+| `/escribir`   | `src/pages/Escribir.jsx`        | Chispa del día, página con etiquetas y privacidad (Solo yo / Mi terapeuta), lista con filtros |
+| `/ajustes`    | `src/pages/Ajustes.jsx`         | Perfil, contacto de confianza, privacidad, escritura, avisos, tamaño de letra, datos |
+
+Siempre visible: botón **Ayuda ahora** con Línea de la Vida (800 911 2000), 911 y aviso al contacto de confianza.
+
+## Estructura
+
+```
+src/
+  main.jsx            rutas
+  estado.jsx          estado compartido en memoria (páginas, mensajes, ánimo, letra)
+  index.css           estilos base y componentes de Tailwind
+  data/ejemplo.js     datos de ejemplo (psicólogos, personalidades, páginas…)
+  data/mapa.js        contorno de México (Natural Earth, dominio público)
+  components/         Layout (navegación y crisis), Psicologos (mapa y tarjeta), ui (piezas pequeñas)
+  pages/              una pantalla por archivo
+tailwind.config.js    sistema visual "Sereno" (colores y tipografía)
+```
 
 ## Cómo verlo
-Abre `index.html` en el navegador, o sirve la carpeta:
 
-    python -m http.server 5500
+    npm install
+    npm run dev
 
-y entra a http://localhost:5500
+y entra a http://localhost:5173. Para la versión de producción: `npm run build` (sale en `dist/`).
 
 ## Notas
-- Usa Tailwind por CDN; colores y tipografías del sistema "Cuaderno & Tinta" están en el
-  bloque `tailwind.config` dentro del `<head>` de cada página.
-- **Son plantillas de diseño estáticas**: no hay JavaScript de la app. Botones, formularios e
-  interruptores son solo visuales y el contenido es de ejemplo fijo. Lo único "vivo" es pasar
-  de página en móvil (Mi diario ↔ Terapia), hecho solo con CSS (`:target`).
-- La versión con lógica funcional (guardar en `localStorage`, enviar mensajes, filtros) está
-  en el historial de git, en el commit `3e49889`, por si se retoma la programación.
+- La versión anterior en HTML estático (estilo "Cuaderno & Tinta") está en el historial de git,
+  commit `83e4552`.
 - Para producción harían falta autenticación, cifrado y un backend que cumpla la normativa de
   datos de salud (en México, la LFPDPPP trata la salud como dato personal sensible).
-- La terapeuta "Psic. Elena Ruiz" y su agenda son datos de ejemplo.
+- Psicólogos, terapeuta y usuaria son personas inventadas para el prototipo.
 
 ## Publicación en Render
-Sitio estático: Render sirve la carpeta raíz tal cual (sin paso de compilación).
-La configuración está en `render.yaml`. Cada `git push` a `main` vuelve a publicar.
+`render.yaml` compila con `npm ci && npm run build`, publica `dist/` y redirige todas las rutas a
+la app. Las direcciones viejas (`pensar.html`, `hablar.html`, etc.) redirigen a las nuevas.
+Cada `git push` a `main` vuelve a publicar.
