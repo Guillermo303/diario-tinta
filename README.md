@@ -22,10 +22,11 @@ y entra a http://localhost:5500
 ## Notas
 - Usa Tailwind por CDN; colores y tipografías del sistema "Cuaderno & Tinta" están en el
   bloque `tailwind.config` dentro del `<head>` de cada página.
-- Todo se guarda en `localStorage` del navegador (solo en ese dispositivo):
-  `dt-paginas`, `dt-borrador`, `dt-animo`, `dt-terapia`, `dt-ajustes`.
-- Es un prototipo: no hay servidor. Los mensajes a la terapeuta no se envían a nadie todavía,
-  y "PIN" o "cerrar sesión por inactividad" solo se guardan como preferencia.
+- **Son plantillas de diseño estáticas**: no hay JavaScript de la app. Botones, formularios e
+  interruptores son solo visuales y el contenido es de ejemplo fijo. Lo único "vivo" es pasar
+  de página en móvil (Mi diario ↔ Terapia), hecho solo con CSS (`:target`).
+- La versión con lógica funcional (guardar en `localStorage`, enviar mensajes, filtros) está
+  en el historial de git, en el commit `3e49889`, por si se retoma la programación.
 - Para producción harían falta autenticación, cifrado y un backend que cumpla la normativa de
   datos de salud (en México, la LFPDPPP trata la salud como dato personal sensible).
 - La terapeuta "Psic. Elena Ruiz" y su agenda son datos de ejemplo.
