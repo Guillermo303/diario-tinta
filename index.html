@@ -6,7 +6,7 @@
       min-height: max(884px, 100dvh);
     }
   </style>
-  <script>try{var _a=JSON.parse(localStorage.getItem("dt-ajustes")||"{}");document.documentElement.style.zoom={chica:"0.92",grande:"1.12"}[_a.letra]||"";}catch(e){}</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(44,40,37,0.04)]"><div class="h-16 px-margin-mobile flex items-center justify-between"><div class="flex items-center gap-space-sm min-w-0"><span aria-label="Diario &amp; Tinta" role="img" class="h-9 w-9 flex-shrink-0 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-sm"><span class="material-symbols-outlined text-[20px]">ink_pen</span></span><div class="flex flex-col min-w-0"><span class="font-headline-sm text-headline-sm text-primary tracking-tight truncate leading-tight">Mi Diario &amp; Amigos</span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider truncate">Diario &amp; Mapa</span></div></div><div class="flex items-center gap-space-sm flex-shrink-0"><span class="hidden xs:inline-block font-label-md text-label-md text-tertiary px-space-xs py-0.5 rounded-lg bg-tertiary-fixed/30">Hoy</span><a class="min-w-[44px] min-h-[44px] flex items-center justify-center p-1 rounded-full transition-transform active:scale-95" data-path="ajustes" href="ajustes.html"><img alt="Profile" class="w-8 h-8 rounded-full object-cover shadow-[0_1px_4px_rgba(44,40,37,0.12)]" src="img/foto-02.jpg"/></a></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-24 bg-surface"><div class="flex flex-col w-full px-margin-mobile pb-space-lg gap-space-lg">
+  <script>try{var _a=JSON.parse(localStorage.getItem("dt-ajustes")||"{}");document.documentElement.style.zoom={chica:"0.92",grande:"1.12"}[_a.letra]||"";}catch(e){}</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(44,40,37,0.04)]"><div class="h-16 px-margin-mobile flex items-center justify-between"><div class="flex items-center gap-space-sm min-w-0"><span aria-label="Diario &amp; Tinta" role="img" class="h-9 w-9 flex-shrink-0 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-sm"><span class="material-symbols-outlined text-[20px]">ink_pen</span></span><div class="flex flex-col min-w-0"><span class="font-headline-sm text-headline-sm text-primary tracking-tight truncate leading-tight">Mi Diario</span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider truncate">Diario personal</span></div></div><div class="flex items-center gap-space-sm flex-shrink-0"><span class="hidden xs:inline-block font-label-md text-label-md text-tertiary px-space-xs py-0.5 rounded-lg bg-tertiary-fixed/30">Hoy</span><a class="min-w-[44px] min-h-[44px] flex items-center justify-center p-1 rounded-full transition-transform active:scale-95" data-path="ajustes" href="ajustes.html"><img alt="Profile" class="w-8 h-8 rounded-full object-cover shadow-[0_1px_4px_rgba(44,40,37,0.12)]" src="img/foto-02.jpg"/></a></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-24 bg-surface"><div class="flex flex-col w-full px-margin-mobile pb-space-lg gap-space-lg">
 <!-- Selector de Pliegos / Vista Cuaderno (Toggle de Páginas en Móvil) -->
 <div class="relative w-full flex items-center justify-between p-1 bg-surface-container rounded-xl shadow-sm">
 <button class="flex-1 flex items-center justify-center gap-space-xs py-2 px-space-sm rounded-lg bg-surface-container-lowest text-primary shadow-[0_2px_8px_rgba(44,40,37,0.06)] transition-all duration-300" id="tab-left" onclick="switchSpread('left')">
@@ -14,8 +14,8 @@
 <span class="font-label-md text-label-md">Pliego Izq. (Diario)</span>
 </button>
 <button class="flex-1 flex items-center justify-center gap-space-xs py-2 px-space-sm rounded-lg text-on-surface-variant hover:text-on-surface transition-all duration-300" id="tab-right" onclick="switchSpread('right')">
-<span class="material-symbols-outlined text-[18px]">explore</span>
-<span class="font-label-md text-label-md">Pliego Der. (Mapa)</span>
+<span class="material-symbols-outlined text-[18px]">self_improvement</span>
+<span class="font-label-md text-label-md">Pliego Der. (Ánimo)</span>
 </button>
 </div>
 <!-- Contenedor del Libro Abierto (Simulación Encuadernación) -->
@@ -124,14 +124,14 @@
 <div class="flex flex-col gap-space-xs mt-space-xs">
 <span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider px-1">Cajón de Herramientas</span>
 <div class="grid grid-cols-2 gap-space-xs">
-<!-- Tarjeta 1: Chats anteriores -->
+<!-- Tarjeta 1: Mi terapeuta -->
 <div onclick="location.href='chats.html'" class="p-space-sm bg-surface-container-low hover:bg-surface-container rounded-lg flex items-center gap-space-sm cursor-pointer transition-colors shadow-sm">
 <div class="w-8 h-8 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed">
-<span class="material-symbols-outlined text-[18px]">forum</span>
+<span class="material-symbols-outlined text-[18px]">psychology</span>
 </div>
 <div class="flex flex-col min-w-0">
-<span class="font-label-md text-label-md text-on-surface truncate">Chats pasados</span>
-<span class="font-label-sm text-label-sm text-on-surface-variant truncate">4 cartas nuevas</span>
+<span class="font-label-md text-label-md text-on-surface truncate">Mi terapeuta</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate">1 mensaje nuevo</span>
 </div>
 </div>
 <!-- Tarjeta 2: Borradores guardados -->
@@ -155,7 +155,7 @@
 </div>
 </div>
 <!-- Tarjeta 4: Configuración -->
-<div class="p-space-sm bg-surface-container-low hover:bg-surface-container rounded-lg flex items-center gap-space-sm cursor-pointer transition-colors shadow-sm">
+<div onclick="location.href='ajustes.html'" class="p-space-sm bg-surface-container-low hover:bg-surface-container rounded-lg flex items-center gap-space-sm cursor-pointer transition-colors shadow-sm">
 <div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant">
 <span class="material-symbols-outlined text-[18px]">settings</span>
 </div>
@@ -167,141 +167,115 @@
 </div>
 </div>
 </section>
-<!-- PÁGINA DERECHA: Compañeros de Tinta & Mapa Social -->
+<!-- PÁGINA DERECHA: Bienestar privado -->
 <section class="hidden md:flex flex-col gap-space-md w-full bg-surface-container-lowest rounded-lg p-space-md shadow-sm relative overflow-hidden mt-space-md md:mt-0" id="page-right">
-<!-- Título de Pliego Derecho -->
-<div class="flex flex-col">
-<div class="flex items-center justify-between">
-<span class="font-label-sm text-label-sm text-tertiary uppercase tracking-widest">Atlas de Amistades</span>
-<span class="material-symbols-outlined text-tertiary text-[20px]">near_me</span>
+<div class="absolute -top-2 right-8 w-20 h-5 bg-tertiary-fixed/60 rotate-2 rounded-sm pointer-events-none"></div>
+<div class="flex flex-col pt-1">
+  <span class="font-label-sm text-label-sm text-tertiary uppercase tracking-widest flex items-center gap-1"><span class="material-symbols-outlined text-[15px]">lock</span> Bienestar · solo para ti</span>
+  <h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mt-1">¿Cómo te sientes hoy?</h2>
+  <p class="font-body-sm text-body-sm text-on-surface-variant">No hay respuestas correctas. Elige el sello que más se parezca a tu día.</p>
 </div>
-<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mt-1">Compañeros de Tinta</h2>
-<p class="font-body-sm text-body-sm text-on-surface-variant">Descubre dónde están escribiendo y leyendo tus amigos ahora mismo.</p>
+
+<!-- Sellos de ánimo -->
+<div id="animos" class="grid grid-cols-5 gap-1.5" role="radiogroup" aria-label="Estado de ánimo de hoy"></div>
+<label class="flex flex-col gap-1">
+  <span class="font-label-md text-label-md text-on-surface-variant">¿Quieres anotar algo más? (opcional)</span>
+  <textarea id="animo-nota" rows="2" maxlength="280" placeholder="Dormí poco, pero la caminata me ayudó…" class="w-full rounded-lg border-0 bg-surface-container px-3 py-2 font-body-sm text-body-sm text-on-surface resize-none focus:ring-2 focus:ring-primary placeholder:text-outline"></textarea>
+</label>
+<div class="flex items-center justify-between gap-space-sm">
+  <label class="flex items-center gap-2 font-label-md text-label-md text-on-surface-variant cursor-pointer">
+    <input id="animo-compartir" type="checkbox" class="rounded border-outline-variant text-primary focus:ring-primary"/>
+    Compartir con mi terapeuta
+  </label>
+  <button id="animo-guardar" class="py-2 px-4 rounded-lg bg-primary text-on-primary font-label-md text-label-md shadow-sm hover:bg-on-primary-fixed-variant active:scale-95 transition-all">Guardar</button>
 </div>
-<!-- Barra de Búsqueda Rápida Estilo Pergamino -->
-<div class="relative w-full">
-<div class="flex items-center gap-space-sm px-space-sm py-2 bg-surface-container rounded-lg shadow-inner">
-<span class="material-symbols-outlined text-outline text-[20px]">search</span>
-<input class="w-full bg-transparent border-0 p-0 text-body-md text-on-surface placeholder:text-outline focus:outline-none" placeholder="Buscar amigos o ciudades..." type="text"/>
-<span class="material-symbols-outlined text-outline text-[18px] cursor-pointer">tune</span>
+<p id="animo-estado" class="font-label-sm text-label-sm text-tertiary -mt-2 min-h-[1rem]" aria-live="polite"></p>
+
+<!-- Semana emocional -->
+<div class="bg-surface-container-low rounded-xl p-space-md shadow-sm">
+  <div class="flex items-center justify-between mb-space-sm">
+    <span class="font-label-lg text-label-lg text-on-surface">Tu semana</span>
+    <span class="font-label-sm text-label-sm text-on-surface-variant">Últimos 7 días</span>
+  </div>
+  <div id="semana" class="grid grid-cols-7 gap-1 text-center"></div>
 </div>
-</div>
-<!-- Mapa Ilustrado de México (Vector Cartográfico Estilizado) -->
-<div class="relative w-full h-80 rounded-xl bg-surface-container-low shadow-sm overflow-hidden flex items-center justify-center">
-<!-- Textura Cartográfica de fondo y Líneas de Latitud/Longitud tenues -->
-<svg class="absolute inset-0 w-full h-full opacity-20 pointer-events-none" xmlns="http://www.w3.org/2000/svg">
-<defs>
-<pattern height="40" id="carto-grid" patternunits="userSpaceOnUse" width="40">
-<path class="text-outline" d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" stroke-dasharray="2 2" stroke-width="0.5"></path>
-</pattern>
-</defs>
-<rect fill="url(#carto-grid)" height="100%" width="100%"></rect>
-</svg>
-<!-- Silueta Vectorial Artesanal de la República Mexicana -->
-<svg class="w-full h-full object-contain p-2 filter drop-shadow-[0_2px_4px_rgba(44,40,37,0.06)]" viewbox="0 0 600 420" xmlns="http://www.w3.org/2000/svg">
-<!-- Silueta México estilizada en tonos sepia / papel suave -->
-<path d="M 65 60 C 95 65 110 95 115 130 C 120 160 110 200 135 240 C 150 260 145 270 135 255 C 120 220 100 170 85 130 C 70 95 60 70 65 60 Z" fill="#efe6e2" stroke="#88726c" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"></path>
-<path d="M 125 105 Q 160 100 210 95 Q 260 90 320 85 Q 350 85 365 110 Q 380 145 365 190 Q 345 220 325 245 Q 340 260 380 270 Q 420 270 460 250 Q 510 240 550 260 Q 580 280 575 310 Q 560 330 520 335 Q 480 340 440 330 Q 400 320 360 335 Q 320 350 285 330 Q 250 310 215 280 Q 180 250 150 200 Q 130 150 125 105 Z" fill="#fbf2ed" stroke="#88726c" stroke-linejoin="round" stroke-width="1.5"></path>
-<!-- Península de Yucatán & Golfo -->
-<path d="M 450 250 Q 490 230 535 240 Q 570 255 570 285 Q 560 310 525 315 Z" fill="#efe6e2" stroke="#88726c" stroke-width="1.2"></path>
-<!-- Rosa de los vientos artesanal sutil -->
-<g class="opacity-60 text-secondary" transform="translate(60, 330)">
-<circle cx="20" cy="20" fill="none" r="18" stroke="currentColor" stroke-dasharray="1 2" stroke-width="1"></circle>
-<path d="M 20 5 L 23 20 L 20 35 L 17 20 Z" fill="currentColor"></path>
-<path d="M 5 20 L 20 23 L 35 20 L 20 17 Z" fill="currentColor" opacity="0.6"></path>
-<text fill="currentColor" font-size="8" font-weight="bold" text-anchor="middle" x="20" y="3">N</text>
-</g>
-</svg>
-<!-- Chinchetas y Avatares de Amigos sobre Ciudades Clave -->
-<!-- 1. Monterrey: Valeria -->
-<div class="absolute top-[28%] left-[54%] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center group cursor-pointer z-10">
-<div class="flex items-center gap-1 bg-surface-container-lowest px-2 py-0.5 rounded-full shadow-md">
-<span class="w-2 h-2 rounded-full bg-tertiary"></span>
-<span class="font-label-sm text-label-sm text-on-surface">Valeria ☕</span>
-</div>
-<div class="w-8 h-8 rounded-full bg-secondary-fixed flex items-center justify-center shadow-md -mt-1 ring-2 ring-surface-container-lowest">
-<img class="w-full h-full rounded-full object-cover" data-alt="A portrait of a cheerful young woman with curly brown hair in an artisanal café drinking espresso, warm earthy lighting, sketchbook aesthetic" src="img/foto-03.jpg"/>
-</div>
-<div class="w-1.5 h-1.5 rounded-full bg-primary mt-0.5"></div>
-</div>
-<!-- 2. Guadalajara: Mateo -->
-<div class="absolute top-[52%] left-[40%] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center group cursor-pointer z-10">
-<div class="flex items-center gap-1 bg-surface-container-lowest px-2 py-0.5 rounded-full shadow-md">
-<span class="w-2 h-2 rounded-full bg-tertiary"></span>
-<span class="font-label-sm text-label-sm text-on-surface">Mateo 🌿</span>
-</div>
-<div class="w-8 h-8 rounded-full bg-tertiary-fixed flex items-center justify-center shadow-md -mt-1 ring-2 ring-surface-container-lowest">
-<img class="w-full h-full rounded-full object-cover" data-alt="Close up portrait of a young man with glasses writing poetry in a lush botanical courtyard, soft morning glow, warm film photography tone" src="img/foto-04.jpg"/>
-</div>
-<div class="w-1.5 h-1.5 rounded-full bg-primary mt-0.5"></div>
-</div>
-<!-- 3. CDMX: Sofía (Resaltada / Cercana) -->
-<div class="absolute top-[62%] left-[52%] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center group cursor-pointer z-20 scale-105">
-<div class="flex items-center gap-1 bg-primary text-on-primary px-2.5 py-0.5 rounded-full shadow-md">
-<span class="w-2 h-2 rounded-full bg-surface-container-lowest animate-ping"></span>
-<span class="font-label-sm text-label-sm font-semibold">Sofía ✍️</span>
-</div>
-<div class="w-9 h-9 rounded-full bg-primary-fixed flex items-center justify-center shadow-lg -mt-1 ring-2 ring-primary">
-<img class="w-full h-full rounded-full object-cover" data-alt="Profile portrait of a young creative Mexican woman smiling while sketching in a vintage library café in Roma Norte Mexico City, natural warm lighting" src="img/foto-05.jpg"/>
-</div>
-<div class="w-2 h-2 rounded-full bg-primary mt-0.5"></div>
-</div>
-<!-- 4. Oaxaca: Diego -->
-<div class="absolute top-[75%] left-[60%] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center group cursor-pointer z-10">
-<div class="flex items-center gap-1 bg-surface-container-lowest px-2 py-0.5 rounded-full shadow-md">
-<span class="w-2 h-2 rounded-full bg-secondary"></span>
-<span class="font-label-sm text-label-sm text-on-surface">Diego 🎨</span>
-</div>
-<div class="w-7 h-7 rounded-full bg-secondary-fixed-dim flex items-center justify-center shadow-md -mt-1 ring-2 ring-surface-container-lowest">
-<span class="font-label-sm text-label-sm font-bold text-on-secondary-fixed">D</span>
-</div>
-<div class="w-1.5 h-1.5 rounded-full bg-primary mt-0.5"></div>
-</div>
-<!-- 5. Mérida: Camila -->
-<div class="absolute top-[50%] left-[83%] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center group cursor-pointer z-10">
-<div class="flex items-center gap-1 bg-surface-container-lowest px-2 py-0.5 rounded-full shadow-md">
-<span class="w-2 h-2 rounded-full bg-tertiary"></span>
-<span class="font-label-sm text-label-sm text-on-surface">Camila 📖</span>
-</div>
-<div class="w-7 h-7 rounded-full bg-tertiary-fixed-dim flex items-center justify-center shadow-md -mt-1 ring-2 ring-surface-container-lowest">
-<span class="font-label-sm text-label-sm font-bold text-on-tertiary-fixed">C</span>
-</div>
-<div class="w-1.5 h-1.5 rounded-full bg-primary mt-0.5"></div>
-</div>
-</div>
-<!-- Tarjeta Inferior de Amigos Activos Cercanos -->
+
+<!-- Próxima sesión -->
 <div class="bg-surface-container rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm">
-<div class="flex items-center justify-between">
-<div class="flex items-center gap-space-xs">
-<span class="material-symbols-outlined text-primary text-[20px]">group</span>
-<span class="font-headline-sm text-headline-sm text-on-surface">3 amigos activos cerca</span>
+  <div class="flex items-center gap-space-sm">
+    <div class="w-11 h-11 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center font-headline-sm text-headline-sm shadow-sm" aria-hidden="true">ER</div>
+    <div class="min-w-0">
+      <span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Próxima sesión</span>
+      <p class="font-label-lg text-label-lg text-on-surface">Jueves 13 de nov · 17:00</p>
+      <p class="font-body-sm text-body-sm text-on-surface-variant">Psic. Elena Ruiz · Videollamada</p>
+    </div>
+  </div>
+  <a href="chats.html" class="py-2.5 px-space-sm bg-secondary-fixed text-on-secondary-fixed rounded-lg font-label-md text-label-md flex items-center justify-center gap-1.5 shadow-sm hover:bg-secondary-fixed-dim transition-all">
+    <span class="material-symbols-outlined text-[18px]">psychology</span> Escribir a mi terapeuta
+  </a>
 </div>
-<span class="font-label-sm text-label-sm text-secondary font-medium">Roma &amp; Condesa</span>
-</div>
-<div class="flex items-center gap-space-sm bg-surface-container-lowest p-space-sm rounded-lg shadow-inner">
-<div class="flex -space-x-2">
-<div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center font-label-sm text-label-sm font-bold text-on-primary-fixed shadow-sm">S</div>
-<div class="w-8 h-8 rounded-full bg-secondary-fixed flex items-center justify-center font-label-sm text-label-sm font-bold text-on-secondary-fixed shadow-sm">M</div>
-<div class="w-8 h-8 rounded-full bg-tertiary-fixed flex items-center justify-center font-label-sm text-label-sm font-bold text-on-tertiary-fixed shadow-sm">V</div>
-</div>
-<div class="flex flex-col min-w-0">
-<span class="font-label-md text-label-md text-on-surface truncate">Sofía está en Café Nin</span>
-<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Escribiendo entrada sobre viajes</span>
-</div>
-</div>
-<!-- Botones de Acción Social Cálida -->
-<div class="grid grid-cols-2 gap-space-xs mt-1">
-<button class="py-2.5 px-space-sm bg-secondary-fixed text-on-secondary-fixed rounded-lg font-label-md text-label-md flex items-center justify-center gap-1.5 shadow-sm hover:bg-secondary-fixed-dim transition-all">
-<span class="material-symbols-outlined text-[18px]">chat_bubble</span>
-<span>Saludar por chat</span>
-</button>
-<button class="py-2.5 px-space-sm bg-surface-container-high text-on-surface rounded-lg font-label-md text-label-md flex items-center justify-center gap-1.5 shadow-sm hover:bg-surface-dim transition-all">
-<span class="material-symbols-outlined text-[18px]">menu_book</span>
-<span>Diarios públicos</span>
-</button>
-</div>
-</div>
+
+<p class="flex items-start gap-1.5 font-body-sm text-body-sm text-on-surface-variant">
+  <span class="material-symbols-outlined text-[16px] text-tertiary mt-0.5">verified_user</span>
+  Tus registros se guardan solo en este dispositivo. Tu terapeuta únicamente ve lo que tú decides compartir.
+</p>
 </section>
+<script>
+(() => {
+  const ANIMOS = [
+    { id: 'calma',     emoji: '🌿', txt: 'Calma',     color: 'bg-tertiary-fixed' },
+    { id: 'alegria',   emoji: '☀️', txt: 'Alegría',   color: 'bg-secondary-fixed' },
+    { id: 'cansancio', emoji: '🌙', txt: 'Cansancio', color: 'bg-surface-container-high' },
+    { id: 'tristeza',  emoji: '🌧️', txt: 'Tristeza',  color: 'bg-primary-fixed' },
+    { id: 'ansiedad',  emoji: '🌀', txt: 'Ansiedad',  color: 'bg-error-container' },
+  ];
+  const get = (k, d) => { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch { return d; } };
+  const set = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} };
+  const fecha = d => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+  const hoy = fecha(new Date());
+  const ajustes = get('dt-ajustes', {});
+  let registros = get('dt-animo', {});
+  let elegido = registros[hoy]?.animo || null;
+  const $ = s => document.querySelector(s);
+  $('#animo-nota').value = registros[hoy]?.nota || '';
+  $('#animo-compartir').checked = registros[hoy] ? !!registros[hoy].compartido : !!ajustes.compartirDefault;
+
+  function pintarAnimos() {
+    const c = $('#animos'); c.innerHTML = '';
+    ANIMOS.forEach(a => {
+      const on = a.id === elegido;
+      const b = document.createElement('button');
+      b.type = 'button'; b.setAttribute('role', 'radio'); b.setAttribute('aria-checked', on); b.setAttribute('aria-label', a.txt);
+      b.className = `flex flex-col items-center gap-0.5 py-2 rounded-lg border-2 transition-all active:scale-95 ${on ? 'border-primary bg-surface-container-lowest shadow-sm' : 'border-transparent bg-surface-container hover:bg-surface-container-high'}`;
+      b.innerHTML = `<span class="w-8 h-8 rounded-full ${a.color} flex items-center justify-center text-[17px]">${a.emoji}</span><span class="font-label-sm text-[10px] text-on-surface"></span>`;
+      b.lastChild.textContent = a.txt;
+      b.onclick = () => { elegido = a.id; pintarAnimos(); };
+      c.appendChild(b);
+    });
+  }
+  function pintarSemana() {
+    const c = $('#semana'); c.innerHTML = '';
+    const dias = ['D', 'L', 'M', 'X', 'J', 'V', 'S'];
+    for (let i = 6; i >= 0; i--) {
+      const d = new Date(); d.setDate(d.getDate() - i);
+      const k = fecha(d), r = registros[k], a = r && ANIMOS.find(x => x.id === r.animo);
+      const cel = document.createElement('div');
+      cel.className = 'flex flex-col items-center gap-1';
+      cel.innerHTML = `<span class="font-label-sm text-label-sm text-on-surface-variant">${dias[d.getDay()]}</span>
+        <span class="w-8 h-8 rounded-full flex items-center justify-center text-[15px] ${a ? a.color : 'border border-dashed border-outline-variant'}" title="${a ? a.txt : 'Sin registro'}">${a ? a.emoji : ''}</span>`;
+      c.appendChild(cel);
+    }
+  }
+  $('#animo-guardar').onclick = () => {
+    if (!elegido) { $('#animo-estado').textContent = 'Elige primero un sello de ánimo.'; return; }
+    registros[hoy] = { animo: elegido, nota: $('#animo-nota').value.trim(), compartido: $('#animo-compartir').checked };
+    set('dt-animo', registros); pintarSemana();
+    $('#animo-estado').textContent = registros[hoy].compartido ? 'Guardado y visible para tu terapeuta ✓' : 'Guardado solo para ti ✓';
+  };
+  pintarAnimos(); pintarSemana();
+})();
+</script>
+
 </div>
 <!-- Sello de Tinta Final de Página / Cierre Poético -->
 <div class="flex items-center justify-center gap-space-sm py-2 opacity-70">
@@ -333,4 +307,4 @@
       tabLeft.className = "flex-1 flex items-center justify-center gap-space-xs py-2 px-space-sm rounded-lg text-on-surface-variant hover:text-on-surface transition-all duration-300";
     }
   }
-</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(44,40,37,0.05)]" data-active-classes="text-primary font-label-md"><div class="flex justify-around items-center h-16 px-space-xs"><a aria-current="page" class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] px-space-xs transition-colors text-primary font-label-md" data-path="diario-&amp;-mapa" href="index.html"><span class="material-symbols-outlined text-[22px]">menu_book</span><span class="font-label-sm text-label-sm mt-0.5 leading-none">Diario</span></a><a class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] px-space-xs text-on-surface-variant hover:text-on-surface transition-colors" data-path="pensamientos" href="pensar.html"><span class="material-symbols-outlined text-[22px]">edit_note</span><span class="font-label-sm text-label-sm mt-0.5 leading-none">Pensar</span></a><a class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] px-space-xs text-on-surface-variant hover:text-on-surface transition-colors" data-path="amigos" href="mapa.html"><span class="material-symbols-outlined text-[22px]">group</span><span class="font-label-sm text-label-sm mt-0.5 leading-none">Amigos</span></a><a class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] px-space-xs text-on-surface-variant hover:text-on-surface transition-colors" data-path="chats" href="chats.html"><span class="material-symbols-outlined text-[22px]">forum</span><span class="font-label-sm text-label-sm mt-0.5 leading-none">Chats</span></a><a class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] px-space-xs text-on-surface-variant hover:text-on-surface transition-colors" data-path="ajustes" href="ajustes.html"><span class="material-symbols-outlined text-[22px]">settings</span><span class="font-label-sm text-label-sm mt-0.5 leading-none">Ajustes</span></a></div></nav></body></html>
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(44,40,37,0.05)]" data-active-classes="text-primary font-label-md"><div class="flex justify-around items-center h-16 px-space-xs"><a aria-current="page" class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] px-space-xs transition-colors text-primary font-label-md" data-path="diario-&amp;-mapa" href="index.html"><span class="material-symbols-outlined text-[22px]">menu_book</span><span class="font-label-sm text-label-sm mt-0.5 leading-none">Diario</span></a><a class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] px-space-xs text-on-surface-variant hover:text-on-surface transition-colors" data-path="pensamientos" href="pensar.html"><span class="material-symbols-outlined text-[22px]">edit_note</span><span class="font-label-sm text-label-sm mt-0.5 leading-none">Pensar</span></a><a class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] px-space-xs text-on-surface-variant hover:text-on-surface transition-colors" data-path="chats" href="chats.html"><span class="material-symbols-outlined text-[22px]">psychology</span><span class="font-label-sm text-label-sm mt-0.5 leading-none">Terapia</span></a><a class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] px-space-xs text-on-surface-variant hover:text-on-surface transition-colors" data-path="ajustes" href="ajustes.html"><span class="material-symbols-outlined text-[22px]">settings</span><span class="font-label-sm text-label-sm mt-0.5 leading-none">Ajustes</span></a></div></nav></body></html>

@@ -6,7 +6,7 @@
       min-height: max(884px, 100dvh);
     }
   </style>
-  <script>try{var _a=JSON.parse(localStorage.getItem("dt-ajustes")||"{}");document.documentElement.style.zoom={chica:"0.92",grande:"1.12"}[_a.letra]||"";}catch(e){}</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(44,40,37,0.04)]"><div class="h-16 px-margin-mobile flex items-center justify-between"><div class="flex items-center gap-space-sm min-w-0"><span aria-label="Diario &amp; Tinta" role="img" class="h-9 w-9 flex-shrink-0 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-sm"><span class="material-symbols-outlined text-[20px]">ink_pen</span></span><div class="flex flex-col min-w-0"><span class="font-headline-sm text-headline-sm text-primary tracking-tight truncate leading-tight">Mi Diario &amp; Amigos</span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider truncate">Ajustes</span></div></div><div class="flex items-center gap-space-sm flex-shrink-0"><span class="hidden xs:inline-block font-label-md text-label-md text-tertiary px-space-xs py-0.5 rounded-lg bg-tertiary-fixed/30">Hoy</span><a class="min-w-[44px] min-h-[44px] flex items-center justify-center p-1 rounded-full transition-transform active:scale-95" data-path="ajustes" href="ajustes.html"><img alt="Profile" class="w-8 h-8 rounded-full object-cover shadow-[0_1px_4px_rgba(44,40,37,0.12)]" src="img/foto-02.jpg"/></a></div></div></header><style>
+  <script>try{var _a=JSON.parse(localStorage.getItem("dt-ajustes")||"{}");document.documentElement.style.zoom={chica:"0.92",grande:"1.12"}[_a.letra]||"";}catch(e){}</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(44,40,37,0.04)]"><div class="h-16 px-margin-mobile flex items-center justify-between"><div class="flex items-center gap-space-sm min-w-0"><span aria-label="Diario &amp; Tinta" role="img" class="h-9 w-9 flex-shrink-0 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-sm"><span class="material-symbols-outlined text-[20px]">ink_pen</span></span><div class="flex flex-col min-w-0"><span class="font-headline-sm text-headline-sm text-primary tracking-tight truncate leading-tight">Mi Diario</span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider truncate">Ajustes</span></div></div><div class="flex items-center gap-space-sm flex-shrink-0"><span class="hidden xs:inline-block font-label-md text-label-md text-tertiary px-space-xs py-0.5 rounded-lg bg-tertiary-fixed/30">Hoy</span><a class="min-w-[44px] min-h-[44px] flex items-center justify-center p-1 rounded-full transition-transform active:scale-95" data-path="ajustes" href="ajustes.html"><img alt="Profile" class="w-8 h-8 rounded-full object-cover shadow-[0_1px_4px_rgba(44,40,37,0.12)]" src="img/foto-02.jpg"/></a></div></div></header><style>
   .ficha { box-shadow: 0 1px 0 rgba(44,40,37,.04), 0 6px 16px rgba(44,40,37,.06); }
   .interruptor { position: relative; width: 44px; height: 26px; flex-shrink: 0; border-radius: 999px; background: #dbc1ba; transition: background .2s; }
   .interruptor::after { content: ''; position: absolute; top: 3px; left: 3px; width: 20px; height: 20px; border-radius: 50%; background: #fff; box-shadow: 0 1px 3px rgba(44,40,37,.25); transition: transform .2s; }
@@ -26,7 +26,7 @@
     <span class="material-symbols-outlined text-[16px]">settings</span> Ajustes del cuaderno
   </span>
   <h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-on-surface">Tu escritorio, a tu manera</h1>
-  <p class="font-body-md text-body-md italic text-on-surface-variant">Elige cómo escribes, quién te lee y qué tan cerca te encuentran tus amigos en el mapa.</p>
+  <p class="font-body-md text-body-md italic text-on-surface-variant">Elige cómo escribes y qué compartes con tu terapeuta. Por defecto, todo queda solo para ti.</p>
 </header>
 
 <div class="grid grid-cols-1 md:grid-cols-12 gap-space-lg items-start">
@@ -39,22 +39,18 @@
       <img src="img/foto-02.jpg" alt="Tu foto de perfil" class="w-16 h-16 rounded-full object-cover ring-4 ring-surface-container shadow-sm"/>
       <div class="min-w-0">
         <p id="perfil-nombre-vista" class="font-headline-sm text-headline-sm text-on-surface truncate">Ana Lucía</p>
-        <p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">location_on</span><span id="perfil-ciudad-vista">Coyoacán, CDMX</span></p>
+        <p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[16px] text-tertiary">lock</span><span>Perfil privado · solo tú</span></p>
       </div>
     </div>
     <div class="grid grid-cols-3 gap-2 mt-space-md text-center">
       <div class="bg-surface-container-low rounded-lg py-2"><p class="font-headline-sm text-headline-sm text-primary">14</p><p class="font-label-sm text-label-sm text-on-surface-variant">días de racha</p></div>
       <div class="bg-surface-container-low rounded-lg py-2"><p id="stat-paginas" class="font-headline-sm text-headline-sm text-primary">3</p><p class="font-label-sm text-label-sm text-on-surface-variant">páginas</p></div>
-      <div class="bg-surface-container-low rounded-lg py-2"><p class="font-headline-sm text-headline-sm text-primary">6</p><p class="font-label-sm text-label-sm text-on-surface-variant">amigos</p></div>
+      <div class="bg-surface-container-low rounded-lg py-2"><p class="font-headline-sm text-headline-sm text-primary">8</p><p class="font-label-sm text-label-sm text-on-surface-variant">sesiones</p></div>
     </div>
     <div class="flex flex-col gap-space-sm mt-space-md">
       <label class="flex flex-col gap-1">
-        <span class="font-label-md text-label-md text-on-surface-variant">Nombre de pluma</span>
+        <span class="font-label-md text-label-md text-on-surface-variant">¿Cómo quieres que te llamen?</span>
         <input data-ajuste="nombre" maxlength="40" class="w-full rounded-lg border-0 bg-surface-container px-3 py-2 font-body-md text-body-md text-on-surface focus:ring-2 focus:ring-primary"/>
-      </label>
-      <label class="flex flex-col gap-1">
-        <span class="font-label-md text-label-md text-on-surface-variant">Ciudad desde donde escribes</span>
-        <input data-ajuste="ciudad" maxlength="60" class="w-full rounded-lg border-0 bg-surface-container px-3 py-2 font-body-md text-body-md text-on-surface focus:ring-2 focus:ring-primary"/>
       </label>
       <label class="flex flex-col gap-1">
         <span class="font-label-md text-label-md text-on-surface-variant">Frase de portada</span>
@@ -101,35 +97,36 @@
     </div>
   </section>
 
-  <!-- Privacidad y mapa -->
+  <!-- Privacidad y confidencialidad -->
   <section class="bg-surface-container-lowest rounded-xl ficha overflow-hidden" aria-labelledby="g-privacidad">
     <h2 id="g-privacidad" class="flex items-center gap-2 px-space-md pt-space-md pb-space-sm font-headline-sm text-headline-sm text-on-surface">
-      <span class="material-symbols-outlined text-tertiary">explore</span> Privacidad y mapa
+      <span class="material-symbols-outlined text-tertiary">verified_user</span> Privacidad y confidencialidad
     </h2>
     <div class="px-space-md">
-      <div class="fila py-space-sm flex items-center justify-between gap-space-md">
-        <div><p class="font-label-lg text-label-lg text-on-surface">Aparecer en el Atlas de Amigos</p><p class="font-body-sm text-body-sm text-on-surface-variant">Tus amigos verán tu pin en el mapa de México.</p></div>
-        <button class="interruptor" role="switch" data-ajuste="enMapa" aria-label="Aparecer en el mapa"></button>
-      </div>
       <div class="fila py-space-sm">
-        <p class="font-label-lg text-label-lg text-on-surface">Precisión de tu ubicación</p>
-        <p class="font-body-sm text-body-sm text-on-surface-variant mb-2">Nunca mostramos tu dirección exacta.</p>
-        <div class="flex p-1 bg-surface-container rounded-lg" role="radiogroup" aria-label="Precisión de ubicación" data-grupo="precision">
-          <button data-valor="estado" class="opcion flex-1 py-1.5 px-2 rounded-md font-label-md text-label-md">Solo estado</button>
-          <button data-valor="ciudad" class="opcion flex-1 py-1.5 px-2 rounded-md font-label-md text-label-md">Ciudad</button>
-          <button data-valor="barrio" class="opcion flex-1 py-1.5 px-2 rounded-md font-label-md text-label-md">Barrio</button>
+        <div class="flex items-start gap-space-sm p-space-sm rounded-lg bg-tertiary-fixed/30">
+          <span class="material-symbols-outlined text-tertiary">shield_lock</span>
+          <p class="font-body-sm text-body-sm text-on-surface">Esta app no tiene perfiles públicos, amigos ni mensajes con otras personas. Solo tu terapeuta puede ver lo que tú decides compartir.</p>
         </div>
       </div>
       <div class="fila py-space-sm flex items-center justify-between gap-space-md">
-        <div><p class="font-label-lg text-label-lg text-on-surface">Mostrar "Escribiendo ahora"</p><p class="font-body-sm text-body-sm text-on-surface-variant">El pulso verde junto a tu foto mientras escribes.</p></div>
-        <button class="interruptor" role="switch" data-ajuste="escribiendoAhora" aria-label="Mostrar escribiendo ahora"></button>
+        <div><p class="font-label-lg text-label-lg text-on-surface">Compartir con mi terapeuta por defecto</p><p class="font-body-sm text-body-sm text-on-surface-variant">Si está apagado, cada página nueva empieza como "Solo yo".</p></div>
+        <button class="interruptor" role="switch" data-ajuste="compartirDefault" aria-label="Compartir con mi terapeuta por defecto"></button>
+      </div>
+      <div class="fila py-space-sm flex items-center justify-between gap-space-md">
+        <div><p class="font-label-lg text-label-lg text-on-surface">Pedir PIN al abrir</p><p class="font-body-sm text-body-sm text-on-surface-variant">Protege tu diario si alguien más usa este dispositivo.</p></div>
+        <button class="interruptor" role="switch" data-ajuste="pin" aria-label="Pedir PIN al abrir"></button>
+      </div>
+      <div class="fila py-space-sm flex items-center justify-between gap-space-md">
+        <div><p class="font-label-lg text-label-lg text-on-surface">Ocultar contenido en las notificaciones</p><p class="font-body-sm text-body-sm text-on-surface-variant">Los avisos dirán "Tienes un mensaje" sin mostrar el texto.</p></div>
+        <button class="interruptor" role="switch" data-ajuste="ocultarNotif" aria-label="Ocultar contenido en las notificaciones"></button>
       </div>
       <div class="fila py-space-sm">
-        <p class="font-label-lg text-label-lg text-on-surface">¿Quién puede enviarte cartas?</p>
-        <div class="flex p-1 bg-surface-container rounded-lg mt-2" role="radiogroup" aria-label="Quién puede enviarte cartas" data-grupo="cartas">
-          <button data-valor="todos" class="opcion flex-1 py-1.5 px-2 rounded-md font-label-md text-label-md">Cualquiera</button>
-          <button data-valor="amigos" class="opcion flex-1 py-1.5 px-2 rounded-md font-label-md text-label-md">Amigos</button>
-          <button data-valor="nadie" class="opcion flex-1 py-1.5 px-2 rounded-md font-label-md text-label-md">Nadie</button>
+        <p class="font-label-lg text-label-lg text-on-surface">Cerrar sesión por inactividad</p>
+        <div class="flex p-1 bg-surface-container rounded-lg mt-2" role="radiogroup" aria-label="Cerrar sesión por inactividad" data-grupo="cierre">
+          <button data-valor="5" class="opcion flex-1 py-1.5 px-2 rounded-md font-label-md text-label-md">5 min</button>
+          <button data-valor="15" class="opcion flex-1 py-1.5 px-2 rounded-md font-label-md text-label-md">15 min</button>
+          <button data-valor="nunca" class="opcion flex-1 py-1.5 px-2 rounded-md font-label-md text-label-md">Nunca</button>
         </div>
       </div>
     </div>
@@ -142,12 +139,12 @@
     </h2>
     <div class="px-space-md">
       <div class="fila py-space-sm flex items-center justify-between gap-space-md">
-        <div><p class="font-label-lg text-label-lg text-on-surface">Cartas nuevas</p><p class="font-body-sm text-body-sm text-on-surface-variant">Cuando llega un sobre con lacre a tu buzón.</p></div>
-        <button class="interruptor" role="switch" data-ajuste="avisoCartas" aria-label="Avisos de cartas nuevas"></button>
+        <div><p class="font-label-lg text-label-lg text-on-surface">Mensajes de tu terapeuta</p><p class="font-body-sm text-body-sm text-on-surface-variant">Cuando te responde en tu espacio confidencial.</p></div>
+        <button class="interruptor" role="switch" data-ajuste="avisoTerapeuta" aria-label="Avisos de mensajes de tu terapeuta"></button>
       </div>
       <div class="fila py-space-sm flex items-center justify-between gap-space-md">
-        <div><p class="font-label-lg text-label-lg text-on-surface">Amigos escribiendo cerca</p><p class="font-body-sm text-body-sm text-on-surface-variant">Si alguien abre su diario en tu ciudad.</p></div>
-        <button class="interruptor" role="switch" data-ajuste="avisoCerca" aria-label="Avisos de amigos escribiendo cerca"></button>
+        <div><p class="font-label-lg text-label-lg text-on-surface">Recordatorio de sesión</p><p class="font-body-sm text-body-sm text-on-surface-variant">Un aviso 24 horas y 1 hora antes de tu cita.</p></div>
+        <button class="interruptor" role="switch" data-ajuste="avisoSesion" aria-label="Recordatorio de sesión"></button>
       </div>
       <div class="fila py-space-sm flex items-center justify-between gap-space-md">
         <div><p class="font-label-lg text-label-lg text-on-surface">Racha en riesgo</p><p class="font-body-sm text-body-sm text-on-surface-variant">Un aviso a las 9 p. m. si aún no escribes.</p></div>
@@ -215,10 +212,10 @@
 <script>
 (() => {
   const DEF = {
-    nombre: 'Ana Lucía', ciudad: 'Coyoacán, CDMX', frase: 'Coleccionista de tardes lluviosas y cartas sin prisa.',
+    nombre: 'Ana Lucía', frase: 'Coleccionista de tardes lluviosas y cartas sin prisa.',
     recordatorio: true, horaRecordatorio: '20:30', meta: 150, tinta: 'sepia', chispa: true,
-    enMapa: true, precision: 'ciudad', escribiendoAhora: true, cartas: 'amigos',
-    avisoCartas: true, avisoCerca: false, avisoRacha: true,
+    compartirDefault: false, pin: false, ocultarNotif: true, cierre: '15',
+    avisoTerapeuta: true, avisoSesion: true, avisoRacha: true,
     letra: 'normal', papel: 'rayado', menosMovimiento: false,
   };
   const TINTAS = [
@@ -231,6 +228,7 @@
     set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} },
   };
   let aj = { ...DEF, ...store.get('dt-ajustes', {}) };
+  ['ciudad', 'enMapa', 'precision', 'escribiendoAhora', 'cartas', 'avisoCartas', 'avisoCerca'].forEach(k => delete aj[k]);
   const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
 
   let tAviso;
@@ -269,7 +267,6 @@
 
   function pintarPerfil() {
     $('#perfil-nombre-vista').textContent = aj.nombre || 'Sin nombre';
-    $('#perfil-ciudad-vista').textContent = aj.ciudad || 'En algún lugar de México';
   }
   function pintar() {
     pintarPerfil();
@@ -293,9 +290,6 @@
       b.classList.toggle('border-primary', on); b.classList.toggle('bg-surface-container-lowest', on);
       b.classList.toggle('border-transparent', !on); b.classList.toggle('bg-surface-container', !on);
     });
-    // Mapa desactivado → atenuar opciones dependientes
-    const fila = $('[data-grupo="precision"]').closest('.fila');
-    fila.classList.toggle('opacity-50', !aj.enMapa); fila.classList.toggle('pointer-events-none', !aj.enMapa);
     // Letra aplicada a la página
     document.documentElement.style.zoom = { chica: '0.92', grande: '1.12' }[aj.letra] || '';
     $('#muestra-letra').style.fontSize = TAM[aj.letra];
@@ -329,4 +323,4 @@
 </script>
 <style>.motion-reduce-all *, .motion-reduce-all *::after { transition: none !important; animation: none !important; }</style>
 </main>
-<nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(44,40,37,0.05)]" data-active-classes="text-primary font-label-md"><div class="flex justify-around items-center h-16 px-space-xs"><a class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] px-space-xs text-on-surface-variant hover:text-on-surface transition-colors" data-path="diario-&amp;-mapa" href="index.html"><span class="material-symbols-outlined text-[22px]">menu_book</span><span class="font-label-sm text-label-sm mt-0.5 leading-none">Diario</span></a><a class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] px-space-xs text-on-surface-variant hover:text-on-surface transition-colors" data-path="pensamientos" href="pensar.html"><span class="material-symbols-outlined text-[22px]">edit_note</span><span class="font-label-sm text-label-sm mt-0.5 leading-none">Pensar</span></a><a class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] px-space-xs text-on-surface-variant hover:text-on-surface transition-colors" data-path="amigos" href="mapa.html"><span class="material-symbols-outlined text-[22px]">group</span><span class="font-label-sm text-label-sm mt-0.5 leading-none">Amigos</span></a><a class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] px-space-xs text-on-surface-variant hover:text-on-surface transition-colors" data-path="chats" href="chats.html"><span class="material-symbols-outlined text-[22px]">forum</span><span class="font-label-sm text-label-sm mt-0.5 leading-none">Chats</span></a><a aria-current="page" class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] px-space-xs transition-colors text-primary font-label-md" data-path="ajustes" href="ajustes.html"><span class="material-symbols-outlined text-[22px]">settings</span><span class="font-label-sm text-label-sm mt-0.5 leading-none">Ajustes</span></a></div></nav></body></html>
+<nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(44,40,37,0.05)]" data-active-classes="text-primary font-label-md"><div class="flex justify-around items-center h-16 px-space-xs"><a class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] px-space-xs text-on-surface-variant hover:text-on-surface transition-colors" data-path="diario-&amp;-mapa" href="index.html"><span class="material-symbols-outlined text-[22px]">menu_book</span><span class="font-label-sm text-label-sm mt-0.5 leading-none">Diario</span></a><a class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] px-space-xs text-on-surface-variant hover:text-on-surface transition-colors" data-path="pensamientos" href="pensar.html"><span class="material-symbols-outlined text-[22px]">edit_note</span><span class="font-label-sm text-label-sm mt-0.5 leading-none">Pensar</span></a><a class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] px-space-xs text-on-surface-variant hover:text-on-surface transition-colors" data-path="chats" href="chats.html"><span class="material-symbols-outlined text-[22px]">psychology</span><span class="font-label-sm text-label-sm mt-0.5 leading-none">Terapia</span></a><a aria-current="page" class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] px-space-xs transition-colors text-primary font-label-md" data-path="ajustes" href="ajustes.html"><span class="material-symbols-outlined text-[22px]">settings</span><span class="font-label-sm text-label-sm mt-0.5 leading-none">Ajustes</span></a></div></nav></body></html>

@@ -1,15 +1,16 @@
 # Diario & Tinta — prototipo web
 
-Exportado desde el proyecto de Stitch "Diario Interactivo con Mapa".
+Diario personal **privado** para personas en terapia psicológica. No es una red social:
+no hay perfiles públicos, amigos, mapas ni mensajes entre usuarios. La única otra persona
+en la app es la terapeuta, y solo ve lo que el usuario decide compartir.
 
-| Archivo      | Pantalla de Stitch                          |
-|--------------|---------------------------------------------|
-| `index.html` | Diario Abierto & Mapa de Amigos (inicio)    |
-| `mapa.html`  | Pliego Derecho - Mapa de México & Amigos    |
-| `chats.html` | Chats Anteriores - Cartas Manuscritas       |
-| `pensar.html`| Pensamientos (diseñada a mano, mismo estilo) |
-| `ajustes.html`| Ajustes (diseñada a mano, mismo estilo)     |
-| `img/`       | Fotos descargadas localmente                |
+| Archivo        | Pantalla                                                     |
+|----------------|--------------------------------------------------------------|
+| `index.html`   | Diario (pliego izquierdo) y registro de ánimo privado (derecho) |
+| `pensar.html`  | Escribir páginas; cada una es "Solo yo" o "Mi terapeuta"     |
+| `chats.html`   | Terapia: canal confidencial con la terapeuta + líneas de crisis |
+| `ajustes.html` | Escritura, privacidad y confidencialidad, avisos, papel, datos |
+| `img/`         | Foto de perfil                                               |
 
 ## Cómo verlo
 Abre `index.html` en el navegador, o sirve la carpeta:
@@ -19,20 +20,15 @@ Abre `index.html` en el navegador, o sirve la carpeta:
 y entra a http://localhost:5500
 
 ## Notas
-- Usa Tailwind por CDN; los colores y tipografías del sistema "Cuaderno & Tinta"
-  están en el bloque `tailwind.config` dentro del `<head>` de cada página.
-- Navegación inferior conectada: Diario, Pensar, Amigos (mapa), Chats y Ajustes. El avatar de la cabecera también abre Ajustes.
-- Todo se guarda en `localStorage` del navegador: `dt-paginas`, `dt-borrador` (Pensar) y `dt-ajustes` (Ajustes).
-- Ajustes que ya afectan al sitio: tamaño de letra (todas las páginas), tinta predeterminada y chispa del día (Pensar). El resto se guarda pero aún no cambia nada (no hay servidor).
-- El logo original era un recurso privado de Stitch; se reemplazó por un ícono.
-
-## Mapa (mapa.html)
-- Contorno y 32 estados reales de México, generados de datos geográficos
-  (proyección equirectangular corregida a 23° N) e incrustados como SVG.
-- Los pines se colocan por latitud/longitud con la misma proyección (`PROY` en el script).
-- Tocar un amigo acerca el mapa y abre su tarjeta postal; buscar por nombre, ciudad o estado;
-  filtros funcionales. Respeta "Aparecer en el mapa" y la ciudad de Ajustes.
-- Para agregar un amigo: añade un objeto al arreglo `AMIGOS` con `lat`, `lon` y `estado` (slug).
+- Usa Tailwind por CDN; colores y tipografías del sistema "Cuaderno & Tinta" están en el
+  bloque `tailwind.config` dentro del `<head>` de cada página.
+- Todo se guarda en `localStorage` del navegador (solo en ese dispositivo):
+  `dt-paginas`, `dt-borrador`, `dt-animo`, `dt-terapia`, `dt-ajustes`.
+- Es un prototipo: no hay servidor. Los mensajes a la terapeuta no se envían a nadie todavía,
+  y "PIN" o "cerrar sesión por inactividad" solo se guardan como preferencia.
+- Para producción harían falta autenticación, cifrado y un backend que cumpla la normativa de
+  datos de salud (en México, la LFPDPPP trata la salud como dato personal sensible).
+- La terapeuta "Psic. Elena Ruiz" y su agenda son datos de ejemplo.
 
 ## Publicación en Render
 Sitio estático: Render sirve la carpeta raíz tal cual (sin paso de compilación).
