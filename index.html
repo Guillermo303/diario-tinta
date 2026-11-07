@@ -6,13 +6,13 @@
     }
   </style>
   <style>
-  /* Plantilla sin código: las cintas cambian de página con #terapia / #diario */
+  /* Plantilla sin código: las cintas cambian de página con #psicologos / #diario */
   .tab { color: #55433e; }
-  #tab-left, html:has(#terapia:target) #tab-right { background:#fff; color:#94452c; box-shadow:0 2px 8px rgba(44,40,37,.06); }
-  html:has(#terapia:target) #tab-left { background:transparent; color:#55433e; box-shadow:none; }
+  #tab-left, html:has(#psicologos:target) #tab-right { background:#fff; color:#94452c; box-shadow:0 2px 8px rgba(44,40,37,.06); }
+  html:has(#psicologos:target) #tab-left { background:transparent; color:#55433e; box-shadow:none; }
   @media (max-width: 767px) {
-    html:has(#terapia:target) #page-left { display:none; }
-    html:has(#terapia:target) #page-right { display:flex; }
+    html:has(#psicologos:target) #page-left { display:none; }
+    html:has(#psicologos:target) #page-right { display:flex; }
   }
 </style></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased flex flex-col min-h-screen">
 <style>
@@ -26,7 +26,7 @@
 </style>
 <header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(44,40,37,0.04)]"><div class="h-16 px-margin-mobile flex items-center justify-between max-w-[1200px] mx-auto"><div class="flex items-center gap-space-sm min-w-0"><span aria-label="Diario &amp; Tinta" role="img" class="h-9 w-9 flex-shrink-0 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-sm"><span class="material-symbols-outlined text-[20px]">ink_pen</span></span><div class="flex flex-col min-w-0"><span class="font-headline-sm text-headline-sm text-primary tracking-tight truncate leading-tight">Mi Diario</span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider truncate flex items-center gap-1"><span class="material-symbols-outlined text-[13px]">lock</span> Privado y confidencial</span></div></div><a class="min-w-[44px] min-h-[44px] flex items-center justify-center p-1 rounded-full transition-transform active:scale-95" href="ajustes.html" aria-label="Ajustes"><img alt="" class="w-8 h-8 rounded-full object-cover shadow-[0_1px_4px_rgba(44,40,37,0.12)]" src="img/foto-02.jpg"></a></div></header>
 
-<span id="terapia" class="absolute top-0" aria-hidden="true"></span><span id="diario" class="absolute top-0" aria-hidden="true"></span><main class="flex-1 flex flex-col relative w-full pt-16 pb-space-lg bg-surface">
+<span id="psicologos" class="absolute top-0" aria-hidden="true"></span><span id="diario" class="absolute top-0" aria-hidden="true"></span><main class="flex-1 flex flex-col relative w-full pt-16 pb-space-lg bg-surface">
 <div class="flex flex-col w-full max-w-[1200px] mx-auto px-margin-mobile md:px-margin pt-space-md gap-space-md">
 
 <!-- Cintas del libro (solo móvil): elegir página -->
@@ -34,9 +34,8 @@
   <a href="#diario" id="tab-left" class="tab flex-1 flex items-center justify-center gap-space-xs py-2 px-space-sm rounded-lg transition-all duration-300">
     <span class="material-symbols-outlined text-[18px]">auto_stories</span><span class="font-label-md text-label-md">Mi diario</span>
   </a>
-  <a href="#terapia" id="tab-right" class="tab flex-1 flex items-center justify-center gap-space-xs py-2 px-space-sm rounded-lg transition-all duration-300">
-    <span class="material-symbols-outlined text-[18px]">psychology</span><span class="font-label-md text-label-md">Terapia</span>
-    <span id="tab-aviso" class="w-2 h-2 rounded-full bg-primary" aria-label="Mensaje nuevo"></span>
+  <a href="#psicologos" id="tab-right" class="tab flex-1 flex items-center justify-center gap-space-xs py-2 px-space-sm rounded-lg transition-all duration-300">
+    <span class="material-symbols-outlined text-[18px]">person_search</span><span class="font-label-md text-label-md">Psicólogos</span>
   </a>
 </div>
 
@@ -106,6 +105,31 @@
       </a>
     </div>
 
+    <!-- Tú y tu terapeuta (resumen) -->
+    <div class="relative rounded-xl border border-outline-variant/70 bg-surface-container-low p-space-sm flex flex-col gap-space-sm" aria-labelledby="t-terapia">
+      <div class="flex items-center gap-space-sm">
+        <div class="w-10 h-10 flex-shrink-0 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center font-label-lg text-label-lg shadow-sm" aria-hidden="true">ER</div>
+        <div class="min-w-0 flex-1">
+          <p id="t-terapia" class="font-label-sm text-label-sm text-tertiary uppercase tracking-widest flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">lock</span> Tú y tu terapeuta</p>
+          <p class="font-label-lg text-label-lg text-on-surface truncate">Psic. Elena Ruiz</p>
+        </div>
+        <div class="text-right flex-shrink-0">
+          <p class="font-label-sm text-label-sm text-on-surface-variant">Próxima sesión</p>
+          <p class="font-label-md text-label-md text-primary">Jue 13 nov · 17:00</p>
+        </div>
+      </div>
+      <div class="flex flex-col gap-1">
+        <div class="self-start max-w-[92%] px-3 py-2 rounded-2xl burbuja-ella bg-surface-container-lowest font-body-sm text-body-sm text-on-surface">Qué bueno que lo intentaste. Si quieres, comparte una de esas páginas y la revisamos el jueves.</div>
+        <span class="font-label-sm text-label-sm text-outline px-1 flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span> Elena · Mensaje nuevo · 3 nov</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <label for="t-texto" class="sr-only">Escribe a tu terapeuta</label>
+        <input id="t-texto" type="text" placeholder="Responder a Elena…" class="flex-1 min-w-0 rounded-full border-0 bg-surface-container-lowest px-3 py-2 font-body-sm text-body-sm text-on-surface focus:ring-2 focus:ring-primary placeholder:text-outline">
+        <button type="button" class="h-9 w-9 flex-shrink-0 rounded-full bg-primary text-on-primary shadow-sm flex items-center justify-center" aria-label="Enviar mensaje"><span class="material-symbols-outlined text-[18px]">send</span></button>
+      </div>
+      <p class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px] text-error">emergency</span> ¿En crisis? Línea de la Vida <a href="tel:8009112000" class="font-semibold text-on-surface underline">800 911 2000</a> o <a href="tel:911" class="font-semibold text-on-surface underline">911</a></p>
+    </div>
+
     <!-- Páginas recientes -->
     <div class="flex flex-col gap-space-xs">
       <div class="flex items-center justify-between px-1">
@@ -125,58 +149,130 @@
     </div>
   </section>
 
-  <!-- ===================== PÁGINA DERECHA: TERAPIA ===================== -->
-  <section id="page-right" class="hidden md:flex flex-col gap-space-md w-full bg-surface-container-lowest rounded-lg p-space-md hoja relative" aria-labelledby="t-terapia">
+  <!-- ===================== PÁGINA DERECHA: PSICÓLOGOS COMPATIBLES ===================== -->
+  <section id="page-right" class="hidden md:flex flex-col gap-space-md w-full bg-surface-container-lowest rounded-lg p-space-md hoja relative" aria-labelledby="t-psicologos">
     <div class="absolute -top-2 right-8 w-20 h-5 bg-tertiary-fixed/60 rotate-2 rounded-sm pointer-events-none"></div>
     <div class="flex flex-col pt-1">
-      <span class="font-label-sm text-label-sm text-tertiary uppercase tracking-widest flex items-center gap-1"><span class="material-symbols-outlined text-[15px]">lock</span> Espacio confidencial</span>
-      <h2 id="t-terapia" class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mt-1">Tú y tu terapeuta</h2>
+      <span class="font-label-sm text-label-sm text-tertiary uppercase tracking-widest flex items-center gap-1"><span class="material-symbols-outlined text-[15px]">person_search</span> Encuentra apoyo</span>
+      <h2 id="t-psicologos" class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mt-1">Psicólogos para ti</h2>
     </div>
 
-    <!-- Terapeuta + próxima sesión -->
-    <div class="flex items-center gap-space-sm p-space-sm rounded-xl bg-surface-container-low">
-      <div class="w-11 h-11 flex-shrink-0 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center font-headline-sm text-headline-sm shadow-sm" aria-hidden="true">ER</div>
-      <div class="min-w-0 flex-1">
-        <p class="font-label-lg text-label-lg text-on-surface">Psic. Elena Ruiz</p>
-        <p class="font-body-sm text-body-sm text-on-surface-variant truncate">Responde lun–vie, 9:00–19:00</p>
-      </div>
-      <div class="text-right flex-shrink-0">
-        <p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Próxima sesión</p>
-        <p class="font-label-md text-label-md text-primary">Jue 13 nov · 17:00</p>
+    <!-- Situación actual -->
+    <div class="rounded-xl bg-secondary-fixed/40 p-space-sm flex flex-col gap-1.5">
+      <p class="font-label-md text-label-md text-on-surface flex items-center gap-1.5"><span class="material-symbols-outlined text-[18px] text-secondary">insights</span> Según lo que compartiste esta semana</p>
+      <div class="flex flex-wrap gap-1.5">
+        <span class="px-2 py-1 rounded-full bg-surface-container-lowest font-label-md text-label-md text-on-surface">🌧️ Ánimo bajo 4 de 7 días</span>
+        <span class="px-2 py-1 rounded-full bg-surface-container-lowest font-label-md text-label-md text-on-surface">💼 Estrés por el trabajo</span>
+        <span class="px-2 py-1 rounded-full bg-surface-container-lowest font-label-md text-label-md text-on-surface">🌙 Duermes poco</span>
       </div>
     </div>
 
-    <!-- Conversación -->
-    <div class="flex flex-col rounded-xl border border-outline-variant/60 overflow-hidden">
-      <div class="px-space-sm py-1.5 border-b border-dashed border-outline-variant flex items-center justify-between">
-        <span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[15px] text-tertiary">encrypted</span> Solo tú y ella pueden leer esto</span>
-        <span id="t-total" class="font-label-sm text-label-sm text-outline">3 mensajes</span>
-      </div>
-      <ol id="hilo" class="flex flex-col gap-space-sm p-space-sm" aria-live="polite" aria-label="Mensajes"><li class="flex flex-col max-w-[85%] self-start items-start"><div class="px-3.5 py-2.5 rounded-2xl font-body-md text-body-md whitespace-pre-line burbuja-ella bg-surface-container text-on-surface">Hola, te escribo para recordarte que puedes usar este espacio entre sesiones. Respondo en horario laboral; no es un canal de emergencias.</div>
-        <span class="font-label-sm text-label-sm text-outline mt-1 px-1">Elena · 1 nov, 07:07 a.m.</span></li><li class="flex flex-col max-w-[85%] self-end items-end"><div class="px-3.5 py-2.5 rounded-2xl font-body-md text-body-md whitespace-pre-line burbuja-yo bg-primary text-on-primary">Gracias. Esta semana probé escribir antes de dormir, como acordamos. Me ayudó a ordenar lo del trabajo.</div>
-        <span class="font-label-sm text-label-sm text-outline mt-1 px-1">Tú · 3 nov, 07:07 a.m.</span></li><li class="flex flex-col max-w-[85%] self-start items-start"><div class="px-3.5 py-2.5 rounded-2xl font-body-md text-body-md whitespace-pre-line burbuja-ella bg-surface-container text-on-surface">Qué bueno que lo intentaste. Si quieres, comparte una de esas páginas y la revisamos el jueves.</div>
-        <span class="font-label-sm text-label-sm text-outline mt-1 px-1">Elena · 3 nov, 10:07 a.m.</span></li></ol>
-      <div id="t-form" class="border-t border-outline-variant/60 p-space-sm flex items-end gap-2 bg-surface-container-low/60">
-        <label for="t-texto" class="sr-only">Escribe un mensaje</label>
-        <textarea id="t-texto" rows="1" maxlength="1000" placeholder="Escribe a tu terapeuta…" class="flex-1 rounded-xl border-0 bg-surface-container-lowest px-3 py-2.5 font-body-md text-body-md text-on-surface resize-none focus:ring-2 focus:ring-primary placeholder:text-outline max-h-40" style="height: 44px;"></textarea>
-        <button id="t-enviar" type="submit" class="h-11 w-11 flex-shrink-0 rounded-full bg-primary text-on-primary shadow-md flex items-center justify-center hover:bg-on-primary-fixed-variant active:scale-95 transition-all disabled:opacity-40" aria-label="Enviar mensaje" disabled="">
-          <span class="material-symbols-outlined text-[20px]">send</span>
-        </button>
-      </div>
-    </div>
+    <!-- Mini mapa -->
+    <figure class="rounded-xl bg-surface-container-low p-space-sm">
+      <svg viewBox="0 0 400 260" class="w-full h-auto" role="img" aria-label="Mapa de México: tú estás en Torreón; los psicólogos están en Torreón, Gómez Palacio y Monterrey, y tu terapeuta en la Ciudad de México">
+        <path d="M256.5 100.7 L251.9 112.0 L249.9 121.3 L249.0 138.6 L247.8 144.9 L249.9 152.0 L253.6 158.2 L256.0 168.3 L263.8 177.9 L266.6 185.2 L271.3 191.6 L283.9 195.0 L288.8 200.4 L299.2 196.8 L308.3 195.5 L317.1 193.2 L324.6 191.0 L332.2 185.7 L335.0 178.2 L336.0 167.3 L338.0 163.6 L346.1 160.2 L358.6 157.2 L369.2 157.6 L376.4 156.5 L379.2 159.3 L378.8 165.5 L372.4 173.2 L369.6 181.0 L371.8 183.3 L370.0 188.8 L367.0 198.9 L364.0 195.6 L361.5 195.8 L359.3 196.0 L355.0 203.8 L352.9 202.2 L351.4 202.8 L351.5 204.7 L340.5 204.6 L329.4 204.6 L329.4 211.9 L324.1 211.9 L328.5 216.2 L332.9 219.2 L334.2 222.0 L336.1 222.8 L335.8 227.2 L320.6 227.2 L314.9 237.7 L316.6 240.1 L315.2 243.2 L314.9 246.9 L301.4 233.0 L295.3 228.8 L285.6 225.5 L279.0 226.4 L269.4 231.3 L263.5 232.5 L255.1 229.1 L246.2 226.7 L235.1 220.8 L226.2 219.0 L212.7 213.0 L202.8 206.8 L199.8 203.3 L193.1 202.6 L181.0 198.5 L176.0 192.6 L163.3 185.3 L157.3 177.1 L154.5 170.9 L158.5 169.6 L157.2 165.9 L160.0 162.6 L160.0 158.1 L156.0 152.3 L154.9 147.2 L151.0 140.7 L140.5 127.8 L128.6 117.8 L122.8 109.7 L112.6 104.4 L110.4 101.3 L112.2 93.3 L106.2 90.3 L99.1 84.0 L96.2 75.0 L89.8 74.0 L82.9 67.2 L77.3 60.9 L76.8 56.9 L70.4 47.1 L66.2 37.3 L66.4 32.3 L57.8 27.2 L53.8 27.8 L47.1 24.2 L45.2 29.4 L47.1 35.6 L48.3 45.3 L52.4 50.6 L61.2 59.5 L63.1 62.6 L64.9 63.5 L66.5 67.9 L68.6 67.7 L71.0 76.1 L74.6 79.3 L77.1 83.9 L84.6 90.5 L88.5 102.5 L92.1 108.1 L95.4 114.2 L96.0 121.0 L101.7 121.4 L106.5 127.3 L110.8 133.0 L110.5 135.3 L105.5 140.1 L103.4 140.0 L100.3 132.2 L92.5 124.8 L84.0 118.6 L77.9 115.3 L78.3 105.9 L76.5 98.9 L70.8 94.9 L62.6 89.1 L61.1 90.8 L58.1 87.4 L50.8 84.3 L43.8 76.8 L44.6 75.8 L49.5 76.6 L53.9 71.7 L54.4 65.9 L45.2 56.7 L38.2 53.1 L33.9 45.1 L29.5 36.6 L24.0 26.3 L19.1 14.7 L32.6 13.7 L47.7 12.3 L46.6 14.8 L64.5 21.1 L91.6 30.2 L115.3 30.1 L124.7 30.1 L124.7 24.8 L145.3 24.8 L149.6 29.4 L155.7 33.4 L162.7 39.1 L166.7 45.8 L169.6 52.9 L175.8 56.8 L185.6 60.7 L193.1 50.5 L202.8 50.3 L211.2 55.4 L217.2 64.2 L221.3 71.8 L228.3 79.2 L230.9 88.2 L234.2 94.3 L243.5 98.3 L251.9 101.1 L256.5 100.7 Z" fill="#f5ece7" stroke="#dbc1ba" stroke-width="1.2" stroke-linejoin="round"/>
+        <!-- Zona de La Laguna -->
+        <circle cx="181.5" cy="104.8" r="16" fill="#94452c" fill-opacity=".08" stroke="#94452c" stroke-opacity=".35" stroke-dasharray="3 3"/>
+        <!-- Líneas desde ti -->
+        <g stroke="#88726c" stroke-width="1" stroke-dasharray="2 3" fill="none">
+          <path d="M182 105 L218.8 103"/><path d="M182 105 L232.9 183.8"/>
+        </g>
+        <g><circle cx="218.8" cy="103" r="7" class="fill-tertiary-container stroke-white" stroke-width="2"/><text x="218.8" y="106.2" text-anchor="middle" font-size="8.5" font-weight="700" class="fill-white" font-family="Plus Jakarta Sans, sans-serif">3</text></g>
+        <g><circle cx="171" cy="99" r="7" class="fill-secondary stroke-white" stroke-width="2"/><text x="171" y="102.2" text-anchor="middle" font-size="8.5" font-weight="700" class="fill-white" font-family="Plus Jakarta Sans, sans-serif">2</text></g>
+        <g><circle cx="192" cy="96" r="7" class="fill-primary stroke-white" stroke-width="2"/><text x="192" y="99.2" text-anchor="middle" font-size="8.5" font-weight="700" class="fill-white" font-family="Plus Jakarta Sans, sans-serif">1</text></g>
+        <g><circle cx="232.9" cy="183.8" r="8.5" fill="#496344" stroke="#fff" stroke-width="2"/><text x="232.9" y="186.8" text-anchor="middle" font-size="7.5" font-weight="700" fill="#fff" font-family="Plus Jakarta Sans, sans-serif">ER</text></g>
+        <!-- Tú -->
+        <g><circle cx="182" cy="105" r="11" fill="#94452c" fill-opacity=".18"/><circle cx="182" cy="105" r="4.5" fill="#1e1b18" stroke="#fff" stroke-width="2"/></g>
+        <g font-family="Plus Jakarta Sans, sans-serif" font-size="10" fill="#55433e">
+          <text x="150" y="128" font-weight="700" fill="#1e1b18">Tú · Torreón</text>
+          <text x="228" y="96">Monterrey</text>
+          <text x="242" y="187">CDMX</text>
+        </g>
+      </svg>
+      <figcaption class="flex flex-wrap gap-x-4 gap-y-1 px-1 pt-1 font-label-sm text-label-sm text-on-surface-variant">
+        <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-on-surface"></span> Tú</span>
+        <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-primary"></span> Psicólogos recomendados (1–3)</span>
+        <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-tertiary"></span> Tu terapeuta actual</span>
+      </figcaption>
+    </figure>
 
-    <!-- Compartido -->
-    <div class="flex flex-col gap-1">
-      <span class="font-label-md text-label-md text-on-surface flex items-center gap-1.5"><span class="material-symbols-outlined text-[18px] text-secondary">folder_shared</span> Lo que le has compartido</span>
-      <ul id="compartidas" class="flex flex-wrap gap-1.5 mt-1"><li class="inline-flex items-center gap-1 max-w-full px-2 py-1 rounded-full bg-surface-container font-label-md text-label-md text-on-surface"><span class="material-symbols-outlined text-[15px] text-secondary">description</span><span class="truncate">Lluvia en Coyoacán</span></li><li class="inline-flex items-center gap-1 max-w-full px-2 py-1 rounded-full bg-surface-container font-label-md text-label-md text-on-surface"><span class="material-symbols-outlined text-[15px] text-secondary">description</span><span class="truncate">Cuaderno de amate</span></li></ul>
-      <p id="compartidas-vacio" class="hidden font-body-sm text-body-sm italic text-outline">Aún no compartes nada. Marca "Mi terapeuta" al guardar una página.</p>
-    </div>
+    <!-- Recomendaciones -->
+    <ol class="flex flex-col gap-space-sm" aria-label="Psicólogos recomendados">
+      <li class="rounded-xl border border-outline-variant/70 p-space-sm flex flex-col gap-space-sm bg-surface-container-low">
+        <div class="flex items-start gap-space-sm">
+          <div class="relative w-11 h-11 flex-shrink-0 rounded-full bg-primary text-on-primary flex items-center justify-center font-label-lg text-label-lg shadow-sm" aria-hidden="true">LM
+            <span class="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-surface-container-lowest text-primary border border-primary font-label-sm text-[10px] flex items-center justify-center">1</span></div>
+          <div class="min-w-0 flex-1">
+            <p class="font-label-lg text-label-lg text-on-surface">Psic. Laura Méndez</p>
+            <p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[15px]">location_on</span>Torreón, Coah. · a 3 km de ti</p>
+          </div>
+          <div class="flex-shrink-0 text-right">
+            <p class="font-headline-sm text-headline-sm text-tertiary leading-none">96 %</p>
+            <p class="font-label-sm text-label-sm text-on-surface-variant">compatible</p>
+          </div>
+        </div>
+        <div class="rounded-lg bg-tertiary-fixed/40 px-3 py-2">
+          <p class="font-label-sm text-label-sm text-tertiary uppercase tracking-wider">En qué te puede ayudar</p>
+          <p class="font-body-sm text-body-sm text-on-surface mt-0.5">Trabaja la autocrítica y las rachas de ánimo bajo como las que registraste esta semana. Te puede ayudar a recuperar una rutina de sueño.</p>
+        </div>
+        <div class="flex flex-wrap gap-1"><span class="px-2 py-0.5 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface-variant">Depresión</span><span class="px-2 py-0.5 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface-variant">Terapia cognitivo-conductual</span><span class="px-2 py-0.5 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface-variant">Sueño</span></div>
+        <div class="flex items-center justify-between gap-2 flex-wrap">
+          <p class="font-body-sm text-body-sm text-on-surface-variant">Presencial y en línea · <b class="text-on-surface">$550</b>/sesión · Libre: Mañana, 18:00</p>
+          <button type="button" class="py-1.5 px-3 rounded-lg bg-primary text-on-primary font-label-md text-label-md flex items-center gap-1 shadow-sm"><span class="material-symbols-outlined text-[16px]">videocam</span> Llamada de 15 min</button>
+        </div>
+      </li>
+      <li class="rounded-xl border border-outline-variant/70 p-space-sm flex flex-col gap-space-sm">
+        <div class="flex items-start gap-space-sm">
+          <div class="relative w-11 h-11 flex-shrink-0 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-label-lg text-label-lg shadow-sm" aria-hidden="true">AV
+            <span class="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-surface-container-lowest text-primary border border-primary font-label-sm text-[10px] flex items-center justify-center">2</span></div>
+          <div class="min-w-0 flex-1">
+            <p class="font-label-lg text-label-lg text-on-surface">Psic. Andrés Villarreal</p>
+            <p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[15px]">location_on</span>Gómez Palacio, Dgo. · a 9 km de ti</p>
+          </div>
+          <div class="flex-shrink-0 text-right">
+            <p class="font-headline-sm text-headline-sm text-tertiary leading-none">91 %</p>
+            <p class="font-label-sm text-label-sm text-on-surface-variant">compatible</p>
+          </div>
+        </div>
+        <div class="rounded-lg bg-tertiary-fixed/40 px-3 py-2">
+          <p class="font-label-sm text-label-sm text-tertiary uppercase tracking-wider">En qué te puede ayudar</p>
+          <p class="font-body-sm text-body-sm text-on-surface mt-0.5">Se especializa en estrés y agotamiento por el trabajo, el tema que más aparece en tus páginas. Te ayuda a poner límites y a bajar la presión.</p>
+        </div>
+        <div class="flex flex-wrap gap-1"><span class="px-2 py-0.5 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface-variant">Estrés laboral</span><span class="px-2 py-0.5 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface-variant">Ansiedad</span><span class="px-2 py-0.5 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface-variant">Aceptación y compromiso</span></div>
+        <div class="flex items-center justify-between gap-2 flex-wrap">
+          <p class="font-body-sm text-body-sm text-on-surface-variant">Presencial · <b class="text-on-surface">$500</b>/sesión · Libre: Lun 10 nov, 17:00</p>
+          <button type="button" class="py-1.5 px-3 rounded-lg bg-secondary-fixed text-on-secondary-fixed font-label-md text-label-md flex items-center gap-1 shadow-sm"><span class="material-symbols-outlined text-[16px]">videocam</span> Llamada de 15 min</button>
+        </div>
+      </li>
+      <li class="rounded-xl border border-outline-variant/70 p-space-sm flex flex-col gap-space-sm">
+        <div class="flex items-start gap-space-sm">
+          <div class="relative w-11 h-11 flex-shrink-0 rounded-full bg-tertiary-container text-on-tertiary-container flex items-center justify-center font-label-lg text-label-lg shadow-sm" aria-hidden="true">SG
+            <span class="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-surface-container-lowest text-primary border border-primary font-label-sm text-[10px] flex items-center justify-center">3</span></div>
+          <div class="min-w-0 flex-1">
+            <p class="font-label-lg text-label-lg text-on-surface">Mtra. Sofía Garza</p>
+            <p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[15px]">location_on</span>Monterrey, N.L. · en línea</p>
+          </div>
+          <div class="flex-shrink-0 text-right">
+            <p class="font-headline-sm text-headline-sm text-tertiary leading-none">87 %</p>
+            <p class="font-label-sm text-label-sm text-on-surface-variant">compatible</p>
+          </div>
+        </div>
+        <div class="rounded-lg bg-tertiary-fixed/40 px-3 py-2">
+          <p class="font-label-sm text-label-sm text-tertiary uppercase tracking-wider">En qué te puede ayudar</p>
+          <p class="font-body-sm text-body-sm text-on-surface mt-0.5">Usa mindfulness para la ansiedad nocturna y los pensamientos que no te dejan dormir. Buena opción si prefieres sesiones desde casa.</p>
+        </div>
+        <div class="flex flex-wrap gap-1"><span class="px-2 py-0.5 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface-variant">Ansiedad</span><span class="px-2 py-0.5 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface-variant">Mindfulness</span><span class="px-2 py-0.5 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface-variant">Insomnio</span></div>
+        <div class="flex items-center justify-between gap-2 flex-wrap">
+          <p class="font-body-sm text-body-sm text-on-surface-variant">Solo en línea · <b class="text-on-surface">$600</b>/sesión · Libre: Hoy, 20:30</p>
+          <button type="button" class="py-1.5 px-3 rounded-lg bg-secondary-fixed text-on-secondary-fixed font-label-md text-label-md flex items-center gap-1 shadow-sm"><span class="material-symbols-outlined text-[16px]">videocam</span> Llamada de 15 min</button>
+        </div>
+      </li>
+    </ol>
 
-    <!-- Crisis -->
-    <div class="rounded-xl p-space-sm bg-error-container/50 border border-error/20">
-      <p class="font-label-md text-label-md text-on-error-container flex items-center gap-1.5"><span class="material-symbols-outlined text-[18px]">emergency</span> Este chat no es para emergencias</p>
-      <p class="font-body-sm text-body-sm text-on-error-container mt-1">Si estás en crisis o en peligro, llama a la <a href="tel:8009112000" class="font-semibold underline">Línea de la Vida 800 911 2000</a> o al <a href="tel:911" class="font-semibold underline">911</a>.</p>
-    </div>
+    <p class="flex items-start gap-1.5 font-body-sm text-body-sm text-on-surface-variant">
+      <span class="material-symbols-outlined text-[16px] text-tertiary mt-0.5">verified_user</span>
+      La IA sugiere según tu ánimo y lo que compartes; tú eliges. Ningún psicólogo ve tu diario hasta que tú lo decidas.
+    </p>
   </section>
 
   </div>
