@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { Chip, Encabezado, Icono, useAviso } from '../components/ui';
-import { MapaMexico, TarjetaPsicologo } from '../components/Psicologos';
+import { Encabezado, Icono, useAviso } from '../components/ui';
+import { MapaMexico, Resena } from '../components/Psicologos';
 import { ALTERNATIVOS, OTRAS_AYUDAS, PSICOLOGOS, SITUACION } from '../data/ejemplo';
 
 export default function PsicologosPage() {
@@ -20,53 +20,58 @@ export default function PsicologosPage() {
   };
 
   return (
-    <div className="flex flex-col gap-6">
+    <div className="flex flex-col gap-5">
       <Encabezado etiqueta="Encuentra apoyo" titulo="Psicólogos para ti">
-        Las recomendaciones cambian según cómo te sientes, de qué hablas y cómo te va con cada psicólogo. Tú eliges.
+        Te recomendamos psicólogos cerca de ti según cómo te has sentido. Tú eliges.
       </Encabezado>
 
-      {bannerVisible && (
-        <div role="status" className="aparece flex items-start gap-3 rounded-2xl border border-primario/25 bg-primario-suave/60 p-4">
-          <Icono nombre="autorenew" className="mt-0.5 text-[22px] text-primario" />
-          <div className="min-w-0 flex-1">
-            <p className="font-bold">Tus recomendaciones cambiaron</p>
-            <p className="text-[14px] text-gris">Esta semana hablaste más de <b className="text-tinta">sueño</b> y menos de pareja. Subimos a especialistas en insomnio y ansiedad nocturna.</p>
-            <p className="mt-1 text-[12px] text-tenue">Actualizado hoy, 8:15 · Antes: 1. Andrés V. · 2. Laura M. · 3. Sofía G.</p>
-          </div>
-          <button type="button" onClick={() => setBannerVisible(false)} aria-label="Cerrar aviso" className="rounded-full p-1 text-gris hover:bg-white/60"><Icono nombre="close" className="text-[20px]" /></button>
-        </div>
-      )}
+      {/* Aviso y situación en una sola franja */}
+      <div className="flex flex-wrap items-center gap-2 text-[13px]">
+        <span className="font-bold text-gris">Según tu diario de esta semana:</span>
+        {SITUACION.map(s => (
+          <span key={s.txt} className="inline-flex items-center gap-1 rounded-full bg-suave px-2.5 py-1 font-semibold"><Icono nombre={s.icono} className="text-[15px] text-gris" />{s.txt}</span>
+        ))}
+        {bannerVisible && (
+          <span role="status" className="aparece inline-flex items-center gap-1.5 rounded-full bg-primario-suave px-2.5 py-1 font-semibold text-primario-oscuro">
+            <Icono nombre="autorenew" className="text-[15px]" /> Actualizado hoy: subimos especialistas en sueño
+            <button type="button" onClick={() => setBannerVisible(false)} aria-label="Cerrar aviso" className="rounded-full hover:bg-white/60"><Icono nombre="close" className="text-[15px]" /></button>
+          </span>
+        )}
+      </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-        <aside className="lg:col-span-5 flex flex-col gap-4 lg:sticky lg:top-8">
-          <section className="tarjeta p-4 flex flex-col gap-3" aria-labelledby="t-situacion">
-            <h2 id="t-situacion" className="text-[14px] font-bold text-gris">Según tu diario de esta semana</h2>
-            <div className="flex flex-wrap gap-1.5">{SITUACION.map(s => <Chip key={s.txt} icono={s.icono}>{s.txt}</Chip>)}</div>
-          </section>
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start">
+        {/* Mapa grande */}
+        <div className="lg:col-span-7 lg:sticky lg:top-8">
           <MapaMexico psicologos={lista} seleccionado={sel} onSeleccionar={setSel} />
-          <section className="flex flex-col gap-2" aria-labelledby="t-otras">
-            <h2 id="t-otras" className="etiqueta px-1">Otras ayudas para tu momento</h2>
-            {OTRAS_AYUDAS.map(o => (
-              <div key={o.titulo} className="tarjeta flex items-start gap-3 p-3.5">
-                <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-exito-suave text-exito"><Icono nombre={o.icono} /></span>
-                <span><span className="block font-bold">{o.titulo}</span><span className="block text-[13px] text-gris">{o.detalle}</span></span>
-              </div>
-            ))}
-          </section>
-        </aside>
+        </div>
 
-        <div className="lg:col-span-7 flex flex-col gap-4">
-          <ol className="flex flex-col gap-4" aria-label="Psicólogos recomendados">
+        {/* Reseñas compactas */}
+        <section className="lg:col-span-5 flex flex-col gap-3" aria-labelledby="t-resenas">
+          <div className="flex items-end justify-between gap-2">
+            <h2 id="t-resenas" className="text-lg font-extrabold">Reseñas</h2>
+            <span className="text-[12px] text-tenue">De pacientes verificados</span>
+          </div>
+          <ol className="flex flex-col gap-2.5" aria-label="Psicólogos recomendados">
             {lista.map((p, i) => (
-              <TarjetaPsicologo key={p.id} p={p} n={i + 1} seleccionado={sel === p.id} onSeleccionar={setSel} onOtra={otra}
-                onAgendar={x => aviso(`Llamada con ${x.nombre} solicitada (ejemplo)`)} />
+              <Resena key={p.id} p={p} n={i + 1} seleccionado={sel === p.id} onSeleccionar={setSel} onOtra={otra}
+                onAgendar={x => aviso(`Llamada de 15 min con ${x.nombre} solicitada (ejemplo)`)} />
             ))}
           </ol>
-          <p className="flex items-start gap-2 text-[13px] text-gris">
-            <Icono nombre="verified_user" className="text-[18px] text-primario" />
-            Ningún psicólogo puede pagar para aparecer más arriba ni ve tu diario hasta que tú lo decidas.
+          <p className="flex items-start gap-1.5 text-[12px] text-gris">
+            <Icono nombre="verified_user" className="text-[16px] text-primario" />
+            Toca un nombre para ver más. Nadie paga por aparecer más arriba.
           </p>
-        </div>
+
+          <div className="mt-1 flex flex-col gap-1.5">
+            <h3 className="etiqueta">Otras ayudas</h3>
+            {OTRAS_AYUDAS.map(o => (
+              <div key={o.titulo} className="flex items-center gap-2.5 rounded-xl bg-suave/70 px-3 py-2 text-[13px]">
+                <Icono nombre={o.icono} className="text-[18px] text-exito" />
+                <span className="min-w-0"><b>{o.titulo}</b> <span className="text-gris">· {o.detalle}</span></span>
+              </div>
+            ))}
+          </div>
+        </section>
       </div>
     </div>
   );

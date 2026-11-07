@@ -60,21 +60,21 @@ export const SITUACION = [
 
 export const PSICOLOGOS = [
   {
-    id: 'lm', iniciales: 'LM', nombre: 'Psic. Laura Méndez', ciudad: 'torreon', lugar: 'Torreón, Coah.', distancia: 'a 3 km', modo: 'Presencial y en línea',
+    id: 'lm', estrellas: 4.9, resenas: 38, resena: { texto: 'Me ayudó a volver a dormir sin pastillas. Explica todo con calma.', autor: 'Paciente de 27 años' }, iniciales: 'LM', nombre: 'Psic. Laura Méndez', ciudad: 'torreon', lugar: 'Torreón, Coah.', distancia: 'a 3 km', modo: 'Presencial y en línea',
     compat: 96, precio: 550, libre: 'Mañana, 18:00', color: 'bg-primario',
     ayuda: 'Trabaja la autocrítica y el cansancio que registraste esta semana, y te ayuda a recuperar una rutina de sueño.',
     enfoques: ['Depresión', 'Cognitivo-conductual', 'Sueño'],
     razones: ['Mencionaste el sueño 5 veces esta semana.', 'Registraste cansancio y ansiedad; trabaja ambos.', 'Está a 3 km y tiene horario después del trabajo.'],
   },
   {
-    id: 'av', iniciales: 'AV', nombre: 'Psic. Andrés Villarreal', ciudad: 'gomez', lugar: 'Gómez Palacio, Dgo.', distancia: 'a 9 km', modo: 'Presencial',
+    id: 'av', estrellas: 4.8, resenas: 52, resena: { texto: 'Práctico y directo; por fin aprendí a decir que no en el trabajo.', autor: 'Paciente de 31 años' }, iniciales: 'AV', nombre: 'Psic. Andrés Villarreal', ciudad: 'gomez', lugar: 'Gómez Palacio, Dgo.', distancia: 'a 9 km', modo: 'Presencial',
     compat: 91, precio: 500, libre: 'Lun 10 nov, 17:00', color: 'bg-azul',
     ayuda: 'Se especializa en estrés y agotamiento laboral, el tema que más aparece en tus notas. Te ayuda a poner límites.',
     enfoques: ['Estrés laboral', 'Ansiedad', 'Aceptación y compromiso'],
     razones: ['El trabajo sigue siendo tu tema principal.', 'Calificaste con 5/5 tu llamada con él.', 'Bajó al lugar 2 porque esta semana pesó más el sueño.'],
   },
   {
-    id: 'sg', iniciales: 'SG', nombre: 'Mtra. Sofía Garza', ciudad: 'monterrey', lugar: 'Monterrey, N.L.', distancia: 'en línea', modo: 'Solo en línea',
+    id: 'sg', estrellas: 4.7, resenas: 24, resena: { texto: 'Las sesiones en línea me quedan perfectas de noche.', autor: 'Paciente de 22 años' }, iniciales: 'SG', nombre: 'Mtra. Sofía Garza', ciudad: 'monterrey', lugar: 'Monterrey, N.L.', distancia: 'en línea', modo: 'Solo en línea',
     compat: 87, precio: 600, libre: 'Hoy, 20:30', color: 'bg-lila',
     ayuda: 'Usa mindfulness para la ansiedad nocturna y los pensamientos que no te dejan dormir. Sesiones desde casa.',
     enfoques: ['Ansiedad', 'Mindfulness', 'Insomnio'],
@@ -85,14 +85,14 @@ export const PSICOLOGOS = [
 // Opciones de reemplazo cuando la persona pide "ver otra opción".
 export const ALTERNATIVOS = [
   {
-    id: 'dO', iniciales: 'DO', nombre: 'Psic. Daniel Ortega', ciudad: 'saltillo', lugar: 'Saltillo, Coah.', distancia: 'en línea', modo: 'En línea',
+    id: 'dO', estrellas: 4.6, resenas: 17, resena: { texto: 'Sesiones cortas con tareas claras para la semana.', autor: 'Paciente de 25 años' }, iniciales: 'DO', nombre: 'Psic. Daniel Ortega', ciudad: 'saltillo', lugar: 'Saltillo, Coah.', distancia: 'en línea', modo: 'En línea',
     compat: 84, precio: 480, libre: 'Mié 12 nov, 19:00', color: 'bg-ambar',
     ayuda: 'Acompaña a adultos jóvenes con ansiedad y presión laboral, con sesiones breves y tareas concretas.',
     enfoques: ['Ansiedad', 'Adultos jóvenes', 'Breve'],
     razones: ['Prefieres sesiones cortas y prácticas.', 'Atiende en tu horario disponible.', 'Precio dentro de tu presupuesto.'],
   },
   {
-    id: 'mr', iniciales: 'MR', nombre: 'Psic. Mariana Robles', ciudad: 'guadalajara', lugar: 'Guadalajara, Jal.', distancia: 'en línea', modo: 'En línea',
+    id: 'mr', estrellas: 4.8, resenas: 29, resena: { texto: 'Dejé de ser tan dura conmigo misma.', autor: 'Paciente de 33 años' }, iniciales: 'MR', nombre: 'Psic. Mariana Robles', ciudad: 'guadalajara', lugar: 'Guadalajara, Jal.', distancia: 'en línea', modo: 'En línea',
     compat: 82, precio: 520, libre: 'Vie 14 nov, 9:00', color: 'bg-exito',
     ayuda: 'Terapia centrada en la compasión para la autocrítica y el agotamiento.',
     enfoques: ['Autocrítica', 'Compasión', 'Agotamiento'],
