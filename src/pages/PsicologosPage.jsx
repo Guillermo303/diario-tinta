@@ -40,7 +40,7 @@ export default function PsicologosPage() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
         <aside className="lg:col-span-5 flex flex-col gap-4 lg:sticky lg:top-8">
           <section className="tarjeta p-4 flex flex-col gap-3" aria-labelledby="t-situacion">
-            <h2 id="t-situacion" className="text-[14px] font-bold text-gris">Según tu diario y tus charlas de esta semana</h2>
+            <h2 id="t-situacion" className="text-[14px] font-bold text-gris">Según tu diario de esta semana</h2>
             <div className="flex flex-wrap gap-1.5">{SITUACION.map(s => <Chip key={s.txt} icono={s.icono}>{s.txt}</Chip>)}</div>
           </section>
           <MapaMexico psicologos={lista} seleccionado={sel} onSeleccionar={setSel} />

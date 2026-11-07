@@ -145,7 +145,7 @@ function PsicologosResumen() {
         <span className="flex items-center gap-1 rounded-full bg-primario-suave px-2.5 py-1 text-[12px] font-bold text-primario-oscuro"><Icono nombre="autorenew" className="text-[15px]" /> Actualizado hoy</span>
       </div>
       <div>
-        <p className="mb-2 text-[13px] font-semibold text-gris">Según tu diario y tus charlas de esta semana</p>
+        <p className="mb-2 text-[13px] font-semibold text-gris">Según tu diario de esta semana</p>
         <div className="flex flex-wrap gap-1.5">{SITUACION.map(s => <Chip key={s.txt} icono={s.icono}>{s.txt}</Chip>)}</div>
       </div>
       <div className="rounded-2xl border border-linea p-4 flex flex-col gap-3">
@@ -186,14 +186,6 @@ export default function Hoy() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
         <div className="flex flex-col gap-5">
           <Animo />
-          <Link to="/hablar" className="flex items-center gap-4 rounded-2xl bg-primario p-5 text-white shadow-tarjeta transition hover:bg-primario-oscuro">
-            <span className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-white/15"><Icono nombre="forum" className="text-[26px]" /></span>
-            <span className="min-w-0 flex-1">
-              <span className="block text-[17px] font-extrabold">¿Quieres hablarlo?</span>
-              <span className="block text-[14px] text-white/80">Desahógate con la IA: Escucha, Compañía, Orden o Calma.</span>
-            </span>
-            <Icono nombre="arrow_forward" />
-          </Link>
           <Terapeuta />
         </div>
         <div className="flex flex-col gap-5">

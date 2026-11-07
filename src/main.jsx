@@ -7,7 +7,6 @@ import { ProveedorAvisos } from './components/ui';
 import Layout from './components/Layout';
 import Hoy from './pages/Hoy';
 import PsicologosPage from './pages/PsicologosPage';
-import Hablar from './pages/Hablar';
 import Escribir from './pages/Escribir';
 import Ajustes from './pages/Ajustes';
 import Pacientes from './pages/pro/Pacientes';
@@ -24,7 +23,6 @@ createRoot(document.getElementById('root')).render(
             <Route element={<Layout />}>
               <Route path="hoy" element={<Hoy />} />
               <Route path="psicologos" element={<PsicologosPage />} />
-              <Route path="hablar" element={<Hablar />} />
               <Route path="escribir" element={<Escribir />} />
               <Route path="ajustes" element={<Ajustes />} />
             </Route>
@@ -32,6 +30,7 @@ createRoot(document.getElementById('root')).render(
               <Route index element={<Pacientes />} />
               <Route path="encargado" element={<Encargado />} />
             </Route>
+            <Route path="hablar" element={<Navigate to="/hoy" replace />} />
             <Route path="entrar" element={<Acceso modo="entrar" />} />
             <Route path="registro" element={<Acceso modo="registro" />} />
             <Route path="*" element={<Navigate to="/entrar" replace />} />

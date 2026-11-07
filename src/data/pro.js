@@ -22,7 +22,7 @@ export const SOLICITUDES = [
 ];
 
 export const ALERTAS = [
-  { id: 'a1', paciente: 'Valeria R.', nivel: 'alta', motivo: 'Ánimo bajo 5 días seguidos y una frase de riesgo en su charla con la IA.', hace: 'hace 25 min', limite: 'Revisar antes de 1 h 35 min' },
+  { id: 'a1', paciente: 'Valeria R.', nivel: 'alta', motivo: 'Ánimo bajo 5 días seguidos y una frase de riesgo en una nota de su diario.', hace: 'hace 25 min', limite: 'Revisar antes de 1 h 35 min' },
   { id: 'a2', paciente: 'Daniel C.', nivel: 'media', motivo: 'Dejó de escribir 6 días después de una racha diaria.', hace: 'hace 3 h', limite: 'Revisar hoy' },
 ];
 
@@ -30,8 +30,8 @@ export const PACIENTES = [
   {
     id: 'p1', nombre: 'Valeria R.', iniciales: 'VR', color: 'bg-lila', desde: 'Paciente desde agosto', proxima: 'Hoy, 20:00 · Videollamada',
     animo: ['tristeza', 'tristeza', 'cansancio', 'tristeza', 'ansiedad', 'tristeza', 'tristeza'],
-    compartido: ['Semana de ánimo', 'Nota: "No le encuentro sentido"', 'Resumen de su charla con la IA'],
-    resumen: 'Habla de aislamiento y cansancio. En su charla de anoche dijo que "no tiene caso seguir así". La IA le mostró las líneas de crisis y le ofreció hablar contigo.',
+    compartido: ['Semana de ánimo', 'Nota: "No le encuentro sentido"', 'Resumen de la IA de su semana'],
+    resumen: 'Habla de aislamiento y cansancio. En su nota de anoche escribió que "no tiene caso seguir así". La app le mostró las líneas de crisis y le ofreció hablar contigo.',
     mensajes: [
       { de: 'ella', texto: 'Hola Laura, anoche fue muy difícil. No sé si pueda esperar a la sesión.', fecha: horas(1) },
     ],

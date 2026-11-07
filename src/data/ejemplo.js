@@ -105,53 +105,6 @@ export const OTRAS_AYUDAS = [
   { icono: 'groups', titulo: 'Grupo de apoyo, Torreón', detalle: 'Martes 19:00 · gratuito · con becarios de psicología' },
 ];
 
-export const PERSONALIDADES = [
-  {
-    id: 'escucha', nombre: 'Escucha', icono: 'hearing', color: 'bg-azul-suave text-azul', cuando: 'Solo quiero sacarlo',
-    como: 'Valida lo que sientes y pregunta poco. No da consejos.',
-    charla: [
-      { de: 'ia', texto: 'Aquí estoy. Soy la IA de Diario & Tinta, no una psicóloga. Escribe lo que necesites; solo voy a escucharte.' },
-      { de: 'yo', texto: 'Hoy fue un día pesado. No sé ni por dónde empezar.' },
-      { de: 'ia', texto: 'Está bien no saber por dónde empezar. Puedes ir por partes; lo que salga primero está bien.' },
-    ],
-    respuesta: 'Te leo. Eso que cuentas suena pesado de cargar. Sigue, aquí estoy.',
-  },
-  {
-    id: 'compania', nombre: 'Compañía', icono: 'favorite', color: 'bg-alerta-suave text-alerta', cuando: 'Me siento solo',
-    como: 'Cálida y conversadora. Te acompaña y sigue la plática.',
-    charla: [
-      { de: 'ia', texto: 'Hola, qué bueno que viniste. Soy la IA de Diario & Tinta, no una psicóloga. ¿Cómo estuvo tu día?' },
-      { de: 'yo', texto: 'Algo solitario. Comí sola otra vez y no hablé con nadie.' },
-      { de: 'ia', texto: 'Esos días pesan. Me alegra que me lo cuentes. ¿Hay alguien con quien te gustaría platicar esta semana?' },
-    ],
-    respuesta: 'Gracias por contármelo. Me quedo contigo un rato. ¿Qué es lo que más extrañas de estar con otras personas?',
-  },
-  {
-    id: 'orden', nombre: 'Orden', icono: 'format_list_bulleted', color: 'bg-ambar-suave text-ambar', cuando: 'Tengo todo revuelto',
-    como: 'Te ayuda a separar qué pasó, qué sentiste y qué puedes hacer.',
-    charla: [
-      { de: 'ia', texto: 'Vamos por partes. Soy la IA de Diario & Tinta, no una psicóloga. ¿Qué pasó hoy, en una frase?' },
-      { de: 'yo', texto: 'Mi jefe me corrigió frente a todos y desde entonces siento que no sirvo.' },
-      { de: 'ia', texto: 'Separémoslo. Pasó: una corrección en público. Sentiste: vergüenza. Pensamiento: "no sirvo". ¿Ese pensamiento es un hecho o una interpretación?' },
-    ],
-    respuesta: 'Anotado. ¿Qué podrías hacer mañana, aunque sea pequeño, para sentirte un poco mejor con esto?',
-  },
-  {
-    id: 'calma', nombre: 'Calma', icono: 'air', color: 'bg-exito-suave text-exito', cuando: 'Estoy ansioso',
-    como: 'Respiración y ejercicios para aterrizar en el momento.',
-    respira: true,
-    charla: [
-      { de: 'ia', texto: 'Hola. Soy la IA de Diario & Tinta, no una psicóloga; estoy aquí para acompañarte. ¿Qué te quita el sueño esta noche?' },
-      { de: 'yo', texto: 'Otra vez no puedo dormir. Mañana tengo junta y siento que todo me sale mal en el trabajo.' },
-      { de: 'ia', texto: 'Suena agotador cargar con eso de noche. Probemos algo corto: inhala 4 segundos, sostén 4 y exhala 6. Lo hacemos tres veces juntos.', ejercicio: true },
-      { de: 'yo', texto: 'Ya, un poco mejor. Pero es la tercera noche igual.' },
-      { de: 'ia', texto: 'Gracias por decírmelo. Tres noches seguidas pesan, y hablarlo con una persona puede ayudarte más que yo. Laura Méndez, a 3 km, trabaja justo sueño y estrés. ¿Quieres ver su horario?', sugerencia: 'lm' },
-    ],
-    respuesta: 'Te leo. Respira conmigo una vez más: inhala 4, sostén 4, exhala 6. ¿Cómo se siente tu cuerpo ahora?',
-  },
-];
-
-export const TEMAS_CHARLA = ['Sueño', 'Trabajo', 'Autocrítica'];
 
 export const LINEAS_CRISIS = [
   { nombre: 'Línea de la Vida', numero: '800 911 2000', tel: '8009112000', detalle: 'Gratuita, 24 horas, todo México' },

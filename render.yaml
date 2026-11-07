@@ -21,7 +21,7 @@ services:
         destination: /escribir
       - type: redirect
         source: /hablar.html
-        destination: /hablar
+        destination: /hoy
       - type: redirect
         source: /ajustes.html
         destination: /ajustes

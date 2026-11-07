@@ -79,7 +79,7 @@ export default function Acceso({ modo }) {
           <h1 className="text-[40px] font-extrabold leading-tight">El puente entre escribir “no estoy bien” y hablar con alguien que puede ayudar.</h1>
           <ul className="flex flex-col gap-2 text-white/85">
             <li className="flex items-center gap-2"><Icono nombre="lock" className="text-[20px]" /> Tu diario es privado; tú decides qué compartir.</li>
-            <li className="flex items-center gap-2"><Icono nombre="forum" className="text-[20px]" /> Una IA para desahogarte cuando lo necesites.</li>
+            <li className="flex items-center gap-2"><Icono nombre="monitoring" className="text-[20px]" /> Detecta a tiempo cómo te sientes.</li>
             <li className="flex items-center gap-2"><Icono nombre="person_search" className="text-[20px]" /> Psicólogos compatibles cerca de ti.</li>
           </ul>
         </div>

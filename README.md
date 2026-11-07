@@ -1,8 +1,8 @@
 # Diario & Tinta — prototipo en React
 
 Diario personal **privado** para personas con posible depresión o deterioro de su salud mental.
-No es una red social: la app es un **puente** entre la persona y la ayuda que necesita (IA para
-desahogarse, psicólogos cercanos, contacto de confianza y líneas de crisis).
+No es una red social: la app es un **puente** entre la persona y la ayuda que necesita (diario privado,
+detección temprana, psicólogos cercanos, contacto de confianza y líneas de crisis).
 
 Hecho con **React 18 + Vite + Tailwind CSS + React Router**. Es un prototipo navegable: todo usa
 datos de ejemplo en memoria y se reinicia al recargar; no hay servidor ni se envía nada.
@@ -13,7 +13,6 @@ datos de ejemplo en memoria y se reinicia al recargar; no hay servidor ni se env
 |---------------|---------------------------------|----------|
 | `/hoy`        | `src/pages/Hoy.jsx`             | Ánimo del día y semana, acceso a la IA, "Tú y tu terapeuta" (responder), psicólogos para ti y últimas páginas |
 | `/psicologos` | `src/pages/PsicologosPage.jsx`  | Matchmaking: aviso de cambios, situación actual, mini mapa de México, recomendaciones con "¿Por qué?" y "ver otra opción", otras ayudas |
-| `/hablar`     | `src/pages/Hablar.jsx`          | Desahogo con IA y 4 personalidades (Escucha, Compañía, Orden, Calma); temas detectados editables; si detecta riesgo, ofrece ayuda humana |
 | `/escribir`   | `src/pages/Escribir.jsx`        | Chispa del día, página con etiquetas y privacidad (Solo yo / Mi terapeuta), lista con filtros |
 | `/ajustes`    | `src/pages/Ajustes.jsx`         | Perfil, contacto de confianza, privacidad, escritura, avisos, tamaño de letra, datos |
 
@@ -42,7 +41,7 @@ src/
   main.jsx            rutas
   estado.jsx          estado compartido en memoria (páginas, mensajes, ánimo, letra)
   index.css           estilos base y componentes de Tailwind
-  data/ejemplo.js     datos de ejemplo (psicólogos, personalidades, páginas…)
+  data/ejemplo.js     datos de ejemplo (psicólogos, notas, mensajes…)
   data/mapa.js        contorno de México (Natural Earth, dominio público)
   components/         Layout (navegación y crisis), Psicologos (mapa y tarjeta), ui (piezas pequeñas)
   pages/              una pantalla por archivo
