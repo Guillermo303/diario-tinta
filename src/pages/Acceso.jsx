@@ -28,7 +28,7 @@ export default function Acceso({ modo }) {
   const registro = modo === 'registro';
   const pro = rol === 'psicologo';
 
-  const [d, setD] = useState({ nombre: '', correo: '', telefono: '', clave: '', cedula: '', anos: '', ciudad: 'Torreón, Coah.', experiencia: '', especialidades: [], cv: null, privacidad: false, salud: false });
+  const [d, setD] = useState({ nombre: '', correo: '', telefono: '', clave: '', cedula: '', anos: '', ciudad: 'Torreón, Coah.', experiencia: '', especialidades: [], cv: null, privacidad: false, salud: false, edad: '', ciudadUsuario: 'Torreón, Coah.' });
   const [errores, setErrores] = useState({});
   const [verClave, setVerClave] = useState(false);
   const set = k => e => setD(x => ({ ...x, [k]: e.target.type === 'checkbox' ? e.target.checked : e.target.value }));
@@ -42,6 +42,8 @@ export default function Acceso({ modo }) {
     if (registro) {
       if (d.nombre.trim().length < 2) e.nombre = 'Escribe tu nombre';
       if (d.telefono.replace(/\D/g, '').length !== 10) e.telefono = 'El teléfono debe tener 10 dígitos';
+      if (!pro && !d.edad) e.edad = 'Elige tu rango de edad';
+      if (!pro && d.edad === 'menor') e.edad = 'Por ahora la app es para mayores de 18 años. Si necesitas ayuda, llama gratis a la Línea de la Vida: 800 911 2000';
       if (!d.privacidad) e.privacidad = 'Necesitas aceptar el aviso de privacidad';
       if (!pro && !d.salud) e.salud = 'Necesitamos tu permiso para guardar datos de salud';
       if (pro) {
@@ -127,6 +129,22 @@ export default function Acceso({ modo }) {
             <Campo id="correo" etiqueta="Correo electrónico" error={errores.correo}>
               <input id="correo" type="email" value={d.correo} onChange={set('correo')} autoComplete="email" placeholder="nombre@correo.com" className={cls('correo')} {...err('correo')} />
             </Campo>
+            {registro && !pro && (
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <Campo id="edad" etiqueta="Edad" error={errores.edad}>
+                  <select id="edad" value={d.edad} onChange={set('edad')} className={cls('edad')} {...err('edad')}>
+                    <option value="">Elige…</option>
+                    <option value="menor">Menos de 18</option>
+                    <option value="18-24">18 a 24</option>
+                    <option value="25-34">25 a 34</option>
+                    <option value="35+">35 o más</option>
+                  </select>
+                </Campo>
+                <Campo id="ciudadUsuario" etiqueta="Ciudad">
+                  <input id="ciudadUsuario" value={d.ciudadUsuario} onChange={set('ciudadUsuario')} autoComplete="address-level2" className="campo" />
+                </Campo>
+              </div>
+            )}
             {registro && (
               <Campo id="telefono" etiqueta="Número de teléfono" error={errores.telefono} ayuda={pro ? 'Tu encargado te contactará a este número.' : 'Solo para recuperar tu cuenta o avisarte de una sesión. Nunca se comparte.'}>
                 <div className="flex gap-2">
