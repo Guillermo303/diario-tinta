@@ -161,9 +161,19 @@
     <div class="rounded-xl bg-secondary-fixed/40 p-space-sm flex flex-col gap-1.5">
       <p class="font-label-md text-label-md text-on-surface flex items-center gap-1.5"><span class="material-symbols-outlined text-[18px] text-secondary">insights</span> Según lo que compartiste esta semana</p>
       <div class="flex flex-wrap gap-1.5">
-        <span class="px-2 py-1 rounded-full bg-surface-container-lowest font-label-md text-label-md text-on-surface">🌧️ Ánimo bajo 4 de 7 días</span>
+        <span class="px-2 py-1 rounded-full bg-surface-container-lowest font-label-md text-label-md text-on-surface">🌀 Ansiedad por la noche</span>
         <span class="px-2 py-1 rounded-full bg-surface-container-lowest font-label-md text-label-md text-on-surface">💼 Estrés por el trabajo</span>
         <span class="px-2 py-1 rounded-full bg-surface-container-lowest font-label-md text-label-md text-on-surface">🌙 Duermes poco</span>
+      </div>
+    </div>
+
+    <!-- Matchmaking adaptativo: aviso de cambio -->
+    <div class="rounded-xl border border-primary/30 bg-primary-fixed/40 p-space-sm flex items-start gap-space-sm" role="status">
+      <span class="material-symbols-outlined text-[20px] text-primary mt-0.5">autorenew</span>
+      <div class="min-w-0 flex-1">
+        <p class="font-label-lg text-label-lg text-on-surface">Tus recomendaciones cambiaron</p>
+        <p class="font-body-sm text-body-sm text-on-surface-variant">Esta semana hablaste más de <b class="text-on-surface">sueño</b> y menos de pareja. Subimos a especialistas en insomnio y ansiedad nocturna.</p>
+        <p class="font-label-sm text-label-sm text-outline mt-1">Actualizado hoy, 8:15 · Antes: 1. Andrés V. · 2. Laura M. · 3. Sofía G.</p>
       </div>
     </div>
 
@@ -213,8 +223,13 @@
         </div>
         <div class="rounded-lg bg-tertiary-fixed/40 px-3 py-2">
           <p class="font-label-sm text-label-sm text-tertiary uppercase tracking-wider">En qué te puede ayudar</p>
-          <p class="font-body-sm text-body-sm text-on-surface mt-0.5">Trabaja la autocrítica y las rachas de ánimo bajo como las que registraste esta semana. Te puede ayudar a recuperar una rutina de sueño.</p>
+          <p class="font-body-sm text-body-sm text-on-surface mt-0.5">Trabaja la autocrítica y el cansancio que registraste esta semana. Te puede ayudar a recuperar una rutina de sueño.</p>
         </div>
+        <details class="group rounded-lg">
+          <summary class="cursor-pointer list-none flex items-center gap-1 font-label-md text-label-md text-primary"><span class="material-symbols-outlined text-[16px]">help</span> ¿Por qué me lo recomiendan?<span class="material-symbols-outlined text-[16px] transition-transform group-open:rotate-180">expand_more</span></summary>
+          <ul class="mt-1.5 pl-5 list-disc font-body-sm text-body-sm text-on-surface-variant space-y-0.5"><li>Mencionaste el sueño 5 veces en tus páginas de esta semana.</li><li>Registraste cansancio y ansiedad esta semana; trabaja ambos.</li><li>Está a 3 km y tiene horario libre mañana después del trabajo.</li></ul>
+          <p class="mt-1.5 font-label-sm text-label-sm text-outline">¿No te convence? <span class="underline">Ver otra opción</span> · <span class="underline">No volver a mostrar</span></p>
+        </details>
         <div class="flex flex-wrap gap-1"><span class="px-2 py-0.5 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface-variant">Depresión</span><span class="px-2 py-0.5 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface-variant">Terapia cognitivo-conductual</span><span class="px-2 py-0.5 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface-variant">Sueño</span></div>
         <div class="flex items-center justify-between gap-2 flex-wrap">
           <p class="font-body-sm text-body-sm text-on-surface-variant">Presencial y en línea · <b class="text-on-surface">$550</b>/sesión · Libre: Mañana, 18:00</p>
@@ -238,6 +253,11 @@
           <p class="font-label-sm text-label-sm text-tertiary uppercase tracking-wider">En qué te puede ayudar</p>
           <p class="font-body-sm text-body-sm text-on-surface mt-0.5">Se especializa en estrés y agotamiento por el trabajo, el tema que más aparece en tus páginas. Te ayuda a poner límites y a bajar la presión.</p>
         </div>
+        <details class="group rounded-lg">
+          <summary class="cursor-pointer list-none flex items-center gap-1 font-label-md text-label-md text-primary"><span class="material-symbols-outlined text-[16px]">help</span> ¿Por qué me lo recomiendan?<span class="material-symbols-outlined text-[16px] transition-transform group-open:rotate-180">expand_more</span></summary>
+          <ul class="mt-1.5 pl-5 list-disc font-body-sm text-body-sm text-on-surface-variant space-y-0.5"><li>El trabajo sigue siendo el tema que más aparece en tu diario.</li><li>Calificaste con 5/5 tu llamada con él del 2 de noviembre.</li><li>Bajó al lugar 2 porque esta semana el sueño pesó más.</li></ul>
+          <p class="mt-1.5 font-label-sm text-label-sm text-outline">¿No te convence? <span class="underline">Ver otra opción</span> · <span class="underline">No volver a mostrar</span></p>
+        </details>
         <div class="flex flex-wrap gap-1"><span class="px-2 py-0.5 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface-variant">Estrés laboral</span><span class="px-2 py-0.5 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface-variant">Ansiedad</span><span class="px-2 py-0.5 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface-variant">Aceptación y compromiso</span></div>
         <div class="flex items-center justify-between gap-2 flex-wrap">
           <p class="font-body-sm text-body-sm text-on-surface-variant">Presencial · <b class="text-on-surface">$500</b>/sesión · Libre: Lun 10 nov, 17:00</p>
@@ -261,6 +281,11 @@
           <p class="font-label-sm text-label-sm text-tertiary uppercase tracking-wider">En qué te puede ayudar</p>
           <p class="font-body-sm text-body-sm text-on-surface mt-0.5">Usa mindfulness para la ansiedad nocturna y los pensamientos que no te dejan dormir. Buena opción si prefieres sesiones desde casa.</p>
         </div>
+        <details class="group rounded-lg">
+          <summary class="cursor-pointer list-none flex items-center gap-1 font-label-md text-label-md text-primary"><span class="material-symbols-outlined text-[16px]">help</span> ¿Por qué me lo recomiendan?<span class="material-symbols-outlined text-[16px] transition-transform group-open:rotate-180">expand_more</span></summary>
+          <ul class="mt-1.5 pl-5 list-disc font-body-sm text-body-sm text-on-surface-variant space-y-0.5"><li>Escribes casi siempre después de las 23:00: ansiedad nocturna.</li><li>En Ajustes marcaste que te acomoda la modalidad en línea.</li><li>Tiene espacio hoy por la noche.</li></ul>
+          <p class="mt-1.5 font-label-sm text-label-sm text-outline">¿No te convence? <span class="underline">Ver otra opción</span> · <span class="underline">No volver a mostrar</span></p>
+        </details>
         <div class="flex flex-wrap gap-1"><span class="px-2 py-0.5 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface-variant">Ansiedad</span><span class="px-2 py-0.5 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface-variant">Mindfulness</span><span class="px-2 py-0.5 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface-variant">Insomnio</span></div>
         <div class="flex items-center justify-between gap-2 flex-wrap">
           <p class="font-body-sm text-body-sm text-on-surface-variant">Solo en línea · <b class="text-on-surface">$600</b>/sesión · Libre: Hoy, 20:30</p>
@@ -269,9 +294,24 @@
       </li>
     </ol>
 
+    <!-- Otras formas de ayuda -->
+    <div class="flex flex-col gap-space-xs">
+      <span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider px-1">Otras ayudas para tu momento</span>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-xs">
+        <div class="p-space-sm rounded-lg bg-surface-container-low flex items-start gap-space-sm">
+          <span class="material-symbols-outlined text-[20px] text-tertiary">bedtime</span>
+          <div class="min-w-0"><p class="font-label-lg text-label-lg text-on-surface">Taller "Dormir mejor"</p><p class="font-body-sm text-body-sm text-on-surface-variant">4 sesiones en grupo · en línea · $150</p></div>
+        </div>
+        <div class="p-space-sm rounded-lg bg-surface-container-low flex items-start gap-space-sm">
+          <span class="material-symbols-outlined text-[20px] text-tertiary">groups</span>
+          <div class="min-w-0"><p class="font-label-lg text-label-lg text-on-surface">Grupo de apoyo, Torreón</p><p class="font-body-sm text-body-sm text-on-surface-variant">Martes 19:00 · gratuito · con becarios de psicología</p></div>
+        </div>
+      </div>
+    </div>
+
     <p class="flex items-start gap-1.5 font-body-sm text-body-sm text-on-surface-variant">
       <span class="material-symbols-outlined text-[16px] text-tertiary mt-0.5">verified_user</span>
-      La IA sugiere según tu ánimo y lo que compartes; tú eliges. Ningún psicólogo ve tu diario hasta que tú lo decidas.
+      Las recomendaciones se ajustan a cómo te sientes y a cómo te va con cada psicólogo. Tú eliges, y ningún psicólogo puede pagar para aparecer más arriba ni ve tu diario hasta que tú lo decidas.
     </p>
   </section>
 
